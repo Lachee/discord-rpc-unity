@@ -384,126 +384,6 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/Lachee.Discord.Editor.CharacterLimitAttributeDrawer.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Lachee.Discord.Editor.CharacterLimitAttributeDrawer.html",
-          "hash": "uISBkDeaa98QKjGOTGJhsDH2d+WiXWxEHEJ8Cy5QEsc="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/Lachee.Discord.Editor.DiscordAssetDrawer.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Lachee.Discord.Editor.DiscordAssetDrawer.html",
-          "hash": "Sa9BARKRhpIcWTyXSXNZlI5EH+UxXFgSLPyN43cSaVQ="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/Lachee.Discord.Editor.DiscordEventDrawer.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Lachee.Discord.Editor.DiscordEventDrawer.html",
-          "hash": "riYW0Q4RQh1geuq8zo4sc6wsh4A2rpRcmDoUZD+bafY="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/Lachee.Discord.Editor.DiscordManagerEditor.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Lachee.Discord.Editor.DiscordManagerEditor.html",
-          "hash": "HnAXLuNvSPpBtuDNHJrFxhQ28HKi1KnFapjVNzTDt/0="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/Lachee.Discord.Editor.DiscordNativeInstall.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Lachee.Discord.Editor.DiscordNativeInstall.html",
-          "hash": "oiL25ZGzJPGNNQ/g6z1Pv4k4BwR81wMGjCD+lbvp0B8="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/Lachee.Discord.Editor.DiscordPartyDrawer.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Lachee.Discord.Editor.DiscordPartyDrawer.html",
-          "hash": "eu53dPaxsUOy0kvOTWioNNn/pWh2MDbgwpOM7Cfu6ew="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/Lachee.Discord.Editor.DiscordSecretsDrawer.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Lachee.Discord.Editor.DiscordSecretsDrawer.html",
-          "hash": "JNOKtYvHoYeBlXMnXFEZXMHzFEzY5leADw13qvhVeXA="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/Lachee.Discord.Editor.DiscordTimestampDrawer.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Lachee.Discord.Editor.DiscordTimestampDrawer.html",
-          "hash": "8arrFqG8pjVYt1V0tiezzYaZi7E6Q0kgoGQ8e/m8TaM="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/Lachee.Discord.Editor.DiscordUserDrawer.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Lachee.Discord.Editor.DiscordUserDrawer.html",
-          "hash": "+28/rQD+barzPwXuiCJCMAwPYqvSinAItyWizNF9mmQ="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/Lachee.Discord.Editor.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Lachee.Discord.Editor.html",
-          "hash": "/OcQsH7pmpjEwcwnttgAMnf4OlF+oUH61BH+ozhugQE="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
       "source_relative_path": "api/Lachee.Discord.Event.yml",
       "output": {
         ".html": {
@@ -892,7 +772,7 @@
       "output": {
         ".html": {
           "relative_path": "api/toc.html",
-          "hash": "xTNWKkv6nouphEzwbBvA+TblP3cOz5xYSbgKkpe/Axo="
+          "hash": "ksWd6ymmjxOQw/pDkjvEoSInrKZzTl0NkbnRfJV9Z1g="
         }
       },
       "is_incremental": false,
@@ -958,7 +838,7 @@
         "ManagedReferenceDocumentProcessor": {
           "can_incremental": false,
           "incrementalPhase": "build",
-          "total_file_count": 72,
+          "total_file_count": 62,
           "skipped_file_count": 0
         },
         "TocDocumentProcessor": {
