@@ -2,7 +2,7 @@
 <table frame="void">
     <tr>
       <td width="200px">
-        <img src="https://raw.githubusercontent.com/Lachee/discord-rpc-unity/master/Resources/discord_logo.png" align="center" width="100%" />
+        <img src="https://raw.githubusercontent.com/Lachee/discord-rpc-unity/master/Resources/discord_presence.png" align="center" width="100%" />
       </td>
       <td>
         <h1>Discord RPC Unity</h1>
