@@ -1,19 +1,22 @@
 ﻿using UnityEngine;
 
-public class CharacterLimitAttribute : PropertyAttribute
+namespace Lachee.Discord.Attributes
 {
-	public int max = 32;
-	public bool enforce = false;
-
-	public CharacterLimitAttribute(int max)
+	public class CharacterLimitAttribute : PropertyAttribute
 	{
-		this.max = max;
-		this.enforce = false;
-	}
+		public int max = 32;
+		public bool enforce = false;
 
-	public CharacterLimitAttribute(int max, bool enforce)
-	{
-		this.max = max;
-		this.enforce = enforce;
+		public CharacterLimitAttribute(int max)
+		{
+			this.max = max;
+			this.enforce = false;
+		}
+
+		public CharacterLimitAttribute(int max, bool enforce)
+		{
+			this.max = max;
+			this.enforce = enforce;
+		}
 	}
 }

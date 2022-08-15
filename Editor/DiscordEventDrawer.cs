@@ -1,9 +1,9 @@
 ﻿using UnityEditor;
 using UnityEngine;
 
-namespace DiscordRPC.UnityEditor
+namespace Lachee.Discord.Editor
 {
-	[CustomPropertyDrawer(typeof(DiscordEvent))]
+	[CustomPropertyDrawer(typeof(Event))]
 	public class DiscordEventDrawer : PropertyDrawer
 	{
 		private bool INCLUDE_NONE = false;
@@ -13,8 +13,8 @@ namespace DiscordRPC.UnityEditor
 
 		public override void OnGUI(Rect position, SerializedProperty property, GUIContent label)
 		{
-			DiscordEvent propval = (DiscordEvent)property.intValue;
-			DiscordEvent newval = DiscordEvent.None;
+			Event propval = (Event)property.intValue;
+			Event newval = Event.None;
 
 			Rect buttonPos;
 			int offset = INCLUDE_NONE ? 0 : 1;
@@ -27,21 +27,21 @@ namespace DiscordRPC.UnityEditor
 				if (INCLUDE_NONE)
 				{
 					buttonPos = new Rect(position.x + EditorGUIUtility.labelWidth + buttonWidth * 0, position.y, buttonWidth, position.height);
-					if (GUI.Toggle(buttonPos, propval == DiscordEvent.None, "None", EditorStyles.miniButtonLeft))
-						newval = DiscordEvent.None;
+					if (GUI.Toggle(buttonPos, propval == Event.None, "None", EditorStyles.miniButtonLeft))
+						newval = Event.None;
 				}
 
 				buttonPos = new Rect(position.x + EditorGUIUtility.labelWidth + buttonWidth * (1 - offset), position.y, buttonWidth, position.height);
-				if (GUI.Toggle(buttonPos, (propval & DiscordEvent.Join) == DiscordEvent.Join, "Join", INCLUDE_NONE ? EditorStyles.miniButtonMid : EditorStyles.miniButtonLeft))
-					newval |= DiscordEvent.Join;
+				if (GUI.Toggle(buttonPos, (propval & Event.Join) == Event.Join, "Join", INCLUDE_NONE ? EditorStyles.miniButtonMid : EditorStyles.miniButtonLeft))
+					newval |= Event.Join;
 
 				buttonPos = new Rect(position.x + EditorGUIUtility.labelWidth + buttonWidth * (2 - offset), position.y, buttonWidth, position.height);
-				if (GUI.Toggle(buttonPos, (propval & DiscordEvent.Spectate) == DiscordEvent.Spectate, "Spectate", EditorStyles.miniButtonMid))
-					newval |= DiscordEvent.Spectate;
+				if (GUI.Toggle(buttonPos, (propval & Event.Spectate) == Event.Spectate, "Spectate", EditorStyles.miniButtonMid))
+					newval |= Event.Spectate;
 
 				buttonPos = new Rect(position.x + EditorGUIUtility.labelWidth + buttonWidth * (3 - offset), position.y, buttonWidth, position.height);
-				if (GUI.Toggle(buttonPos, (propval & DiscordEvent.JoinRequest) == DiscordEvent.JoinRequest, "Invites", EditorStyles.miniButtonRight))
-					newval |= DiscordEvent.JoinRequest;
+				if (GUI.Toggle(buttonPos, (propval & Event.JoinRequest) == Event.JoinRequest, "Invites", EditorStyles.miniButtonRight))
+					newval |= Event.JoinRequest;
 
 				property.intValue = (int)newval;
 			}

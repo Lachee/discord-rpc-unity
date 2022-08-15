@@ -1,9 +1,9 @@
 ﻿using UnityEditor;
 using UnityEngine;
 
-namespace DiscordRPC.UnityEditor
+namespace Lachee.Discord.Editor
 {
-	[CustomPropertyDrawer(typeof(DiscordSecrets))]
+	[CustomPropertyDrawer(typeof(Secrets))]
 	public class DiscordSecretsDrawer : PropertyDrawer
 	{
 		public const float keySize = 150;

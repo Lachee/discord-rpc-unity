@@ -1,12 +1,12 @@
 ﻿using UnityEngine;
 using DiscordRPC.Logging;
 
-namespace DiscordRPC.Unity
+namespace Lachee.Discord.Control
 {
     /// <summary>
     /// This is a bridge between the Discord IPC logging and Unity Logging. Useful for debugging errors within the pipe.
     /// </summary>
-    public class UnityLogger : Logging.ILogger
+    public sealed class UnityLogger : DiscordRPC.Logging.ILogger
     {
         public LogLevel Level { get; set; }
 

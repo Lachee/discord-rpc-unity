@@ -1,9 +1,10 @@
-﻿using System.Collections;
+﻿using Lachee.Discord.Attributes;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
 
-namespace DiscordRPC.UnityEditor 
+namespace Lachee.Discord.Editor
 {
 	[CustomPropertyDrawer(typeof(CharacterLimitAttribute))]
 	public class CharacterLimitAttributeDrawer : PropertyDrawer

@@ -7,7 +7,7 @@ using System.IO;
 using System.Runtime.InteropServices;
 using System.Threading;
 
-namespace DiscordRPC.Unity
+namespace Lachee.Discord.Control
 {
     /// <summary>
     /// Pipe Client used to communicate with Discord.

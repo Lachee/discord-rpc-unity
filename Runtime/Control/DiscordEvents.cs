@@ -4,43 +4,43 @@ using System;
 using UnityEngine;
 using UnityEngine.Events;
 
-namespace DiscordRPC.Unity
+namespace Lachee.Discord.Control
 {
     [Serializable]
-    public class DiscordEvents
+    public sealed class DiscordEvents
     {
         [Serializable]
-        public class ReadyMessageEvent : UnityEvent<ReadyMessage> { }
+        public sealed class ReadyMessageEvent : UnityEvent<ReadyMessage> { }
 
         [Serializable]
-        public class CloseMessageEvent : UnityEvent<CloseMessage> { }
+        public sealed class CloseMessageEvent : UnityEvent<CloseMessage> { }
 
         [Serializable]
-        public class ErrorMessageEvent : UnityEvent<ErrorMessage> { }
+        public sealed class ErrorMessageEvent : UnityEvent<ErrorMessage> { }
 
         [Serializable]
-        public class PresenceMessageEvent : UnityEvent<PresenceMessage> { }
+        public sealed class PresenceMessageEvent : UnityEvent<PresenceMessage> { }
 
         [Serializable]
-        public class SubscribeMessageEvent : UnityEvent<SubscribeMessage> { }
+        public sealed class SubscribeMessageEvent : UnityEvent<SubscribeMessage> { }
 
         [Serializable]
-        public class UnsubscribeMessageEvent : UnityEvent<UnsubscribeMessage> { }
+        public sealed class UnsubscribeMessageEvent : UnityEvent<UnsubscribeMessage> { }
 
         [Serializable]
-        public class JoinMessageEvent : UnityEvent<JoinMessage> { }
+        public sealed class JoinMessageEvent : UnityEvent<JoinMessage> { }
 
         [Serializable]
-        public class SpectateMessageEvent : UnityEvent<SpectateMessage> { }
+        public sealed class SpectateMessageEvent : UnityEvent<SpectateMessage> { }
 
         [Serializable]
-        public class JoinRequestMessageEvent : UnityEvent<JoinRequestMessage> { }
+        public sealed class JoinRequestMessageEvent : UnityEvent<JoinRequestMessage> { }
 
         [Serializable]
-        public class ConnectionEstablishedMessageEvent : UnityEvent<ConnectionEstablishedMessage> { }
+        public sealed class ConnectionEstablishedMessageEvent : UnityEvent<ConnectionEstablishedMessage> { }
 
         [Serializable]
-        public class ConnectionFailedMessageEvent : UnityEvent<ConnectionFailedMessage> { }
+        public sealed class ConnectionFailedMessageEvent : UnityEvent<ConnectionFailedMessage> { }
 
         public ReadyMessageEvent OnReady = new ReadyMessageEvent();
         public CloseMessageEvent OnClose = new CloseMessageEvent();
