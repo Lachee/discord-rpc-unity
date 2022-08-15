@@ -18,6 +18,8 @@
 Add the package to your project and look at the sample code. For more documentation about the RPC, check the 
 [discord-rpc-csharp](https://github.com/lachee/discord-rpc-csharp) documentation
 
+Check out the documentation at [https://lachee.github.io/discord-rpc-unity/](https://lachee.github.io/discord-rpc-unity/)
+
 # Installation
 
 <!--[![latest](https://github.com/Lachee/unity-utilities/actions/workflows/release.yml/badge.svg?branch=master)](https://github.com/Lachee/unity-utilities/actions/workflows/release.yml)-->
