@@ -13,7 +13,7 @@ namespace Lachee.Discord.Editor
 			SerializedProperty timestamp = prop.FindPropertyRelative("timestamp");
 
 			// Draw curve
-			EditorGUI.PropertyField(new Rect(pos.x, pos.y, pos.width - buttonWidth - 5f, pos.height), timestamp, label);
+			EditorGUI.PropertyField(new Rect(pos.x, pos.y, pos.width - buttonWidth - 5f, EditorGUIUtility.singleLineHeight), timestamp, label);
 			if (GUI.Button(new Rect(pos.x + pos.width - buttonWidth, pos.y, buttonWidth, pos.height), new GUIContent("Now", "Sets the time to the current time")))
 			{
 				timestamp.longValue = new Timestamp(Time.time).timestamp;

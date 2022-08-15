@@ -16,7 +16,7 @@ namespace Lachee.Discord.Editor
 			SerializedProperty sizeMax = prop.FindPropertyRelative("maxSize");
 
 			float h2 = pos.height / lines;
-			EditorGUI.LabelField(pos, label);
+			EditorGUI.LabelField(new Rect(pos.x, pos.y, pos.width, EditorGUIUtility.singleLineHeight), label);
 
 			int indent = EditorGUI.indentLevel++;
 			{

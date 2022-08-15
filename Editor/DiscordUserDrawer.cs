@@ -43,7 +43,7 @@ namespace Lachee.Discord.Editor
 				DrawRect(pos, Color.red);
 
 				//Draw the label then the left over space it gave us
-				if (foldout.boolValue = EditorGUI.Foldout(pos, foldout.boolValue, label))
+				if (foldout.boolValue = EditorGUI.Foldout(new Rect(pos.x, pos.y, pos.width, EditorGUIUtility.singleLineHeight), foldout.boolValue, label))
 				{
 					DrawAvatar(imageRectangle, avatar);
 

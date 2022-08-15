@@ -16,7 +16,7 @@ namespace Lachee.Discord.Editor
 			SerializedProperty snowflake = prop.FindPropertyRelative("snowflake");
 
 			float h2 = pos.height / lines;
-			EditorGUI.LabelField(pos, label);
+			EditorGUI.LabelField(new Rect(pos.x, pos.y, pos.width, EditorGUIUtility.singleLineHeight), label);
 			
 			if (snowflake.longValue > 0)
 				EditorGUI.LabelField(pos, new GUIContent(" "), new GUIContent("(" + snowflake.longValue.ToString() + ")", "The unique Snowflake ID of the image. May not be accurate to the current image key."));
