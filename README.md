@@ -20,6 +20,16 @@ Add the package to your project and look at the sample code. For more documentat
 
 Check out the documentation at [https://lachee.github.io/discord-rpc-unity/](https://lachee.github.io/discord-rpc-unity/)
 
+# Dependencies
+
+- At _least_ Unity 2018, however:
+    - Support is **only given down to** [Unity 2018.4.36f1](https://unity3d.com/unity/qa/lts-releases?version=2018.4) LTS
+    - Support is **only given up to** the latest LTS 
+
+- Newtonsoft.JSON 13
+    - This is provided by [com.unity.nuget.newtonsoft-json](https://docs.unity3d.com/Packages/com.unity.nuget.newtonsoft-json@3.0/manual/index.html)
+
+
 # Installation
 
 <!--[![latest](https://github.com/Lachee/unity-utilities/actions/workflows/release.yml/badge.svg?branch=master)](https://github.com/Lachee/unity-utilities/actions/workflows/release.yml)-->
