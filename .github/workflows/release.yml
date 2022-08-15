@@ -33,7 +33,7 @@ jobs:
             --exclude "Documentation" \
             --exclude "Samples~" \
             --assets "Runtime/**/*" \
-            --assetes "Editor/**/*" \
+            --assets "Editor/**/*" \
             -r .
         
       # Upload artifact
