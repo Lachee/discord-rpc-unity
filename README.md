@@ -46,3 +46,8 @@ This allows you to make changes and commit them back to the project:
 ```
 git clone https://github.com/Lachee/discord-rpc-unity.git Packages/com.lachee.discordrpc
 ```
+
+# Logging
+
+By default, the DiscordManager will log to the Unity Console while in the Editor.
+To enable logging in builds, create a [Development Build](https://docs.unity3d.com/Manual/BuildSettings.html) and a new discordrpc.log file will be generated with your app when it runs. 
