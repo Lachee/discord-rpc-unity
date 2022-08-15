@@ -4,7 +4,7 @@ using UnityEngine;
 namespace Lachee.Discord.Editor
 {
 	[CustomPropertyDrawer(typeof(Event))]
-	public class DiscordEventDrawer : PropertyDrawer
+	internal sealed class DiscordEventDrawer : PropertyDrawer
 	{
 		private bool INCLUDE_NONE = false;
 

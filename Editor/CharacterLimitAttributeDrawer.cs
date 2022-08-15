@@ -7,7 +7,7 @@ using UnityEngine;
 namespace Lachee.Discord.Editor
 {
 	[CustomPropertyDrawer(typeof(CharacterLimitAttribute))]
-	public class CharacterLimitAttributeDrawer : PropertyDrawer
+	internal sealed class CharacterLimitAttributeDrawer : PropertyDrawer
 	{
 		// Draw the property inside the given rect
 		public override void OnGUI(Rect pos, SerializedProperty property, GUIContent label)

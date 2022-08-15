@@ -4,7 +4,7 @@ using UnityEngine;
 namespace Lachee.Discord.Editor
 {
 	[CustomPropertyDrawer(typeof(Secrets))]
-	public class DiscordSecretsDrawer : PropertyDrawer
+	internal sealed class DiscordSecretsDrawer : PropertyDrawer
 	{
 		public const float keySize = 150;
 		public const int lines = 3;

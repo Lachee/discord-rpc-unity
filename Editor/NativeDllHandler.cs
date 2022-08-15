@@ -8,7 +8,7 @@ using UnityEngine;
 namespace Lachee.Discord.Editor
 {
 	[InitializeOnLoad]
-	public class DiscordNativeInstall
+	internal sealed class DiscordNativeInstall
 	{
 
 		const bool ENABLED = false;

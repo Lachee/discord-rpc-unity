@@ -4,7 +4,7 @@ using UnityEngine;
 namespace Lachee.Discord.Editor
 {
 	[CustomPropertyDrawer(typeof(Timestamp))]
-	public class DiscordTimestampDrawer : PropertyDrawer
+	internal sealed class DiscordTimestampDrawer : PropertyDrawer
 	{
 		public const float buttonWidth = 50f;
 
