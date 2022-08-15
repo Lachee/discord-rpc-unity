@@ -28,7 +28,7 @@ Check out the documentation at [https://lachee.github.io/discord-rpc-unity/](htt
 
 - Newtonsoft.JSON 13
     - This is provided by [com.unity.nuget.newtonsoft-json](https://docs.unity3d.com/Packages/com.unity.nuget.newtonsoft-json@3.0/manual/index.html)
-
+    - _this determines the 2018.4 min spec. You can go lower, but you need to supply your own newtonsoft.json 13.0 binary.
 
 # Installation
 
