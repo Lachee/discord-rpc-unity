@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using Lachee.Discord;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -22,7 +23,7 @@ namespace DiscordRPC.Examples.RichPresence
 		public InputField inputSmallTooltip;
 
 
-		public DiscordPresence presence;
+		public Presence presence;
 
 		private void Start()
 		{
@@ -30,10 +31,10 @@ namespace DiscordRPC.Examples.RichPresence
 			UpdateFields(presence);
 
 			//Register to a presence change
-			DiscordManager.current.events.OnPresenceUpdate.AddListener((message) =>
+			DiscordManager.current.OnPresence.AddListener((message) =>
 			{
-				Debug.Log("Received a new presence! Current App: " + message.ApplicationID + ", " + message.Name);
-				UpdateFields(new DiscordPresence(message.Presence.ToRichPresence()));
+				Debug.Log("Received a new presence! Current App: " + message.applicationID + ", " + message.name);
+				UpdateFields(presence);
 			});
 		}
 
@@ -43,8 +44,13 @@ namespace DiscordRPC.Examples.RichPresence
 			DiscordManager.current.SetPresence(presence);
 		}
 
-		public void UpdateFields(DiscordPresence presence)
+		public void UpdateFields(Presence presence)
 		{
+			if (presence == null)
+            {
+				return;
+            }
+
 			this.presence = presence;
 			inputState.text = presence.state;
 			inputDetails.text = presence.details;
@@ -61,21 +67,21 @@ namespace DiscordRPC.Examples.RichPresence
 		{
 			presence.state = inputState.text;
 			presence.details = inputDetails.text;
-			presence.startTime = inputStartTime.isOn ? new DiscordTimestamp(Time.realtimeSinceStartup) : DiscordTimestamp.Invalid;
+			presence.startTime = inputStartTime.isOn ? new Timestamp(Time.realtimeSinceStartup) : Timestamp.Invalid;
 
-			presence.largeAsset = new DiscordAsset()
+			presence.largeAsset = new Asset()
 			{
 				image = inputLargeKey.text,
 				tooltip = inputLargeTooltip.text
 			};
-			presence.smallAsset = new DiscordAsset()
+			presence.smallAsset = new Asset()
 			{
 				image = inputSmallKey.text,
 				tooltip = inputSmallTooltip.text
 			};
 
 			float duration = float.Parse(inputEndTime.text);
-			presence.endTime = duration > 0 ? new DiscordTimestamp(Time.realtimeSinceStartup + duration) : DiscordTimestamp.Invalid;
+			presence.endTime = duration > 0 ? new Timestamp(Time.realtimeSinceStartup + duration) : Timestamp.Invalid;
 		}
 	}
 }

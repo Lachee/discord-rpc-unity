@@ -139,16 +139,21 @@ namespace Lachee.Discord
         /// <param name="avatar">The avatar that was downloaded</param>
         public delegate void AvatarDownloadCallback(User user, Texture2D avatar);
 
-        /// <summary>
-        /// Gets the user avatar as a Texture2D and starts it with the supplied monobehaviour. It will first check the cache if the image exists, if it does it will return the image. Otherwise it will download the image from Discord and store it in the cache, calling the callback once done.
-        /// </summary>
-        /// <param name="coroutineCaller">The target object that will start the coroutine</param>
-        /// <param name="size">The target size of the avatar. Default is 128x128</param>
-        /// <param name="callback">The callback for when the texture completes. Default is no-callback, but its highly recommended to use a callback</param>
-        /// <returns></returns>
+        [System.Obsolete("coroutine caller has been replaced with just the DiscordManager")]
         public void GetAvatar(MonoBehaviour coroutineCaller, DiscordAvatarSize size = DiscordAvatarSize.x128, AvatarDownloadCallback callback = null)
         {
             coroutineCaller.StartCoroutine(GetAvatarCoroutine(size, callback));
+        }
+
+        /// <summary>
+        /// Gets the user avatar as a Texture2D and starts it with the supplied monobehaviour. It will first check the cache if the image exists, if it does it will return the image. Otherwise it will download the image from Discord and store it in the cache, calling the callback once done.
+        /// </summary>
+        /// <param name="size">The target size of the avatar. Default is 128x128</param>
+        /// <param name="callback">The callback for when the texture completes. Default is no-callback, but its highly recommended to use a callback</param>
+        /// <returns></returns>
+        public void GetAvatar(DiscordAvatarSize size = DiscordAvatarSize.x128, AvatarDownloadCallback callback = null)
+        {
+            DiscordManager.current.StartCoroutine(GetAvatarCoroutine(size, callback));
         }
 
         /// <summary>
@@ -433,8 +438,20 @@ namespace Lachee.Discord
         /// </summary>
         /// <param name="user"></param>
         public static implicit operator User(DiscordRPC.User user) { return new User(user); }
-    }
 
+        public override int GetHashCode()
+        {
+            return this.ID.GetHashCode() ^ 7;
+        }
+
+        public override bool Equals(object obj)
+        {
+            if (obj is User)
+                return this.ID == ((User)obj).ID;
+
+            return false;
+        }
+    }
 
     /// <summary>
     /// The format of the discord avatars in the cache
@@ -490,10 +507,25 @@ namespace Lachee.Discord
         /// <param name="size">The target size of the avatar. Default is 128x128</param>
         /// <param name="callback">The callback for when the texture completes. Default is no-callback, but its highly recommended to use a callback</param>
         /// <returns>Returns the generated <see cref="User"/> for this <see cref="DiscordRPC.User"/> object.</returns>
+        [System.Obsolete]
         public static User GetAvatar(this DiscordRPC.User user, MonoBehaviour coroutineCaller, DiscordAvatarSize size = DiscordAvatarSize.x128, User.AvatarDownloadCallback callback = null)
         {
             var du = new User(user);
             du.GetAvatar(coroutineCaller, size, callback);
+            return du;
+        }
+
+        /// <summary>
+        /// Gets the user avatar as a Texture2D and starts it with the supplied monobehaviour. It will first check the cache if the image exists, if it does it will return the image. Otherwise it will download the image from Discord and store it in the cache, calling the callback once done.
+        /// <para>An alias of <see cref="User.CacheAvatar(MonoBehaviour, DiscordAvatarSize, AvatarDownloadCallback)"/> and will return the new <see cref="User"/> instance.</para>
+        /// </summary>
+        /// <param name="size">The target size of the avatar. Default is 128x128</param>
+        /// <param name="callback">The callback for when the texture completes. Default is no-callback, but its highly recommended to use a callback</param>
+        /// <returns>Returns the generated <see cref="User"/> for this <see cref="DiscordRPC.User"/> object.</returns>
+        public static User GetAvatar(this DiscordRPC.User user,DiscordAvatarSize size = DiscordAvatarSize.x128, User.AvatarDownloadCallback callback = null)
+        {
+            var du = new User(user);
+            du.GetAvatar(size, callback);
             return du;
         }
 

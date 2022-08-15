@@ -7,7 +7,7 @@ using UnityEngine.Events;
 namespace Lachee.Discord.Control
 {
     [Serializable]
-    public sealed class DiscordEvents
+    public sealed class MessageEvents
     {
         [Serializable]
         public sealed class ReadyMessageEvent : UnityEvent<ReadyMessage> { }

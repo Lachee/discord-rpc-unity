@@ -1,6 +1,8 @@
 ﻿using DiscordRPC.Message;
+using Lachee.Discord.Events;
 using System.Collections;
 using UnityEngine;
+using UnityEngine.Events;
 
 namespace Lachee.Discord
 {
@@ -84,7 +86,33 @@ namespace Lachee.Discord
 		#endregion
 
 		[Header("Handlers and Events")]
-		public Control.DiscordEvents events = new Control.DiscordEvents();
+#if UNITY_2019_OR_NEWER
+		public UnityEvent<ReadyEvent> OnReady;
+		public UnityEvent<CloseMessage> OnClose;
+		public UnityEvent<PresenceEvent> OnPresence;
+		public UnityEvent<JoinMessage> OnJoin;
+		[HideInInspector] public UnityEvent<SubscribeMessage> OnSubscribe;
+		[HideInInspector] public UnityEvent<UnsubscribeMessage> OnUnsubscribe;
+		[HideInInspector] public UnityEvent<ErrorMessage> OnError;
+		[HideInInspector] public UnityEvent<SpectateMessage> OnSpectate;
+		[HideInInspector] public UnityEvent<JoinRequestEvent> OnJoinRequest;
+		[HideInInspector] public UnityEvent<ConnectionEstablishedMessage> OnConnectionEstablished;
+		[HideInInspector] public UnityEvent<ConnectionFailedMessage> OnConnectionFailed;
+#else
+#pragma warning disable CS0618 // Type or member is obsolete
+        public UnityReadyEvent OnReady;
+        public UnityCloseEvent OnClose;
+		public UnityPresenceEvent OnPresence;
+		public UnityJoinEvent OnJoin;
+		[HideInInspector] public UnitySubscribeEvent OnSubscribe;
+		[HideInInspector] public UnityUnsubscribeEvent OnUnsubscribe;
+		[HideInInspector] public UnityErrorEvent OnError;
+		[HideInInspector] public UnitySpectateEvent OnSpectate;
+		[HideInInspector] public UnityJoinRequestEvent OnJoinRequest;
+		[HideInInspector] public UnityConnectionEstablishedEvent OnConnectionEstablished;
+		[HideInInspector] public UnityConnectionFailedEvent OnConnectionFailed;
+#pragma warning restore CS0618 // Type or member is obsolete
+#endif
 
 		/// <summary>
 		/// The current Discord Client.
@@ -94,15 +122,23 @@ namespace Lachee.Discord
 
 		public bool isInitialized { get { return _client != null && _client.IsInitialized; } }
 
-		#region Unity Events
+#region Unity Events
 
 		private void OnDisable() { Deinitialize(); }    //Try to dispose the client when we are disabled
 		private void OnDestroy() { Deinitialize(); }
 
 #if (UNITY_WSA || UNITY_WSA_10_0 || UNITY_STANDALONE) && !DISABLE_DISCORD
 
-		private void OnEnable() { if (gameObject.activeSelf && !isInitialized) Initialize(); }   //Try to initialize the client when we are enabled.
+		private void OnEnable()
+		{	//Try to initialize the client when we are enabled.
+			if (gameObject.activeSelf && !isInitialized) 
+				Initialize(); 
+		}   
 
+		private void Awake()
+        {
+			SetupSingleton();
+        }
 
 		//Try to initialize the client when we start. This is useful for moments where we are spawned in
 		private void Start()
@@ -151,19 +187,10 @@ namespace Lachee.Discord
 		}
 #endif
 
-		#endregion
+#endregion
 
-		/// <summary>
-		/// Initializes the discord client if able to. Wont initialize if <see cref="active"/> is false, we are not in playmode, we already have a instance or we already have a client.
-		/// <para>This function is empty unless UNITY_WSA || UNITY_WSA_10_0 || UNITY_STANDALONE) && !DISABLE_DISCORD is meet.</para>
-		/// </summary>
-		public void Initialize()
-		{
-#if (UNITY_WSA || UNITY_WSA_10_0 || UNITY_STANDALONE) && !DISABLE_DISCORD
-
-			if (!active) return;                //Are we allowed to be active?
-			if (!Application.isPlaying) return; //We are not allowed to initialize while in the editor.
-
+		private void SetupSingleton()
+        {
 			//This has a instance already that isn't us
 			if (_instance != null && _instance != this)
 			{
@@ -181,7 +208,23 @@ namespace Lachee.Discord
 
 			//Assign the instance
 			_instance = this;
-			DontDestroyOnLoad(this);
+
+			if (Application.isPlaying)
+				DontDestroyOnLoad(this);
+		}
+
+		/// <summary>
+		/// Initializes the discord client if able to. Wont initialize if <see cref="active"/> is false, we are not in playmode, we already have a instance or we already have a client.
+		/// <para>This function is empty unless UNITY_WSA || UNITY_WSA_10_0 || UNITY_STANDALONE) && !DISABLE_DISCORD is meet.</para>
+		/// </summary>
+		public void Initialize()
+		{
+#if (UNITY_WSA || UNITY_WSA_10_0 || UNITY_STANDALONE) && !DISABLE_DISCORD
+
+			if (!active) return;                //Are we allowed to be active?
+			if (!Application.isPlaying) return; //We are not allowed to initialize while in the editor.
+
+			SetupSingleton();
 
 			//Prepare the logger
 			DiscordRPC.Logging.ILogger logger = null;
@@ -204,7 +247,7 @@ namespace Lachee.Discord
 				client.RegisterUriScheme(steamID);
 
 			//Subscribe to some initial events
-			#region Event Registration
+#region Event Registration
 			client.OnError += (s, args) => Debug.LogError("[DRP] Error Occured within the Discord IPC: (" + args.Code + ") " + args.Message);
 			client.OnJoinRequested += (s, args) => Debug.Log("[DRP] Join Requested");
 
@@ -213,10 +256,9 @@ namespace Lachee.Discord
 				//We have connected to the Discord IPC. We should send our rich presence just incase it lost it.
 				Debug.Log("[DRP] Connection established and received READY from Discord IPC. Sending our previous Rich Presence and Subscription.");
 
-
 				//Set the user and cache their avatars
 				_currentUser = args.User;
-				_currentUser.GetAvatar(this, DiscordAvatarSize.x128);
+				_currentUser.GetAvatar(DiscordAvatarSize.x128);
 			};
 			client.OnPresenceUpdate += (s, args) =>
 			{
@@ -236,8 +278,21 @@ namespace Lachee.Discord
 			};
 
 			//Register the unity events
-			events.RegisterEvents(client);
-			#endregion
+			client.OnReady += (s, args) => OnReady?.Invoke(new ReadyEvent(args));
+			client.OnClose += (s, args) => OnClose?.Invoke(args);
+			client.OnError += (s, args) => OnError?.Invoke(args);
+
+			client.OnPresenceUpdate += (s, args) => OnPresence?.Invoke(new PresenceEvent(args));
+			client.OnSubscribe += (s, args) => OnSubscribe?.Invoke(args);
+			client.OnUnsubscribe += (s, args) => OnUnsubscribe?.Invoke(args);
+
+			client.OnJoin += (s, args) => OnJoin?.Invoke(args);
+			client.OnSpectate += (s, args) => OnSpectate?.Invoke(args);
+			client.OnJoinRequested += (s, args) => OnJoinRequest?.Invoke(new JoinRequestEvent(args));
+
+			client.OnConnectionEstablished += (s, args) => OnConnectionEstablished.Invoke(args);
+			client.OnConnectionFailed += (s, args) => OnConnectionFailed.Invoke(args);
+#endregion
 
 			//Set initial presence and sub. (This will enqueue it)
 			SetSubscription(_currentSubscription);
@@ -326,7 +381,7 @@ namespace Lachee.Discord
 			client.SetSubscription(evt.ToDiscordRPC());
 		}
 
-		#region Single Components Sets
+#region Single Components Sets
 		public Presence UpdateDetails(string details)
 		{
 			if (_client == null) return null;
@@ -395,7 +450,7 @@ namespace Lachee.Discord
 			if (_client == null) return null;
 			return (Presence)_client.UpdateClearTime();
 		}
-		#endregion
+#endregion
 
 
 		/// <summary>

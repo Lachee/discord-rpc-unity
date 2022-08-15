@@ -79,7 +79,7 @@ namespace Lachee.Discord
 		/// Creats a new Presence object, copying values of the Rich Presence
 		/// </summary>
 		/// <param name="presence">The rich presence, often received by discord.</param>
-		public Presence(DiscordRPC.RichPresence presence)
+		public Presence(DiscordRPC.BaseRichPresence presence)
 		{
 			if (presence != null)
 			{
@@ -112,6 +112,33 @@ namespace Lachee.Discord
 					this.largeAsset = new Asset();
 				}
 
+				if (presence.HasTimestamps())
+				{
+					//This could probably be made simpler
+					this.startTime = presence.Timestamps.Start.HasValue ? new Timestamp((long)presence.Timestamps.StartUnixMilliseconds.Value) : Timestamp.Invalid;
+					this.endTime = presence.Timestamps.End.HasValue ? new Timestamp((long)presence.Timestamps.EndUnixMilliseconds.Value) : Timestamp.Invalid;
+				}
+			}
+			else
+			{
+				this.state = "";
+				this.details = "";
+				this.party = new Party();
+				this.secrets = new Secrets();
+				this.smallAsset = new Asset();
+				this.largeAsset = new Asset();
+				this.startTime = Timestamp.Invalid;
+				this.endTime = Timestamp.Invalid;
+			}
+
+			this.buttons = new Button[0];
+		}
+
+		public Presence(DiscordRPC.RichPresence presence)
+            : this((DiscordRPC.BaseRichPresence)presence)
+        {
+			if (presence != null)
+			{
 				if (presence.HasButtons())
 				{
 					this.buttons = new Button[presence.Buttons.Length];
@@ -129,35 +156,14 @@ namespace Lachee.Discord
 				{
 					this.buttons = new Button[0];
 				}
-
-
-				if (presence.HasTimestamps())
-				{
-					//This could probably be made simpler
-					this.startTime = presence.Timestamps.Start.HasValue ? new Timestamp((long)presence.Timestamps.StartUnixMilliseconds.Value) : Timestamp.Invalid;
-					this.endTime = presence.Timestamps.End.HasValue ? new Timestamp((long)presence.Timestamps.EndUnixMilliseconds.Value) : Timestamp.Invalid;
-				}
 			}
-			else
-			{
-				this.state = "";
-				this.details = "";
-				this.party = new Party();
-				this.secrets = new Secrets();
-				this.smallAsset = new Asset();
-				this.largeAsset = new Asset();
-				this.buttons = new Button[0];
-				this.startTime = Timestamp.Invalid;
-				this.endTime = Timestamp.Invalid;
-			}
+         }
 
-		}
-
-		/// <summary>
-		/// Converts this object into a new instance of a rich presence, ready to be sent to the discord client.
-		/// </summary>
-		/// <returns>A new instance of a rich presence, ready to be sent to the discord client.</returns>
-		public DiscordRPC.RichPresence ToRichPresence()
+        /// <summary>
+        /// Converts this object into a new instance of a rich presence, ready to be sent to the discord client.
+        /// </summary>
+        /// <returns>A new instance of a rich presence, ready to be sent to the discord client.</returns>
+        public DiscordRPC.RichPresence ToRichPresence()
 		{
 			var presence = new DiscordRPC.RichPresence();
 			presence.State = this.state;
