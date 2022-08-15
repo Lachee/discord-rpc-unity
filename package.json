@@ -8,6 +8,13 @@
   "changelogUrl": "https://github.com/Lachee/discord-rpc-unity/commits/master",
   "license": "MIT",
   "dependencies": { },
+  "samples": [
+    {
+      "displayName": "Basic Usage",
+      "description": "How to use the basic functionality of the discord manager",
+      "path": "Samples~/Rich Presence" 
+    }
+  ],
   "keywords": [
     "Discord",
     "Rich Presence",
