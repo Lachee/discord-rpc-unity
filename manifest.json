@@ -1,0 +1,990 @@
+{
+  "sitemap": {
+    "fileOptions": {
+      "api/*": {
+        "baseUrl": "https://lachee.github.io/unity-utilities/",
+        "changefreq": "daily"
+      }
+    },
+    "baseUrl": "https://lachee.github.io/unity-utilities/",
+    "changefreq": "yearly"
+  },
+  "homepages": [],
+  "source_base_path": "D:/a/discord-rpc-unity/discord-rpc-unity/Documentation~",
+  "xrefmap": "xrefmap.yml",
+  "files": [
+    {
+      "type": "Resource",
+      "output": {
+        "resource": {
+          "relative_path": "index.json"
+        }
+      },
+      "is_incremental": false
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Lachee.Discord.Asset.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Lachee.Discord.Asset.html",
+          "hash": "lR3tQiLZvG9o7KVLS/uHUf566wulteqfheytum+BwTU="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Lachee.Discord.Attributes.CharacterLimitAttribute.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Lachee.Discord.Attributes.CharacterLimitAttribute.html",
+          "hash": "aFqCcj6W6umjGl7xUpgxVlPcujUJLwI+0pF5Lg26+hw="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Lachee.Discord.Attributes.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Lachee.Discord.Attributes.html",
+          "hash": "XTbudY3GQDO69Jin/fi5Go7jVwr659n4eQrEp0ZBJfY="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Lachee.Discord.Button.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Lachee.Discord.Button.html",
+          "hash": "QJ4abAvAs2wyYH49bdvdx03D+/6aJOpCXzNLf0ZoAAU="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Lachee.Discord.Control.MessageEvents.CloseMessageEvent.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Lachee.Discord.Control.MessageEvents.CloseMessageEvent.html",
+          "hash": "SkD5iKfibHIjLja14KU9QRrQTdMyhbVbVuL7+GIlqak="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Lachee.Discord.Control.MessageEvents.ConnectionEstablishedMessageEvent.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Lachee.Discord.Control.MessageEvents.ConnectionEstablishedMessageEvent.html",
+          "hash": "kTLiaMnELldRGUlNgBLzOTPmV8p5cb9RMtychEXQxBk="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Lachee.Discord.Control.MessageEvents.ConnectionFailedMessageEvent.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Lachee.Discord.Control.MessageEvents.ConnectionFailedMessageEvent.html",
+          "hash": "Vmc3JiU83cb2CSBU+uU7xvYAu/jMkoh7vK/FSA5Ukw8="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Lachee.Discord.Control.MessageEvents.ErrorMessageEvent.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Lachee.Discord.Control.MessageEvents.ErrorMessageEvent.html",
+          "hash": "CQS8CSlpI5EIm+opKtTYesjwE8GDnck4ttrzQlXWwoU="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Lachee.Discord.Control.MessageEvents.JoinMessageEvent.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Lachee.Discord.Control.MessageEvents.JoinMessageEvent.html",
+          "hash": "Oqu55AiNi5m/AXvdpbGb1GWlZYo1ZBGEqnlTlqdiaKY="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Lachee.Discord.Control.MessageEvents.JoinRequestMessageEvent.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Lachee.Discord.Control.MessageEvents.JoinRequestMessageEvent.html",
+          "hash": "aqN91hkX5Kr5XH2XKaMRLpAK7aPYKs7VQGiKXQKluhE="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Lachee.Discord.Control.MessageEvents.PresenceMessageEvent.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Lachee.Discord.Control.MessageEvents.PresenceMessageEvent.html",
+          "hash": "PnKuUhz73yzDCToar6PxkNW9I7OG8FcKDKJ+HRIHKe0="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Lachee.Discord.Control.MessageEvents.ReadyMessageEvent.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Lachee.Discord.Control.MessageEvents.ReadyMessageEvent.html",
+          "hash": "N21u1/DvnGDThY7ZVVs0el/CXQK28xdOsrkfzjThonQ="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Lachee.Discord.Control.MessageEvents.SpectateMessageEvent.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Lachee.Discord.Control.MessageEvents.SpectateMessageEvent.html",
+          "hash": "Zhi/dCrI6VeL2WY40+AqLQAnMPj7RJlbgZUTPM4IHsU="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Lachee.Discord.Control.MessageEvents.SubscribeMessageEvent.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Lachee.Discord.Control.MessageEvents.SubscribeMessageEvent.html",
+          "hash": "JAwhGZmjvxx8pOs3t0OVI5VArv/K1XTh2bvmeyAOk/0="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Lachee.Discord.Control.MessageEvents.UnsubscribeMessageEvent.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Lachee.Discord.Control.MessageEvents.UnsubscribeMessageEvent.html",
+          "hash": "T0LVrPBR+0Xc8Nzh0LtwYHlNZbW9m6mF8H73rw9q3A4="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Lachee.Discord.Control.MessageEvents.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Lachee.Discord.Control.MessageEvents.html",
+          "hash": "yNDKpunOJXFAaBP9ipnQyx16E6Aiw9YbZZxHme9nG38="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Lachee.Discord.Control.UnityLogger.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Lachee.Discord.Control.UnityLogger.html",
+          "hash": "lA0+mcZD13yrQsBLK1swdQx3KQXD+EMl1AuhZBXhR3A="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Lachee.Discord.Control.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Lachee.Discord.Control.html",
+          "hash": "UKMNYSwF1usRVvsBZC2lTFnEPTbSf3XZpQSQUuJsigk="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Lachee.Discord.DiscordAsset.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Lachee.Discord.DiscordAsset.html",
+          "hash": "cd3fpV7JdaRAnG9sv3dtDG/M2OFnprLR9oG2cfbS1CE="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Lachee.Discord.DiscordAvatarFormat.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Lachee.Discord.DiscordAvatarFormat.html",
+          "hash": "h8Fdr4xY8pJ6sVREQx4ZNt9QsEzf1NtP6wbXFf7zM3U="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Lachee.Discord.DiscordAvatarSize.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Lachee.Discord.DiscordAvatarSize.html",
+          "hash": "s3oDtz54A97J0NQ+MIwBBj4Y7xC8WpU0lHtG/1T5ERA="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Lachee.Discord.DiscordButton.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Lachee.Discord.DiscordButton.html",
+          "hash": "uP9O6zbYNQxZ2+7y/1BY8xI3Fbp41NgrR1tkQb2fSuc="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Lachee.Discord.DiscordManager.Pipe.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Lachee.Discord.DiscordManager.Pipe.html",
+          "hash": "xnmzApQrAsYMklgRli3ySr94D4tbvWVv3GYHA5H254Q="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Lachee.Discord.DiscordManager.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Lachee.Discord.DiscordManager.html",
+          "hash": "edrGkOYwx1TtHyVlKhA4vT0VP+9no4UOs7Nkym6+bIM="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Lachee.Discord.DiscordParty.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Lachee.Discord.DiscordParty.html",
+          "hash": "wCPVIVw8XHb1pmiwxNfDOmvskKroG4KZ22cP/uRTgMM="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Lachee.Discord.DiscordPresence.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Lachee.Discord.DiscordPresence.html",
+          "hash": "RIyB+Dky5j4hHWMut6/aYBxTQx39Ggdmn8rNl0KEF2g="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Lachee.Discord.DiscordSecrets.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Lachee.Discord.DiscordSecrets.html",
+          "hash": "TdKMeT3W48y3lrFAakUIc7DBD3QAMNTzKjt0qAJda5k="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Lachee.Discord.DiscordTimestamp.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Lachee.Discord.DiscordTimestamp.html",
+          "hash": "1o3EovIbqUvTU8dfN3xDKhFY7lHYQCYtWxD0Ctbv+6s="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Lachee.Discord.DiscordUser.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Lachee.Discord.DiscordUser.html",
+          "hash": "bhNby1LNZMXWnd/rHRhtroFH8bLOZWPH+860o+hClsA="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Lachee.Discord.DiscordUserExtension.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Lachee.Discord.DiscordUserExtension.html",
+          "hash": "CxzImaOd4G+Kv0n3C4wT8S6CeJ+BZKE1XpRlmuFW/5U="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Lachee.Discord.Editor.CharacterLimitAttributeDrawer.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Lachee.Discord.Editor.CharacterLimitAttributeDrawer.html",
+          "hash": "uISBkDeaa98QKjGOTGJhsDH2d+WiXWxEHEJ8Cy5QEsc="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Lachee.Discord.Editor.DiscordAssetDrawer.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Lachee.Discord.Editor.DiscordAssetDrawer.html",
+          "hash": "Sa9BARKRhpIcWTyXSXNZlI5EH+UxXFgSLPyN43cSaVQ="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Lachee.Discord.Editor.DiscordEventDrawer.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Lachee.Discord.Editor.DiscordEventDrawer.html",
+          "hash": "riYW0Q4RQh1geuq8zo4sc6wsh4A2rpRcmDoUZD+bafY="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Lachee.Discord.Editor.DiscordManagerEditor.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Lachee.Discord.Editor.DiscordManagerEditor.html",
+          "hash": "HnAXLuNvSPpBtuDNHJrFxhQ28HKi1KnFapjVNzTDt/0="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Lachee.Discord.Editor.DiscordNativeInstall.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Lachee.Discord.Editor.DiscordNativeInstall.html",
+          "hash": "oiL25ZGzJPGNNQ/g6z1Pv4k4BwR81wMGjCD+lbvp0B8="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Lachee.Discord.Editor.DiscordPartyDrawer.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Lachee.Discord.Editor.DiscordPartyDrawer.html",
+          "hash": "eu53dPaxsUOy0kvOTWioNNn/pWh2MDbgwpOM7Cfu6ew="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Lachee.Discord.Editor.DiscordSecretsDrawer.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Lachee.Discord.Editor.DiscordSecretsDrawer.html",
+          "hash": "JNOKtYvHoYeBlXMnXFEZXMHzFEzY5leADw13qvhVeXA="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Lachee.Discord.Editor.DiscordTimestampDrawer.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Lachee.Discord.Editor.DiscordTimestampDrawer.html",
+          "hash": "8arrFqG8pjVYt1V0tiezzYaZi7E6Q0kgoGQ8e/m8TaM="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Lachee.Discord.Editor.DiscordUserDrawer.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Lachee.Discord.Editor.DiscordUserDrawer.html",
+          "hash": "+28/rQD+barzPwXuiCJCMAwPYqvSinAItyWizNF9mmQ="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Lachee.Discord.Editor.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Lachee.Discord.Editor.html",
+          "hash": "/OcQsH7pmpjEwcwnttgAMnf4OlF+oUH61BH+ozhugQE="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Lachee.Discord.Event.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Lachee.Discord.Event.html",
+          "hash": "fMhYrv3MquwTWh2Zlj0gQeGZDe9H3hHxjaTS9eiN8mk="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Lachee.Discord.EventExtension.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Lachee.Discord.EventExtension.html",
+          "hash": "231A7V7YtawS9hV7yAXjgEYaKDScIIOdcZsgQUKazCw="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Lachee.Discord.Events.JoinRequestEvent.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Lachee.Discord.Events.JoinRequestEvent.html",
+          "hash": "DTcEAcRPbIvD3h3DYFaCWC0M6xGdBRHvlUVxfcRC1VM="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Lachee.Discord.Events.PresenceEvent.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Lachee.Discord.Events.PresenceEvent.html",
+          "hash": "C4TDUw85Z2W+rzqfuqF5j+XeHtxHCD/lPzw1oMlUyqE="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Lachee.Discord.Events.ReadyEvent.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Lachee.Discord.Events.ReadyEvent.html",
+          "hash": "RG1oiVCLkwzkTKli11/3uQiuEyMJgeUidhyRck9B2Wc="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Lachee.Discord.Events.UnityCloseEvent.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Lachee.Discord.Events.UnityCloseEvent.html",
+          "hash": "tubbTDtAxQvh3vZ7bLNusU9rnmCmFNBJt0ZzZNL1xxU="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Lachee.Discord.Events.UnityConnectionEstablishedEvent.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Lachee.Discord.Events.UnityConnectionEstablishedEvent.html",
+          "hash": "M7nJJ8I2UMgR5t0qE9TCsHXfW8tYs1Jqz/K9E8r/BN0="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Lachee.Discord.Events.UnityConnectionFailedEvent.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Lachee.Discord.Events.UnityConnectionFailedEvent.html",
+          "hash": "HQVRSJ4eNuxO0EzEc9Lktl0Oubk2yWW61LqHhI+i0as="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Lachee.Discord.Events.UnityErrorEvent.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Lachee.Discord.Events.UnityErrorEvent.html",
+          "hash": "PWzp7XjUlzSfZpfdlAMEVe0ggqVdLd3lqFRZLXvuvG0="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Lachee.Discord.Events.UnityJoinEvent.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Lachee.Discord.Events.UnityJoinEvent.html",
+          "hash": "kWnNM/nwccxl7xckwULQqRClTPUkoYSh4k73zD/ZnVg="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Lachee.Discord.Events.UnityJoinRequestEvent.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Lachee.Discord.Events.UnityJoinRequestEvent.html",
+          "hash": "MP1fl0SN3avGbW6/LNn5o7YnIUWKxuMef7l5kPN0KGA="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Lachee.Discord.Events.UnityPresenceEvent.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Lachee.Discord.Events.UnityPresenceEvent.html",
+          "hash": "C/btMHRXo+7xFg0hebqRnwts7YWUFm65FCPsTu0LqJo="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Lachee.Discord.Events.UnityReadyEvent.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Lachee.Discord.Events.UnityReadyEvent.html",
+          "hash": "MWOyK7prEFv6q3wPNc1d2aN5Nh8j82JgUzf2N06Lt3U="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Lachee.Discord.Events.UnitySpectateEvent.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Lachee.Discord.Events.UnitySpectateEvent.html",
+          "hash": "mxoXCB4WNO3d+5cyDCFOqovO3NhOPFR01dk3X0aBgBY="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Lachee.Discord.Events.UnitySubscribeEvent.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Lachee.Discord.Events.UnitySubscribeEvent.html",
+          "hash": "vEGH+JOsPZjgyxviiCdUb3VicAba2qdRxF9QDtqZFJo="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Lachee.Discord.Events.UnityUnsubscribeEvent.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Lachee.Discord.Events.UnityUnsubscribeEvent.html",
+          "hash": "oNQgMg8jipjob/OAh7vzMFdyi5+5gZmGMOKUSzQLHB0="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Lachee.Discord.Events.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Lachee.Discord.Events.html",
+          "hash": "+DGpLwE7U6f+VHIdyWXWeyNt4ONNuD4ySr7vSIuNRzk="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Lachee.Discord.Party.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Lachee.Discord.Party.html",
+          "hash": "D1W6D+Vp1CvCHwg3klt4cv9wHnzssxrFB7cVVgjkT5c="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Lachee.Discord.Presence.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Lachee.Discord.Presence.html",
+          "hash": "tTKtyIUmkrnulodLiOmPvnm4PhUIL6v+xDw+ZGdNhsU="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Lachee.Discord.Secrets.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Lachee.Discord.Secrets.html",
+          "hash": "SkRrdAJyqNsMI10lSb8MuzSYs6eKxtBGpHaviXOT1iw="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Lachee.Discord.Timestamp.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Lachee.Discord.Timestamp.html",
+          "hash": "sx4+U2+YvsjsjgTws/Do9nHk2dayXkP5g/B9iJovBA0="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Lachee.Discord.User.AvatarDownloadCallback.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Lachee.Discord.User.AvatarDownloadCallback.html",
+          "hash": "XsaV0sjb+13OUukouIESvulol11bcW4BKISVxDNfktc="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Lachee.Discord.User.CacheLevelFlag.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Lachee.Discord.User.CacheLevelFlag.html",
+          "hash": "pu8L+z/JQE4Gh+KRGw00PGJ04N5vxnL0eOxHhZMMVgA="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Lachee.Discord.User.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Lachee.Discord.User.html",
+          "hash": "xJRFl768NURhTsmA1D3vLZvF8hitKG31m7lB4wrZtjE="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Lachee.Discord.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Lachee.Discord.html",
+          "hash": "7bFwuA6WF77sml+aE9tKwY22nYC91z673C9oO0DyIWo="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Lachee.IO.Exceptions.NamedPipeConnectionException.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Lachee.IO.Exceptions.NamedPipeConnectionException.html",
+          "hash": "SJtYm+wECudRbdiMqXMPNZtXCsorT8n/RuEYGVTFH9c="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Lachee.IO.Exceptions.NamedPipeOpenException.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Lachee.IO.Exceptions.NamedPipeOpenException.html",
+          "hash": "tdO9rvsvY0tJGPJU8vqA8b3pbhm5U6s4cW7QG2OblmY="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Lachee.IO.Exceptions.NamedPipeReadException.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Lachee.IO.Exceptions.NamedPipeReadException.html",
+          "hash": "gsQoLqRa62j4S4ZkMHnmv0Ykzt+vWqygTDOmWR4fRd0="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Lachee.IO.Exceptions.NamedPipeWriteException.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Lachee.IO.Exceptions.NamedPipeWriteException.html",
+          "hash": "jMU2yyjQj6BIk4kkSzO8AlDry7DGvodZtUEnQY0/5FY="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Lachee.IO.Exceptions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Lachee.IO.Exceptions.html",
+          "hash": "Ydgb3PBA9ol0lKvre3DVrmtX8cx/YQ3VJ+Fp/pUxun0="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Lachee.IO.NamedPipeClientStream.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Lachee.IO.NamedPipeClientStream.html",
+          "hash": "9jIuptMJFhQt5uwsVHfNmoERxT/kIsmAZ2N49Gh4Rc8="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Lachee.IO.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Lachee.IO.html",
+          "hash": "poT1hD2riZduV1osX8ywmceadFa1hGEK6fqzBnrOmZM="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "api/toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/toc.html",
+          "hash": "xTNWKkv6nouphEzwbBvA+TblP3cOz5xYSbgKkpe/Axo="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "index.md",
+      "output": {
+        ".html": {
+          "relative_path": "index.html",
+          "hash": "r+4t/lrfrXwEVTeI5i04+U36Bhg0/LpPd4CYUmMud2o="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "log_codes": [
+        "InvalidFileLink"
+      ],
+      "type": "Toc",
+      "source_relative_path": "manual/toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "manual/toc.html",
+          "hash": "o7Ogp1PEnULaz33YgMkRpldDtLyzvoO2yekCKkDGgLQ="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "toc.html",
+          "hash": "9wORIznvRDSsGMJiasvgCK2kazcN58qF/XQZMUeuVJM="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    }
+  ],
+  "incremental_info": [
+    {
+      "status": {
+        "can_incremental": false,
+        "details": "Cannot build incrementally because last build info is missing.",
+        "incrementalPhase": "build",
+        "total_file_count": 0,
+        "skipped_file_count": 0,
+        "full_build_reason_code": "NoAvailableBuildCache"
+      },
+      "processors": {
+        "ConceptualDocumentProcessor": {
+          "can_incremental": false,
+          "incrementalPhase": "build",
+          "total_file_count": 1,
+          "skipped_file_count": 0
+        },
+        "ManagedReferenceDocumentProcessor": {
+          "can_incremental": false,
+          "incrementalPhase": "build",
+          "total_file_count": 72,
+          "skipped_file_count": 0
+        },
+        "TocDocumentProcessor": {
+          "can_incremental": false,
+          "details": "Processor TocDocumentProcessor cannot support incremental build because the processor doesn't implement ISupportIncrementalDocumentProcessor interface.",
+          "incrementalPhase": "build",
+          "total_file_count": 0,
+          "skipped_file_count": 0
+        }
+      }
+    },
+    {
+      "status": {
+        "can_incremental": false,
+        "details": "Cannot support incremental post processing, the reason is: should not trace intermediate info.",
+        "incrementalPhase": "postProcessing",
+        "total_file_count": 0,
+        "skipped_file_count": 0
+      },
+      "processors": {}
+    }
+  ],
+  "version_info": {},
+  "groups": [
+    {
+      "xrefmap": "xrefmap.yml"
+    }
+  ]
+}
