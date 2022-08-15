@@ -1,13 +1,15 @@
 {
   "name": "com.lachee.discordrpc",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "displayName": "Discord Rich Presence",
   "description": "Implements the RPC Protocol for discord using Discord RPC CSharp",
-  "unity": "2018.2",
+  "unity": "2018.4",
   "documentationUrl": "https://lachee.github.io/discord-rpc-unity/",
   "changelogUrl": "https://github.com/Lachee/discord-rpc-unity/commits/master",
   "license": "MIT",
-  "dependencies": { },
+  "dependencies": {
+    "com.unity.nuget.newtonsoft-json": "3.0.2"
+  },
   "samples": [
     {
       "displayName": "Basic Usage",
