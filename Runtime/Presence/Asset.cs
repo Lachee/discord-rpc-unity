@@ -4,10 +4,10 @@ using UnityEngine;
 namespace Lachee.Discord
 {
 	[System.Obsolete("The word Discord has been removed from types", true)]
-	public sealed class DiscordAssets { }
+	public sealed class DiscordAsset { }
 
 	[System.Serializable]
-	public sealed class Assets
+	public sealed class Asset
 	{
 		/// <summary>
 		/// The key of the image to be displayed.

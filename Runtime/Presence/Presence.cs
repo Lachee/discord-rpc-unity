@@ -31,13 +31,13 @@ namespace Lachee.Discord
 		/// The time the game started. 0 if the game hasn't started
 		/// </summary>
 		[Tooltip("The time the game started. Leave as 0 if the game has not yet started.")]
-		public Timestamps startTime = 0;
+		public Timestamp startTime = 0;
 
 		/// <summary>
 		/// The time the game will end in. 0 to ignore endtime.
 		/// </summary>
 		[Tooltip("Time the game will end. Leave as 0 to ignore it.")]
-		public Timestamps endTime = 0;
+		public Timestamp endTime = 0;
 
 		[Header("Presentation Details")]
 
@@ -45,8 +45,8 @@ namespace Lachee.Discord
 		/// The images used for the presence.
 		/// </summary>
 		[Tooltip("The images used for the presence")]
-		public Assets smallAsset;
-		public Assets largeAsset;
+		public Asset smallAsset;
+		public Asset largeAsset;
 
 		[Header("Button Details")]
 
@@ -91,7 +91,7 @@ namespace Lachee.Discord
 
 				if (presence.HasAssets())
 				{
-					this.smallAsset = new Assets()
+					this.smallAsset = new Asset()
 					{
 						image = presence.Assets.SmallImageKey,
 						tooltip = presence.Assets.SmallImageText,
@@ -99,7 +99,7 @@ namespace Lachee.Discord
 					};
 
 
-					this.largeAsset = new Assets()
+					this.largeAsset = new Asset()
 					{
 						image = presence.Assets.LargeImageKey,
 						tooltip = presence.Assets.LargeImageText,
@@ -108,8 +108,8 @@ namespace Lachee.Discord
 				}
 				else
 				{
-					this.smallAsset = new Assets();
-					this.largeAsset = new Assets();
+					this.smallAsset = new Asset();
+					this.largeAsset = new Asset();
 				}
 
 				if (presence.HasButtons())
@@ -134,8 +134,8 @@ namespace Lachee.Discord
 				if (presence.HasTimestamps())
 				{
 					//This could probably be made simpler
-					this.startTime = presence.Timestamps.Start.HasValue ? new Timestamps((long)presence.Timestamps.StartUnixMilliseconds.Value) : Timestamps.Invalid;
-					this.endTime = presence.Timestamps.End.HasValue ? new Timestamps((long)presence.Timestamps.EndUnixMilliseconds.Value) : Timestamps.Invalid;
+					this.startTime = presence.Timestamps.Start.HasValue ? new Timestamp((long)presence.Timestamps.StartUnixMilliseconds.Value) : Timestamp.Invalid;
+					this.endTime = presence.Timestamps.End.HasValue ? new Timestamp((long)presence.Timestamps.EndUnixMilliseconds.Value) : Timestamp.Invalid;
 				}
 			}
 			else
@@ -144,11 +144,11 @@ namespace Lachee.Discord
 				this.details = "";
 				this.party = new Party();
 				this.secrets = new Secrets();
-				this.smallAsset = new Assets();
-				this.largeAsset = new Assets();
+				this.smallAsset = new Asset();
+				this.largeAsset = new Asset();
 				this.buttons = new Button[0];
-				this.startTime = Timestamps.Invalid;
-				this.endTime = Timestamps.Invalid;
+				this.startTime = Timestamp.Invalid;
+				this.endTime = Timestamp.Invalid;
 			}
 
 		}

@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace Lachee.Discord.Editor
 {
-	[CustomPropertyDrawer(typeof(Timestamps))]
+	[CustomPropertyDrawer(typeof(Timestamp))]
 	public class DiscordTimestampDrawer : PropertyDrawer
 	{
 		public const float buttonWidth = 50f;
@@ -16,7 +16,7 @@ namespace Lachee.Discord.Editor
 			EditorGUI.PropertyField(new Rect(pos.x, pos.y, pos.width - buttonWidth - 5f, pos.height), timestamp, label);
 			if (GUI.Button(new Rect(pos.x + pos.width - buttonWidth, pos.y, buttonWidth, pos.height), new GUIContent("Now", "Sets the time to the current time")))
 			{
-				timestamp.longValue = new Timestamps(Time.time).timestamp;
+				timestamp.longValue = new Timestamp(Time.time).timestamp;
 			}
 		}
 	}

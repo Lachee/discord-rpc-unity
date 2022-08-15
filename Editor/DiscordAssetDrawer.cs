@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace Lachee.Discord.Editor
 {
-	[CustomPropertyDrawer(typeof(Assets))]
+	[CustomPropertyDrawer(typeof(Asset))]
 	public class DiscordAssetDrawer : PropertyDrawer
 	{
 		public const float keySize = 150;

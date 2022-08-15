@@ -4,18 +4,18 @@ using UnityEngine;
 namespace Lachee.Discord
 {
 	[System.Obsolete("The word Discord has been removed from types", true)]
-	public sealed class DiscordTimestamps { }
+	public sealed class DiscordTimestamp { }
 
 	/// <summary>
 	/// A special time class that can convert all manners of time into timestamps.
 	/// </summary>
 	[System.Serializable]
-	public sealed class Timestamps
+	public sealed class Timestamp
 	{
 		/// <summary>
 		/// Representation of a invalid timestamp (unix epoch of 0 seconds).
 		/// </summary>
-		public static readonly Timestamps Invalid = new Timestamps(0L);
+		public static readonly Timestamp Invalid = new Timestamp(0L);
 
 		/// <summary>
 		/// The linux epoch of the timestamp. Use conversion methods such as <see cref="GetTime"/> to convert the time into unity relative times.
@@ -27,21 +27,21 @@ namespace Lachee.Discord
 		/// <summary>
 		/// Creates a new stamp of the current time.
 		/// </summary>
-		public Timestamps()
+		public Timestamp()
 			: this(DateTime.UtcNow) { }
 
 		/// <summary>
 		/// Creates a new stamp with the supplied datetime
 		/// </summary>
 		/// <param name="time">The DateTime</param>
-		public Timestamps(DateTime time)
+		public Timestamp(DateTime time)
 			: this(ToUnixMilliseconds(DateTime.UtcNow)) { }
 
 		/// <summary>
 		/// Creates a new stamp with the specified unix epoch
 		/// </summary>
 		/// <param name="timestamp">The time in unix epoch milliseconds</param>
-		public Timestamps(long timestamp)
+		public Timestamp(long timestamp)
 		{
 			this.timestamp = timestamp;
 		}
@@ -50,7 +50,7 @@ namespace Lachee.Discord
 		/// Creates a new stamp that is relative to the Unity Startup time, where "now" is equal too <see cref="UnityEngine.Time.realtimeSinceStartup"/>.
 		/// </summary>
 		/// <param name="time">The time relative to <see cref="UnityEngine.Time.realtimeSinceStartup"/></param>
-		public Timestamps(float time)
+		public Timestamp(float time)
 		{
 			//Calculate the difference
 			float diff = time - UnityEngine.Time.realtimeSinceStartup;
@@ -93,7 +93,7 @@ namespace Lachee.Discord
 		/// </summary>
 		/// <param name="seconds">The number of seconds to add</param>
 		/// <returns>Returns the same timestamp object.</returns>
-		public Timestamps AddSeconds(int seconds)
+		public Timestamp AddSeconds(int seconds)
 		{
 			timestamp += seconds;
 			return this;
@@ -104,7 +104,7 @@ namespace Lachee.Discord
 		/// </summary>
 		/// <param name="minutes">The number of minutes to add</param>
 		/// <returns>Returns the same timestamp object.</returns>
-		public Timestamps AddMinutes(int minutes)
+		public Timestamp AddMinutes(int minutes)
 		{
 			return AddSeconds(minutes * 60);
 		}
@@ -114,7 +114,7 @@ namespace Lachee.Discord
 		/// </summary>
 		/// <param name="minutes">The fraction of minutes to add</param>
 		/// <returns>Returns the same timestamp object.</returns>
-		public Timestamps AddMinutes(float minutes)
+		public Timestamp AddMinutes(float minutes)
 		{
 			//Convert the time into a integer form
 			int mins = Mathf.FloorToInt(minutes);
@@ -128,7 +128,7 @@ namespace Lachee.Discord
 		/// </summary>
 		/// <param name="hours">The number of hours to add</param>
 		/// <returns>Returns the same timestamp object</returns>
-		public Timestamps AddHours(int hours)
+		public Timestamp AddHours(int hours)
 		{
 			return AddMinutes(hours * 60);
 		}
@@ -138,7 +138,7 @@ namespace Lachee.Discord
 		/// </summary>
 		/// <param name="hours">The fraction of hours to add</param>
 		/// <returns>Returns the same timestamp object.</returns>
-		public Timestamps AddHours(float hours)
+		public Timestamp AddHours(float hours)
 		{
 			int h = Mathf.FloorToInt(hours);
 			float m = (hours - h) * 60f;
@@ -151,7 +151,7 @@ namespace Lachee.Discord
 		/// Casts the timestamp into a unix epoch count of seconds.
 		/// </summary>
 		/// <param name="stamp">The timestamp</param>
-		public static implicit operator long(Timestamps stamp)
+		public static implicit operator long(Timestamp stamp)
 		{
 			return stamp.timestamp;
 		}
@@ -159,7 +159,7 @@ namespace Lachee.Discord
 		/// Converts the timestamp into a unity epoch (start of the game time as origin) count of seconds, where <see cref="UnityEngine.Time.realtimeSinceStartup"/> is now.
 		/// </summary>
 		/// <param name="stamp">The timestamp</param>
-		public static implicit operator float(Timestamps stamp)
+		public static implicit operator float(Timestamp stamp)
 		{
 			return stamp.GetTime();
 		}
@@ -167,7 +167,7 @@ namespace Lachee.Discord
 		/// Converts the timestamp into a <see cref="DateTime"/> representation.
 		/// </summary>
 		/// <param name="stamp">The timestamp</param>
-		public static implicit operator DateTime(Timestamps stamp)
+		public static implicit operator DateTime(Timestamp stamp)
 		{
 			return stamp.GetDateTime();
 		}
@@ -178,26 +178,26 @@ namespace Lachee.Discord
 		/// Casts a unixh epoch count of seconds into a timestamp
 		/// </summary>
 		/// <param name="time">The time in milliseconds</param>
-		public static implicit operator Timestamps(long time)
+		public static implicit operator Timestamp(long time)
 		{
-			return new Timestamps(time);
+			return new Timestamp(time);
 		}
 
 		/// <summary>
 		/// Converts the <see cref="DateTime"/> into a timestamp
 		/// </summary>
 		/// <param name="time">The time</param>
-		public static implicit operator Timestamps(DateTime time)
+		public static implicit operator Timestamp(DateTime time)
 		{
-			return new Timestamps(time);
+			return new Timestamp(time);
 		}
 		/// <summary>
 		/// Converts a unity epoch (start of game time as origin) count of seconds (where <see cref="UnityEngine.Time.realtimeSinceStartup"/> is now) into a timestamp.
 		/// </summary>
 		/// <param name="time">The time</param>
-		public static implicit operator Timestamps(float time)
+		public static implicit operator Timestamp(float time)
 		{
-			return new Timestamps(time);
+			return new Timestamp(time);
 		}
 		#endregion
 

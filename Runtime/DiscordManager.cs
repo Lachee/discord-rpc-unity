@@ -351,13 +351,13 @@ namespace Lachee.Discord
 			return (Presence)_client.UpdatePartySize(size, max);
 		}
 
-		public Presence UpdateLargeAsset(Assets asset)
+		public Presence UpdateLargeAsset(Asset asset)
 		{
 			if (_client == null) return null;
 			if (asset == null) return (Presence)_client.UpdateLargeAsset("", "");
 			return (Presence)_client.UpdateLargeAsset(asset.image, asset.tooltip);
 		}
-		public Presence UpdateSmallAsset(Assets asset)
+		public Presence UpdateSmallAsset(Asset asset)
 		{
 			if (_client == null) return null;
 			if (asset == null) return (Presence)_client.UpdateSmallAsset("", "");
@@ -375,7 +375,7 @@ namespace Lachee.Discord
 			if (_client == null) return null;
 			return (Presence)_client.UpdateStartTime();
 		}
-		public Presence UpdateStartTime(Timestamps timestamp)
+		public Presence UpdateStartTime(Timestamp timestamp)
 		{
 			if (_client == null) return null;
 			return (Presence)_client.UpdateStartTime(timestamp.GetDateTime());
@@ -385,12 +385,12 @@ namespace Lachee.Discord
 			if (_client == null) return null;
 			return (Presence)_client.UpdateEndTime();
 		}
-		public Presence UpdateEndTime(Timestamps timestamp)
+		public Presence UpdateEndTime(Timestamp timestamp)
 		{
 			if (_client == null) return null;
 			return (Presence)_client.UpdateEndTime(timestamp.GetDateTime());
 		}
-		public Presence UpdateClearTime(Timestamps timestamp)
+		public Presence UpdateClearTime(Timestamp timestamp)
 		{
 			if (_client == null) return null;
 			return (Presence)_client.UpdateClearTime();
