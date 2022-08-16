@@ -779,12 +779,15 @@
       "version": ""
     },
     {
+      "log_codes": [
+        "InvalidFileLink"
+      ],
       "type": "Conceptual",
       "source_relative_path": "index.md",
       "output": {
         ".html": {
           "relative_path": "index.html",
-          "hash": "iRDdxG/VNBa/PXlJzvSphlaGv9dEfV91tY8Rl8qYQiQ="
+          "hash": "HrYkHbjtV5MpsEWXCe8mX1EmzAirzGgt+7cwOIcKdDY="
         }
       },
       "is_incremental": false,
