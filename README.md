@@ -2,13 +2,13 @@
 <table frame="void">
     <tr>
       <td width="200px">
-        <img src="https://raw.githubusercontent.com/Lachee/discord-rpc-unity/master/Resources/discord_presence.png" align="center" width="100%" />
+        <img src="https://raw.githubusercontent.com/Lachee/discord-rpc-unity/master/Resources/logo.png" align="center" width="100%" />
       </td>
       <td>
         <h1>Discord RPC Unity</h1>
         <p>
             <a href="https://github.com/Lachee/discord-rpc-unity/actions/workflows/release.yml"><img src="https://github.com/Lachee/discord-rpc-unity/actions/workflows/release.yml/badge.svg" /></a>
-            <a href="https://github.com/Lachee/discord-rpc-unity/tags"><img alt="GitHub package.json version" src="https://img.shields.io/github/package-json/v/lachee/discord-rpc-unity"></a>
+            <a href="https://github.com/Lachee/discord-rpc-unity/tags"><img alt="GitHub package.json version" src="https://img.shields.io/github/package-json/v/lachee/discord-rpc-unity?label=github"></a>
             <a href="https://openupm.com/packages/com.lachee.discordrpc/"><img src="https://img.shields.io/npm/v/com.lachee.discordrpc?label=openupm&amp;registry_uri=https://package.openupm.com" /></a>
           <br>
           This package provides a wrapper for [discord-rpc-csharp](https://github.com/lachee/discord-rpc-csharp) and
