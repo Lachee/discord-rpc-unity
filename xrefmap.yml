@@ -564,6 +564,12 @@ references:
   isSpec: "True"
   fullName: Lachee.Discord.DiscordManager.isInitialized
   nameWithType: DiscordManager.isInitialized
+- uid: Lachee.Discord.DiscordManager.logFile
+  name: logFile
+  href: api/Lachee.Discord.DiscordManager.html#Lachee_Discord_DiscordManager_logFile
+  commentId: F:Lachee.Discord.DiscordManager.logFile
+  fullName: Lachee.Discord.DiscordManager.logFile
+  nameWithType: DiscordManager.logFile
 - uid: Lachee.Discord.DiscordManager.logLevel
   name: logLevel
   href: api/Lachee.Discord.DiscordManager.html#Lachee_Discord_DiscordManager_logLevel
