@@ -31,7 +31,6 @@ namespace Lachee.Discord
 		[Tooltip("The pipe discord is located on. Useful for testing multiple clients.")]
 		public Pipe targetPipe = Pipe.FirstAvailable;
 
-
 		/// <summary>
 		/// All possible pipes discord can be found on.
 		/// </summary>
@@ -52,6 +51,8 @@ namespace Lachee.Discord
 
 		[Tooltip("Logging level of the Discord IPC connection.")]
 		public DiscordRPC.Logging.LogLevel logLevel = DiscordRPC.Logging.LogLevel.Warning;
+		[Tooltip("The file to write the logs too in a build. If empty, then the console logger will be used.")]
+		public string logFile = "discord.log";
 
 		[Tooltip("Registers a custom URI scheme for your game. This is required for the Join / Specate features to work.")]
 		public bool registerUriScheme = false;
@@ -230,8 +231,14 @@ namespace Lachee.Discord
 			DiscordRPC.Logging.ILogger logger = null;
 
 			//Update the logger to the unity logger
-			if (Debug.isDebugBuild) logger = new DiscordRPC.Logging.FileLogger("discordrpc.log") { Level = logLevel };
-			if (Application.isEditor) logger = new Control.UnityLogger() { Level = logLevel };
+			if (Application.isEditor)
+			{
+				logger = new Control.UnityLogger() { Level = logLevel };
+			} 
+			else
+            {
+				logger = new DiscordRPC.Logging.FileLogger(logFile) { Level = logLevel };
+            }
 
 			//We are starting the client. Below is a break down of the parameters.
 			Debug.Log("[DRP] Starting Discord Rich Presence");
