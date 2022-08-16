@@ -8,6 +8,7 @@
         <h1>Discord RPC Unity</h1>
         <p>
           <a href="https://github.com/Lachee/discord-rpc-unity/actions/workflows/release.yml"><img src="https://github.com/Lachee/discord-rpc-unity/actions/workflows/release.yml/badge.svg" /></a>
+            <a href="https://github.com/Lachee/discord-rpc-unity/tags"><img alt="GitHub package.json version" src="https://img.shields.io/github/package-json/v/lachee/discord-rpc-unity"></a>
           <br>
           This package provides a wrapper for [discord-rpc-csharp](https://github.com/lachee/discord-rpc-csharp) and
           a  better experience when intergrating with Unity3D, as well as solving some tricky annoyances such as named pipes and mono.
