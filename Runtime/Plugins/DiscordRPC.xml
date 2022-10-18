@@ -233,17 +233,17 @@
         </member>
         <member name="M:DiscordRPC.DiscordRpcClient.UpdateButtons(DiscordRPC.Button[])">
             <summary>
-            Updates only the <see cref="!:BaseRichPresence.Buttons"/> of the <see cref="P:DiscordRPC.DiscordRpcClient.CurrentPresence"/> and updates/removes the buttons. Returns the newly edited Rich Presence.
+            Updates only the <see cref="P:DiscordRPC.RichPresence.Buttons"/> of the <see cref="P:DiscordRPC.DiscordRpcClient.CurrentPresence"/> and updates/removes the buttons. Returns the newly edited Rich Presence.
             </summary>
-            <param name="Button">The buttons of the Rich Presence</param>
+            <param name="button">The buttons of the Rich Presence</param>
             <returns>Updated Rich Presence</returns>
         </member>
         <member name="M:DiscordRPC.DiscordRpcClient.SetButton(DiscordRPC.Button,System.Int32)">
             <summary>
-            Updates only the <see cref="!:BaseRichPresence.Buttons"/> of the <see cref="P:DiscordRPC.DiscordRpcClient.CurrentPresence"/> and updates the button with the given index. Returns the newly edited Rich Presence.
+            Updates only the <see cref="P:DiscordRPC.RichPresence.Buttons"/> of the <see cref="P:DiscordRPC.DiscordRpcClient.CurrentPresence"/> and updates the button with the given index. Returns the newly edited Rich Presence.
             </summary>
-            <param name="Button">The buttons of the Rich Presence</param>
-            <param name="Index">The number of the button</param>
+            <param name="button">The buttons of the Rich Presence</param>
+            <param name="index">The number of the button</param>
             <returns>Updated Rich Presence</returns>
         </member>
         <member name="M:DiscordRPC.DiscordRpcClient.UpdateDetails(System.String)">
@@ -797,7 +797,14 @@
             Returns a platform specific path that Discord is hosting the IPC on.
             </summary>
             <param name="pipe">The pipe number.</param>
-            <param name="sandbox">The sandbox the pipe is in. Leave blank for no sandbox.</param>
+            <param name="sandbox">The sandbox environment the pipe is in</param>
+            <returns></returns>
+        </member>
+        <member name="M:DiscordRPC.IO.ManagedNamedPipeClient.GetPipeName(System.Int32)">
+            <summary>
+            returns a platform specific path that Discord is hosting the IPC on.
+            </summary>
+            <param name="pipe">The pipe number</param>
             <returns></returns>
         </member>
         <member name="M:DiscordRPC.IO.ManagedNamedPipeClient.GetPipeSandbox">
@@ -948,6 +955,13 @@
             </summary>
             <param name="stream"></param>
         </member>
+        <member name="M:DiscordRPC.IO.PipeFrame.Equals(DiscordRPC.IO.PipeFrame)">
+            <summary>
+            Compares if the frame equals the other frame.
+            </summary>
+            <param name="other"></param>
+            <returns></returns>
+        </member>
         <member name="T:DiscordRPC.Logging.ConsoleLogger">
             <summary>
             Logs the outputs to the console using <see cref="M:System.Console.WriteLine"/>
@@ -973,12 +987,18 @@
             Creates a new instance of a Console Logger.
             </summary>
         </member>
+        <member name="M:DiscordRPC.Logging.ConsoleLogger.#ctor(DiscordRPC.Logging.LogLevel)">
+            <summary>
+            Creates a new instance of a Console Logger
+            </summary>
+            <param name="level">The log level</param>
+        </member>
         <member name="M:DiscordRPC.Logging.ConsoleLogger.#ctor(DiscordRPC.Logging.LogLevel,System.Boolean)">
             <summary>
             Creates a new instance of a Console Logger with a set log level
             </summary>
-            <param name="level"></param>
-            <param name="coloured"></param>
+            <param name="level">The log level</param>
+            <param name="coloured">Should the logs be in colour?</param>
         </member>
         <member name="M:DiscordRPC.Logging.ConsoleLogger.Trace(System.String,System.Object[])">
             <summary>
@@ -1777,9 +1797,15 @@
             Creates a empty timestamp object
             </summary>
         </member>
-        <member name="M:DiscordRPC.Timestamps.#ctor(System.DateTime,System.Nullable{System.DateTime})">
+        <member name="M:DiscordRPC.Timestamps.#ctor(System.DateTime)">
             <summary>
-            Creates a timestamp with the set start or end time.
+            Creates a timestamp with the set start time
+            </summary>
+            <param name="start"></param>
+        </member>
+        <member name="M:DiscordRPC.Timestamps.#ctor(System.DateTime,System.DateTime)">
+            <summary>
+            Creates a timestamp with a set duration
             </summary>
             <param name="start">The start time</param>
             <param name="end">The end time</param>
@@ -2529,13 +2555,21 @@
             </summary>
             <param name="configuration">The configuration received by the OnReady event.</param>
         </member>
+        <member name="M:DiscordRPC.User.GetAvatarURL(DiscordRPC.User.AvatarFormat)">
+            <summary>
+            Gets a URL that can be used to download the user's avatar. If the user has not yet set their avatar, it will return the default one that discord is using. The default avatar only supports the <see cref="F:DiscordRPC.User.AvatarFormat.PNG"/> format.
+            </summary>
+            <remarks>The file returned will be 128px x 128px</remarks>
+            <param name="format">The format of the target avatar</param>
+            <returns>URL to the discord CDN for the particular avatar</returns>
+        </member>
         <member name="M:DiscordRPC.User.GetAvatarURL(DiscordRPC.User.AvatarFormat,DiscordRPC.User.AvatarSize)">
             <summary>
             Gets a URL that can be used to download the user's avatar. If the user has not yet set their avatar, it will return the default one that discord is using. The default avatar only supports the <see cref="F:DiscordRPC.User.AvatarFormat.PNG"/> format.
             </summary>
             <param name="format">The format of the target avatar</param>
-            <param name="size">The optional size of the avatar you wish for. Defaults to x128.</param>
-            <returns></returns>
+            <param name="size">The optional size of the avatar you wish for.</param>
+            <returns>URL to the discord CDN for the particular avatar</returns>
         </member>
         <member name="M:DiscordRPC.User.GetAvatarExtension(DiscordRPC.User.AvatarFormat)">
             <summary>
