@@ -1,6 +1,6 @@
 {
   "name": "com.lachee.discordrpc",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "displayName": "Discord Rich Presence",
   "description": "Implements the RPC Protocol for discord using Discord RPC CSharp",
   "unity": "2018.4",
