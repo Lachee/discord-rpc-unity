@@ -28,7 +28,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Lachee.Discord.Asset.html",
-          "hash": "lR3tQiLZvG9o7KVLS/uHUf566wulteqfheytum+BwTU="
+          "hash": "tOhXF9x137dBb+KLdP0SSGMZ81DE9KiAcb/4TvrrSts="
         }
       },
       "is_incremental": false,
@@ -40,7 +40,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Lachee.Discord.Attributes.CharacterLimitAttribute.html",
-          "hash": "aFqCcj6W6umjGl7xUpgxVlPcujUJLwI+0pF5Lg26+hw="
+          "hash": "NKY0xsxW8zo8Y68B1jR8AbkbXUf0hY7cLJaF5tQsdrQ="
         }
       },
       "is_incremental": false,
@@ -52,7 +52,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Lachee.Discord.Attributes.html",
-          "hash": "XTbudY3GQDO69Jin/fi5Go7jVwr659n4eQrEp0ZBJfY="
+          "hash": "vInRF+RyLTjh7hGl4VuJkjm2N0daAZSJ67ucuXcWuxE="
         }
       },
       "is_incremental": false,
@@ -64,7 +64,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Lachee.Discord.Button.html",
-          "hash": "QJ4abAvAs2wyYH49bdvdx03D+/6aJOpCXzNLf0ZoAAU="
+          "hash": "olpth9TKQtMsp71vupHacK37ILcXRY/I3RgJwRIoBeg="
         }
       },
       "is_incremental": false,
@@ -76,7 +76,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Lachee.Discord.Control.MessageEvents.CloseMessageEvent.html",
-          "hash": "SkD5iKfibHIjLja14KU9QRrQTdMyhbVbVuL7+GIlqak="
+          "hash": "dCQ0GLdYjGENp9P0RkUVWaRmTwavIhc2L04OKIzve1Q="
         }
       },
       "is_incremental": false,
@@ -88,7 +88,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Lachee.Discord.Control.MessageEvents.ConnectionEstablishedMessageEvent.html",
-          "hash": "kTLiaMnELldRGUlNgBLzOTPmV8p5cb9RMtychEXQxBk="
+          "hash": "Dc4JggYB9BKtZ19q3Qro0qoSxAF2wPtBOB2phqxt/0s="
         }
       },
       "is_incremental": false,
@@ -100,7 +100,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Lachee.Discord.Control.MessageEvents.ConnectionFailedMessageEvent.html",
-          "hash": "Vmc3JiU83cb2CSBU+uU7xvYAu/jMkoh7vK/FSA5Ukw8="
+          "hash": "hXJwhxo+vPRjqruBvGAerw33gfad0afK5SiOo3/ECK8="
         }
       },
       "is_incremental": false,
@@ -112,7 +112,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Lachee.Discord.Control.MessageEvents.ErrorMessageEvent.html",
-          "hash": "CQS8CSlpI5EIm+opKtTYesjwE8GDnck4ttrzQlXWwoU="
+          "hash": "Xq2uUw7EW+4N4lzx7yOXFb1KYW/oFyb9Yx/bML1TnJU="
         }
       },
       "is_incremental": false,
@@ -124,7 +124,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Lachee.Discord.Control.MessageEvents.JoinMessageEvent.html",
-          "hash": "Oqu55AiNi5m/AXvdpbGb1GWlZYo1ZBGEqnlTlqdiaKY="
+          "hash": "B6OC4FI5Vjny+nvFcStRl+hDYAA/mT75kuLN3WT3v0I="
         }
       },
       "is_incremental": false,
@@ -136,7 +136,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Lachee.Discord.Control.MessageEvents.JoinRequestMessageEvent.html",
-          "hash": "aqN91hkX5Kr5XH2XKaMRLpAK7aPYKs7VQGiKXQKluhE="
+          "hash": "wap+x0yfIhdS/zdXNyrfknlebAW79xgETLIKb0qGsMk="
         }
       },
       "is_incremental": false,
@@ -148,7 +148,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Lachee.Discord.Control.MessageEvents.PresenceMessageEvent.html",
-          "hash": "PnKuUhz73yzDCToar6PxkNW9I7OG8FcKDKJ+HRIHKe0="
+          "hash": "smw2SPv14304H24CEivwygvCUoYrHKX7UMVufXPgSE4="
         }
       },
       "is_incremental": false,
@@ -160,7 +160,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Lachee.Discord.Control.MessageEvents.ReadyMessageEvent.html",
-          "hash": "N21u1/DvnGDThY7ZVVs0el/CXQK28xdOsrkfzjThonQ="
+          "hash": "GjunRVkwOB7GL/U/DC4h8jykq1ah66GoeXiJzPstxu8="
         }
       },
       "is_incremental": false,
@@ -172,7 +172,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Lachee.Discord.Control.MessageEvents.SpectateMessageEvent.html",
-          "hash": "Zhi/dCrI6VeL2WY40+AqLQAnMPj7RJlbgZUTPM4IHsU="
+          "hash": "/ZBX6XJJWSMzWGVtpX7ok7UO+NZWB/LiX1NxO+fIZ18="
         }
       },
       "is_incremental": false,
@@ -184,7 +184,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Lachee.Discord.Control.MessageEvents.SubscribeMessageEvent.html",
-          "hash": "JAwhGZmjvxx8pOs3t0OVI5VArv/K1XTh2bvmeyAOk/0="
+          "hash": "IwRIy7Mgr6wUVR1ushRMlWwDdumQz1OK4r7HLo0r4q4="
         }
       },
       "is_incremental": false,
@@ -196,7 +196,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Lachee.Discord.Control.MessageEvents.UnsubscribeMessageEvent.html",
-          "hash": "T0LVrPBR+0Xc8Nzh0LtwYHlNZbW9m6mF8H73rw9q3A4="
+          "hash": "5qRliPy2ytrUxfW8iD5b4afxFgULiJUAjGaZ8NZqGK0="
         }
       },
       "is_incremental": false,
@@ -208,7 +208,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Lachee.Discord.Control.MessageEvents.html",
-          "hash": "yNDKpunOJXFAaBP9ipnQyx16E6Aiw9YbZZxHme9nG38="
+          "hash": "fhLld6El8Fhrw9mRQfLH7h+sF8baFW37AAO20OV6iyU="
         }
       },
       "is_incremental": false,
@@ -220,7 +220,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Lachee.Discord.Control.UnityLogger.html",
-          "hash": "lA0+mcZD13yrQsBLK1swdQx3KQXD+EMl1AuhZBXhR3A="
+          "hash": "YBvytPd+v3m7HhZZ1h/29H7NtPH0M5xHUUECa+pVx2s="
         }
       },
       "is_incremental": false,
@@ -232,7 +232,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Lachee.Discord.Control.html",
-          "hash": "UKMNYSwF1usRVvsBZC2lTFnEPTbSf3XZpQSQUuJsigk="
+          "hash": "Z6bl4uXiJYCAHQmOeNedJPFrYhaIcFZQI+uECzG0sr4="
         }
       },
       "is_incremental": false,
@@ -244,7 +244,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Lachee.Discord.DiscordAsset.html",
-          "hash": "cd3fpV7JdaRAnG9sv3dtDG/M2OFnprLR9oG2cfbS1CE="
+          "hash": "UKRebYEKyQTblXFkQQ7FMwFfav/ZnwcoYS6IHTrKhyg="
         }
       },
       "is_incremental": false,
@@ -256,7 +256,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Lachee.Discord.DiscordAvatarFormat.html",
-          "hash": "h8Fdr4xY8pJ6sVREQx4ZNt9QsEzf1NtP6wbXFf7zM3U="
+          "hash": "wRF+GsAGH8XWIWq8pumHJOBXqQmzHt7qHoSJF7fApnE="
         }
       },
       "is_incremental": false,
@@ -268,7 +268,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Lachee.Discord.DiscordAvatarSize.html",
-          "hash": "s3oDtz54A97J0NQ+MIwBBj4Y7xC8WpU0lHtG/1T5ERA="
+          "hash": "m/A8xQ4dLN2lcXHmuNP4PGNfAXAsMVRixCLZPdZQ3fI="
         }
       },
       "is_incremental": false,
@@ -280,7 +280,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Lachee.Discord.DiscordButton.html",
-          "hash": "uP9O6zbYNQxZ2+7y/1BY8xI3Fbp41NgrR1tkQb2fSuc="
+          "hash": "9SZOkbIWSX1R6Lgfc+6dW5rRiK5AJlFvLEfSHxFP1n0="
         }
       },
       "is_incremental": false,
@@ -292,7 +292,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Lachee.Discord.DiscordManager.Pipe.html",
-          "hash": "xnmzApQrAsYMklgRli3ySr94D4tbvWVv3GYHA5H254Q="
+          "hash": "8/BVSam0eO67JYJTXo3C7WS/YStXJHrzph789pJK+lc="
         }
       },
       "is_incremental": false,
@@ -304,7 +304,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Lachee.Discord.DiscordManager.html",
-          "hash": "YXNyeegh3Cfok5k8jQ1WZV+h4F97b3v0SE2U9F0pf3o="
+          "hash": "5FY8fIVAd9e8hF1JjpUlVFxdKaa52Dic6LZHh42f4G4="
         }
       },
       "is_incremental": false,
@@ -316,7 +316,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Lachee.Discord.DiscordParty.html",
-          "hash": "wCPVIVw8XHb1pmiwxNfDOmvskKroG4KZ22cP/uRTgMM="
+          "hash": "n3s/ti9EErNplxgprXyr5pZz2AG0iumNkkAj7GdZkfE="
         }
       },
       "is_incremental": false,
@@ -328,7 +328,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Lachee.Discord.DiscordPresence.html",
-          "hash": "RIyB+Dky5j4hHWMut6/aYBxTQx39Ggdmn8rNl0KEF2g="
+          "hash": "Mwt9OJ6Mkm7xqMObOwfmYoLZGPLhxjWCf/Bg46a6YcY="
         }
       },
       "is_incremental": false,
@@ -340,7 +340,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Lachee.Discord.DiscordSecrets.html",
-          "hash": "TdKMeT3W48y3lrFAakUIc7DBD3QAMNTzKjt0qAJda5k="
+          "hash": "vOOtBtErm28ew/lsRXQfmmEpV/fvrC6sYa9BnF/vfyY="
         }
       },
       "is_incremental": false,
@@ -352,7 +352,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Lachee.Discord.DiscordTimestamp.html",
-          "hash": "1o3EovIbqUvTU8dfN3xDKhFY7lHYQCYtWxD0Ctbv+6s="
+          "hash": "pOcY+ZxuatMkrf454/iV4OS/PiclCjB9GE4+ePAw9oY="
         }
       },
       "is_incremental": false,
@@ -364,7 +364,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Lachee.Discord.DiscordUser.html",
-          "hash": "bhNby1LNZMXWnd/rHRhtroFH8bLOZWPH+860o+hClsA="
+          "hash": "BaG6ZyABR1aerEyP7vBC1difacPG08XT/pQfdh+8UMg="
         }
       },
       "is_incremental": false,
@@ -376,7 +376,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Lachee.Discord.DiscordUserExtension.html",
-          "hash": "CxzImaOd4G+Kv0n3C4wT8S6CeJ+BZKE1XpRlmuFW/5U="
+          "hash": "HOKsz5muKcjsbZCj/sZHz8TrDvM4Hq9ilFNEcgvjlEY="
         }
       },
       "is_incremental": false,
@@ -388,7 +388,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Lachee.Discord.Event.html",
-          "hash": "fMhYrv3MquwTWh2Zlj0gQeGZDe9H3hHxjaTS9eiN8mk="
+          "hash": "p+/srpWM1R/4c2Zat95MComJuHetOWmVuM5Sn2vs7yU="
         }
       },
       "is_incremental": false,
@@ -400,7 +400,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Lachee.Discord.EventExtension.html",
-          "hash": "231A7V7YtawS9hV7yAXjgEYaKDScIIOdcZsgQUKazCw="
+          "hash": "SFsyf/iBaTS+fwFFpMHsnSSzY+L2lDK4AmYbK+rCSQc="
         }
       },
       "is_incremental": false,
@@ -412,7 +412,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Lachee.Discord.Events.JoinRequestEvent.html",
-          "hash": "DTcEAcRPbIvD3h3DYFaCWC0M6xGdBRHvlUVxfcRC1VM="
+          "hash": "hAayK3cXVa7stncdQA+HpoVkqZ4dnmUGTjp+sjOMLMU="
         }
       },
       "is_incremental": false,
@@ -424,7 +424,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Lachee.Discord.Events.PresenceEvent.html",
-          "hash": "C4TDUw85Z2W+rzqfuqF5j+XeHtxHCD/lPzw1oMlUyqE="
+          "hash": "VB1h99UuXf5KylY7bxEydIE6AV/yvvd8Gcs+KyMto90="
         }
       },
       "is_incremental": false,
@@ -436,7 +436,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Lachee.Discord.Events.ReadyEvent.html",
-          "hash": "RG1oiVCLkwzkTKli11/3uQiuEyMJgeUidhyRck9B2Wc="
+          "hash": "2tOELTnGG8ulXAI8PXDOaLEKoaQw/CdlCl4SFLRzyQ0="
         }
       },
       "is_incremental": false,
@@ -448,7 +448,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Lachee.Discord.Events.UnityCloseEvent.html",
-          "hash": "tubbTDtAxQvh3vZ7bLNusU9rnmCmFNBJt0ZzZNL1xxU="
+          "hash": "l70y3frbIMUkLCwh8pA99Azu+B6qwr02sXa4xtsy1nY="
         }
       },
       "is_incremental": false,
@@ -460,7 +460,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Lachee.Discord.Events.UnityConnectionEstablishedEvent.html",
-          "hash": "M7nJJ8I2UMgR5t0qE9TCsHXfW8tYs1Jqz/K9E8r/BN0="
+          "hash": "NOkJBs6XanDaGNWMyzckCh3MSAxb8e3H3l4smCP4QPg="
         }
       },
       "is_incremental": false,
@@ -472,7 +472,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Lachee.Discord.Events.UnityConnectionFailedEvent.html",
-          "hash": "HQVRSJ4eNuxO0EzEc9Lktl0Oubk2yWW61LqHhI+i0as="
+          "hash": "YcvDwsuHCH4ecKYIlW+x38ekBFom8qxyA177vPnZqkQ="
         }
       },
       "is_incremental": false,
@@ -484,7 +484,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Lachee.Discord.Events.UnityErrorEvent.html",
-          "hash": "PWzp7XjUlzSfZpfdlAMEVe0ggqVdLd3lqFRZLXvuvG0="
+          "hash": "8ZdgGgrtCR+/wJ1uwqz6EMUFB49F/c740xz4XnSflkM="
         }
       },
       "is_incremental": false,
@@ -496,7 +496,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Lachee.Discord.Events.UnityJoinEvent.html",
-          "hash": "kWnNM/nwccxl7xckwULQqRClTPUkoYSh4k73zD/ZnVg="
+          "hash": "VwGipsf3zDsjlzThLylInBQSrjBTzJ2aFb7OOW9JzxA="
         }
       },
       "is_incremental": false,
@@ -508,7 +508,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Lachee.Discord.Events.UnityJoinRequestEvent.html",
-          "hash": "MP1fl0SN3avGbW6/LNn5o7YnIUWKxuMef7l5kPN0KGA="
+          "hash": "YhlCNc3riQyH4KLn9bbUTNJExmPyDxrJvdZ8Qf8kXQQ="
         }
       },
       "is_incremental": false,
@@ -520,7 +520,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Lachee.Discord.Events.UnityPresenceEvent.html",
-          "hash": "C/btMHRXo+7xFg0hebqRnwts7YWUFm65FCPsTu0LqJo="
+          "hash": "TX0JydKEPyt9KebXikHErssZ5D2DDawzpnxOG+mk3M8="
         }
       },
       "is_incremental": false,
@@ -532,7 +532,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Lachee.Discord.Events.UnityReadyEvent.html",
-          "hash": "MWOyK7prEFv6q3wPNc1d2aN5Nh8j82JgUzf2N06Lt3U="
+          "hash": "sGRMMF7EimFKtdlkE2YzGTa4DXdkpRAmkL7VVSWkmH4="
         }
       },
       "is_incremental": false,
@@ -544,7 +544,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Lachee.Discord.Events.UnitySpectateEvent.html",
-          "hash": "mxoXCB4WNO3d+5cyDCFOqovO3NhOPFR01dk3X0aBgBY="
+          "hash": "MOHE4W5PezO/T6Hiqyk9Eh+BD19njh1seCGU9o97WQo="
         }
       },
       "is_incremental": false,
@@ -556,7 +556,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Lachee.Discord.Events.UnitySubscribeEvent.html",
-          "hash": "vEGH+JOsPZjgyxviiCdUb3VicAba2qdRxF9QDtqZFJo="
+          "hash": "4fOQSyj3bSYn7AmlMYdOdBPHv03IP5GhPQkNSP9ZpdE="
         }
       },
       "is_incremental": false,
@@ -568,7 +568,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Lachee.Discord.Events.UnityUnsubscribeEvent.html",
-          "hash": "oNQgMg8jipjob/OAh7vzMFdyi5+5gZmGMOKUSzQLHB0="
+          "hash": "2i0IveYzRf0WNzDnK4CrG92kpjJPeD/Z/9TbV+QTWiU="
         }
       },
       "is_incremental": false,
@@ -580,7 +580,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Lachee.Discord.Events.html",
-          "hash": "+DGpLwE7U6f+VHIdyWXWeyNt4ONNuD4ySr7vSIuNRzk="
+          "hash": "48r+HtOjvBrLtkU6LcqkzWU9K3/PSSr9jB4cyW6uh7w="
         }
       },
       "is_incremental": false,
@@ -592,7 +592,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Lachee.Discord.Party.html",
-          "hash": "D1W6D+Vp1CvCHwg3klt4cv9wHnzssxrFB7cVVgjkT5c="
+          "hash": "eeU4rIlnpDEVQPz0soqCsnvm/5jeHdvrj+rukWAnnYM="
         }
       },
       "is_incremental": false,
@@ -604,7 +604,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Lachee.Discord.Presence.html",
-          "hash": "tTKtyIUmkrnulodLiOmPvnm4PhUIL6v+xDw+ZGdNhsU="
+          "hash": "Af/7u9MpSi++opJL3n0kOArce42Y81UatJzARRzKB9M="
         }
       },
       "is_incremental": false,
@@ -616,7 +616,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Lachee.Discord.Secrets.html",
-          "hash": "SkRrdAJyqNsMI10lSb8MuzSYs6eKxtBGpHaviXOT1iw="
+          "hash": "0kOAtNJ98V9a7ThKqJ77tNy8AHc93dJiMeRtfw2QtI4="
         }
       },
       "is_incremental": false,
@@ -628,7 +628,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Lachee.Discord.Timestamp.html",
-          "hash": "sx4+U2+YvsjsjgTws/Do9nHk2dayXkP5g/B9iJovBA0="
+          "hash": "kpoxbIvuwVUb8znwKNRLoSA5LVNf8S0vo5hwwlRGpA0="
         }
       },
       "is_incremental": false,
@@ -640,7 +640,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Lachee.Discord.User.AvatarDownloadCallback.html",
-          "hash": "XsaV0sjb+13OUukouIESvulol11bcW4BKISVxDNfktc="
+          "hash": "P69A83tI9tFlH6ILsgk3R2Rq3yklzBm9hJX/atSBjsc="
         }
       },
       "is_incremental": false,
@@ -652,7 +652,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Lachee.Discord.User.CacheLevelFlag.html",
-          "hash": "pu8L+z/JQE4Gh+KRGw00PGJ04N5vxnL0eOxHhZMMVgA="
+          "hash": "Z6n2VjKFhZGqtapiW4p8TACi+td18cmatuIxRFIPPps="
         }
       },
       "is_incremental": false,
@@ -664,7 +664,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Lachee.Discord.User.html",
-          "hash": "xJRFl768NURhTsmA1D3vLZvF8hitKG31m7lB4wrZtjE="
+          "hash": "0apy+wBSQen8WHJrcD3ChdOudxiFpyN6dANHNP/9i7k="
         }
       },
       "is_incremental": false,
@@ -676,7 +676,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Lachee.Discord.html",
-          "hash": "7bFwuA6WF77sml+aE9tKwY22nYC91z673C9oO0DyIWo="
+          "hash": "IoIaAq1oNDhoFYHPb7SV+HEvY9RUUE3xqAzw/AZkZeQ="
         }
       },
       "is_incremental": false,
@@ -688,7 +688,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Lachee.IO.Exceptions.NamedPipeConnectionException.html",
-          "hash": "SJtYm+wECudRbdiMqXMPNZtXCsorT8n/RuEYGVTFH9c="
+          "hash": "LOThYnJ7dJf07LVAnQ4k3ntffW8l3w+FTJKTErVeCZ0="
         }
       },
       "is_incremental": false,
@@ -700,7 +700,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Lachee.IO.Exceptions.NamedPipeOpenException.html",
-          "hash": "tdO9rvsvY0tJGPJU8vqA8b3pbhm5U6s4cW7QG2OblmY="
+          "hash": "lTyl7xPIAb+zG1XtdZPPD02Me12WoJ7NLVBgPpagkmI="
         }
       },
       "is_incremental": false,
@@ -712,7 +712,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Lachee.IO.Exceptions.NamedPipeReadException.html",
-          "hash": "gsQoLqRa62j4S4ZkMHnmv0Ykzt+vWqygTDOmWR4fRd0="
+          "hash": "StD8XlCmTTs+OI4DezRsWgU8jjpW/FHFHtuzp5mFoE8="
         }
       },
       "is_incremental": false,
@@ -724,7 +724,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Lachee.IO.Exceptions.NamedPipeWriteException.html",
-          "hash": "jMU2yyjQj6BIk4kkSzO8AlDry7DGvodZtUEnQY0/5FY="
+          "hash": "86gA9fvVb7QtvGnKHHcnGMyyj4xP50edoRqCyIzg9a8="
         }
       },
       "is_incremental": false,
@@ -736,7 +736,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Lachee.IO.Exceptions.html",
-          "hash": "Ydgb3PBA9ol0lKvre3DVrmtX8cx/YQ3VJ+Fp/pUxun0="
+          "hash": "IbTQ6X7i2rOqI5zBMOYt13IShDEsvcwcbIE3iE65xAw="
         }
       },
       "is_incremental": false,
@@ -748,7 +748,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Lachee.IO.NamedPipeClientStream.html",
-          "hash": "9jIuptMJFhQt5uwsVHfNmoERxT/kIsmAZ2N49Gh4Rc8="
+          "hash": "miRtsBV8s3bBYZbqArIJUMJWwg5t4jiTDhvLRQUZPqk="
         }
       },
       "is_incremental": false,
@@ -760,7 +760,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Lachee.IO.html",
-          "hash": "poT1hD2riZduV1osX8ywmceadFa1hGEK6fqzBnrOmZM="
+          "hash": "ylM+XcnpqV/Azg4kc/1HqJWXQiiYCG3JHTlBzv95TiQ="
         }
       },
       "is_incremental": false,
@@ -787,7 +787,7 @@
       "output": {
         ".html": {
           "relative_path": "index.html",
-          "hash": "HrYkHbjtV5MpsEWXCe8mX1EmzAirzGgt+7cwOIcKdDY="
+          "hash": "5vm5n4Px5i+s8xpEJooCY/1OqWimpVPP/UjlYuxd6Aw="
         }
       },
       "is_incremental": false,
