@@ -59,3 +59,9 @@ Go old school and download the Unity Package and import it into your project.
 
 By default, the DiscordManager will log to the Unity Console while in the Editor.
 To enable logging in builds, create a [Development Build](https://docs.unity3d.com/Manual/BuildSettings.html) and a new discordrpc.log file will be generated with your app when it runs. 
+
+# Licensing
+
+The license is MIT so do what you want;
+
+However, i do appriciate attributations where possible and a link. Also if you plan to "fix" the library and sell it, please contribute back to this project with your fixes so others can benifit too.
