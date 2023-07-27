@@ -360,11 +360,11 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/Lachee.Discord.DiscordUser.yml",
+      "source_relative_path": "api/Lachee.Discord.DiscordUserExtension.yml",
       "output": {
         ".html": {
-          "relative_path": "api/Lachee.Discord.DiscordUser.html",
-          "hash": "BaG6ZyABR1aerEyP7vBC1difacPG08XT/pQfdh+8UMg="
+          "relative_path": "api/Lachee.Discord.DiscordUserExtension.html",
+          "hash": "U6XM9qX+hN8qGS9e+osJ8TVOGJTn2PnyMALeu2R4Zgw="
         }
       },
       "is_incremental": false,
@@ -372,11 +372,23 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/Lachee.Discord.DiscordUserExtension.yml",
+      "source_relative_path": "api/Lachee.Discord.Editor.SerializedPropertyExtensions.yml",
       "output": {
         ".html": {
-          "relative_path": "api/Lachee.Discord.DiscordUserExtension.html",
-          "hash": "HOKsz5muKcjsbZCj/sZHz8TrDvM4Hq9ilFNEcgvjlEY="
+          "relative_path": "api/Lachee.Discord.Editor.SerializedPropertyExtensions.html",
+          "hash": "kvidXKb8eMga92KYq1t0rEjH3hKhJl4L9Oz3Ud8D0QY="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Lachee.Discord.Editor.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Lachee.Discord.Editor.html",
+          "hash": "hadBxfPcFetzXOBxLmtBMG72IfuPia4avkhNaMFqKWk="
         }
       },
       "is_incremental": false,
@@ -664,7 +676,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Lachee.Discord.User.html",
-          "hash": "0apy+wBSQen8WHJrcD3ChdOudxiFpyN6dANHNP/9i7k="
+          "hash": "goXypIW/a9tp0D75gQjMi/3XORCljfuQWkJDuS2TRLI="
         }
       },
       "is_incremental": false,
@@ -676,7 +688,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Lachee.Discord.html",
-          "hash": "IoIaAq1oNDhoFYHPb7SV+HEvY9RUUE3xqAzw/AZkZeQ="
+          "hash": "wOauz2IgyP4RVPHhhKoZTAHKUw9KRMRL7G7iDUd1NdI="
         }
       },
       "is_incremental": false,
@@ -748,7 +760,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Lachee.IO.NamedPipeClientStream.html",
-          "hash": "miRtsBV8s3bBYZbqArIJUMJWwg5t4jiTDhvLRQUZPqk="
+          "hash": "It6QwEEKQXTIkyyz+87HNhosX+UV/wiaTlPuZTYbVcA="
         }
       },
       "is_incremental": false,
@@ -772,7 +784,7 @@
       "output": {
         ".html": {
           "relative_path": "api/toc.html",
-          "hash": "ksWd6ymmjxOQw/pDkjvEoSInrKZzTl0NkbnRfJV9Z1g="
+          "hash": "1OL8MZmFbHpDN2VAj4S3oSWyz4enpRNA5XVZvmunKQc="
         }
       },
       "is_incremental": false,
@@ -841,7 +853,7 @@
         "ManagedReferenceDocumentProcessor": {
           "can_incremental": false,
           "incrementalPhase": "build",
-          "total_file_count": 62,
+          "total_file_count": 63,
           "skipped_file_count": 0
         },
         "TocDocumentProcessor": {

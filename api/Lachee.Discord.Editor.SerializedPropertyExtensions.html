@@ -5,10 +5,10 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>Class DiscordUserExtension
+    <title>Class SerializedPropertyExtensions
    | Utilities </title>
     <meta name="viewport" content="width=device-width">
-    <meta name="title" content="Class DiscordUserExtension
+    <meta name="title" content="Class SerializedPropertyExtensions
    | Utilities ">
     <meta name="generator" content="docfx 2.59.4.0">
     
@@ -77,18 +77,17 @@
         </div>
         <div class="article row grid-right">
           <div class="col-md-10">
-            <article class="content wrap" id="_content" data-uid="Lachee.Discord.DiscordUserExtension">
+            <article class="content wrap" id="_content" data-uid="Lachee.Discord.Editor.SerializedPropertyExtensions">
   
   
-  <h1 id="Lachee_Discord_DiscordUserExtension" data-uid="Lachee.Discord.DiscordUserExtension" class="text-break">Class DiscordUserExtension
+  <h1 id="Lachee_Discord_Editor_SerializedPropertyExtensions" data-uid="Lachee.Discord.Editor.SerializedPropertyExtensions" class="text-break">Class SerializedPropertyExtensions
   </h1>
-  <div class="markdown level0 summary"><p>Collection of extensions to the <see cref="!:DiscordRPC.User"></see> class.</p>
-</div>
+  <div class="markdown level0 summary"></div>
   <div class="markdown level0 conceptual"></div>
   <div class="inheritance">
     <h5>Inheritance</h5>
     <div class="level0"><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">Object</a></div>
-    <div class="level1"><span class="xref">DiscordUserExtension</span></div>
+    <div class="level1"><span class="xref">SerializedPropertyExtensions</span></div>
   </div>
   <div class="inheritedMembers">
     <h5>Inherited Members</h5>
@@ -114,25 +113,24 @@
       <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone#system-object-memberwiseclone">Object.MemberwiseClone()</a>
     </div>
   </div>
-  <h6><strong>Namespace</strong>: <a class="xref" href="Lachee.Discord.html">Lachee.Discord</a></h6>
+  <h6><strong>Namespace</strong>: <a class="xref" href="Lachee.Discord.Editor.html">Lachee.Discord.Editor</a></h6>
   <h6><strong>Assembly</strong>: cs.temp.dll.dll</h6>
-  <h5 id="Lachee_Discord_DiscordUserExtension_syntax">Syntax</h5>
+  <h5 id="Lachee_Discord_Editor_SerializedPropertyExtensions_syntax">Syntax</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static class DiscordUserExtension</code></pre>
+    <pre><code class="lang-csharp hljs">public static class SerializedPropertyExtensions</code></pre>
   </div>
   <h3 id="methods">Methods
   </h3>
   
   
-  <a id="Lachee_Discord_DiscordUserExtension_GetAvatar_" data-uid="Lachee.Discord.DiscordUserExtension.GetAvatar*"></a>
-  <h4 id="Lachee_Discord_DiscordUserExtension_GetAvatar_DiscordRPC_User_Lachee_Discord_DiscordAvatarSize_Lachee_Discord_User_AvatarDownloadCallback_" data-uid="Lachee.Discord.DiscordUserExtension.GetAvatar(DiscordRPC.User,Lachee.Discord.DiscordAvatarSize,Lachee.Discord.User.AvatarDownloadCallback)">GetAvatar(DiscordRPC.User, DiscordAvatarSize, User.AvatarDownloadCallback)</h4>
-  <div class="markdown level1 summary"><p>Gets the user avatar as a Texture2D and starts it with the supplied monobehaviour. It will first check the cache if the image exists, if it does it will return the image. Otherwise it will download the image from Discord and store it in the cache, calling the callback once done.
-<p>An alias of <see cref="!:User.CacheAvatar(MonoBehaviour, DiscordAvatarSize, AvatarDownloadCallback)"></see> and will return the new <a class="xref" href="Lachee.Discord.User.html">User</a> instance.</p></p>
+  <a id="Lachee_Discord_Editor_SerializedPropertyExtensions_GetFieldInfoFromPath_" data-uid="Lachee.Discord.Editor.SerializedPropertyExtensions.GetFieldInfoFromPath*"></a>
+  <h4 id="Lachee_Discord_Editor_SerializedPropertyExtensions_GetFieldInfoFromPath_System_Type_System_String_BindingFlags_" data-uid="Lachee.Discord.Editor.SerializedPropertyExtensions.GetFieldInfoFromPath(System.Type,System.String,BindingFlags)">GetFieldInfoFromPath(Type, String, BindingFlags)</h4>
+  <div class="markdown level1 summary"><p>Finds the field info for the given type at the given path.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static User GetAvatar(this DiscordRPC.User user, DiscordAvatarSize size = DiscordAvatarSize.x128, User.AvatarDownloadCallback callback = null)</code></pre>
+    <pre><code class="lang-csharp hljs">public static FieldInfo GetFieldInfoFromPath(this Type type, string path, BindingFlags flag = null)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -145,20 +143,65 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">DiscordRPC.User</span></td>
-        <td><span class="parametername">user</span></td>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.type">Type</a></td>
+        <td><span class="parametername">type</span></td>
         <td></td>
       </tr>
       <tr>
-        <td><a class="xref" href="Lachee.Discord.DiscordAvatarSize.html">DiscordAvatarSize</a></td>
-        <td><span class="parametername">size</span></td>
-        <td><p>The target size of the avatar. Default is 128x128</p>
-</td>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">String</a></td>
+        <td><span class="parametername">path</span></td>
+        <td></td>
       </tr>
       <tr>
-        <td><a class="xref" href="Lachee.Discord.User.AvatarDownloadCallback.html">User.AvatarDownloadCallback</a></td>
-        <td><span class="parametername">callback</span></td>
-        <td><p>The callback for when the texture completes. Default is no-callback, but its highly recommended to use a callback</p>
+        <td><span class="xref">BindingFlags</span></td>
+        <td><span class="parametername">flag</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">FieldInfo</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="Lachee_Discord_Editor_SerializedPropertyExtensions_GetFieldInfoFromPath_System_Type_System_String_BindingFlags__remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>Does not work with arrays yet as they would return a PropertyInfo instead</p>
+</div>
+  
+  
+  <a id="Lachee_Discord_Editor_SerializedPropertyExtensions_GetSerializedFieldInfo_" data-uid="Lachee.Discord.Editor.SerializedPropertyExtensions.GetSerializedFieldInfo*"></a>
+  <h4 id="Lachee_Discord_Editor_SerializedPropertyExtensions_GetSerializedFieldInfo_SerializedProperty_" data-uid="Lachee.Discord.Editor.SerializedPropertyExtensions.GetSerializedFieldInfo(SerializedProperty)">GetSerializedFieldInfo(SerializedProperty)</h4>
+  <div class="markdown level1 summary"><p>Gets the FieldInfo of the underlying field</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static FieldInfo GetSerializedFieldInfo(this SerializedProperty property)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">SerializedProperty</span></td>
+        <td><span class="parametername">property</span></td>
+        <td><p>The property to get the FieldInfo off</p>
 </td>
       </tr>
     </tbody>
@@ -173,23 +216,21 @@
     </thead>
     <tbody>
       <tr>
-        <td><a class="xref" href="Lachee.Discord.User.html">User</a></td>
-        <td><p>Returns the generated <a class="xref" href="Lachee.Discord.User.html">User</a> for this <see cref="!:DiscordRPC.User"></see> object.</p>
-</td>
+        <td><span class="xref">FieldInfo</span></td>
+        <td></td>
       </tr>
     </tbody>
   </table>
   
   
-  <a id="Lachee_Discord_DiscordUserExtension_GetAvatarCoroutine_" data-uid="Lachee.Discord.DiscordUserExtension.GetAvatarCoroutine*"></a>
-  <h4 id="Lachee_Discord_DiscordUserExtension_GetAvatarCoroutine_DiscordRPC_User_Lachee_Discord_DiscordAvatarSize_Lachee_Discord_User_AvatarDownloadCallback_" data-uid="Lachee.Discord.DiscordUserExtension.GetAvatarCoroutine(DiscordRPC.User,Lachee.Discord.DiscordAvatarSize,Lachee.Discord.User.AvatarDownloadCallback)">GetAvatarCoroutine(DiscordRPC.User, DiscordAvatarSize, User.AvatarDownloadCallback)</h4>
-  <div class="markdown level1 summary"><p>Gets the user avatar as a Texture2D as a enumerator. It will first check the cache if the image exists, if it does it will return the image. Otherwise it will download the image from Discord and store it in the cache, calling the callback once done.
-<p>An alias of <see cref="!:User.CacheAvatarCoroutine(DiscordAvatarSize, User.AvatarDownloadCallback)"></see> and will return the new <a class="xref" href="Lachee.Discord.User.html">User</a> instance in the callback.</p></p>
+  <a id="Lachee_Discord_Editor_SerializedPropertyExtensions_GetSerializedType_" data-uid="Lachee.Discord.Editor.SerializedPropertyExtensions.GetSerializedType*"></a>
+  <h4 id="Lachee_Discord_Editor_SerializedPropertyExtensions_GetSerializedType_SerializedProperty_" data-uid="Lachee.Discord.Editor.SerializedPropertyExtensions.GetSerializedType(SerializedProperty)">GetSerializedType(SerializedProperty)</h4>
+  <div class="markdown level1 summary"><p>Gets the type of the underlying field the SerializedProperty is of.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static IEnumerator GetAvatarCoroutine(this DiscordRPC.User user, DiscordAvatarSize size = DiscordAvatarSize.x128, User.AvatarDownloadCallback callback = null)</code></pre>
+    <pre><code class="lang-csharp hljs">public static Type GetSerializedType(this SerializedProperty property)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -202,20 +243,9 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">DiscordRPC.User</span></td>
-        <td><span class="parametername">user</span></td>
-        <td></td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="Lachee.Discord.DiscordAvatarSize.html">DiscordAvatarSize</a></td>
-        <td><span class="parametername">size</span></td>
-        <td><p>The target size of the avatar. Default is 128x128</p>
-</td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="Lachee.Discord.User.AvatarDownloadCallback.html">User.AvatarDownloadCallback</a></td>
-        <td><span class="parametername">callback</span></td>
-        <td><p>The callback for when the texture completes. Default is no-callback, but its highly recommended to use a callback</p>
+        <td><span class="xref">SerializedProperty</span></td>
+        <td><span class="parametername">property</span></td>
+        <td><p>The property to get the type from</p>
 </td>
       </tr>
     </tbody>
@@ -230,22 +260,21 @@
     </thead>
     <tbody>
       <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.ienumerator">IEnumerator</a></td>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.type">Type</a></td>
         <td></td>
       </tr>
     </tbody>
   </table>
   
   
-  <a id="Lachee_Discord_DiscordUserExtension_GetDefaultAvatarCoroutine_" data-uid="Lachee.Discord.DiscordUserExtension.GetDefaultAvatarCoroutine*"></a>
-  <h4 id="Lachee_Discord_DiscordUserExtension_GetDefaultAvatarCoroutine_DiscordRPC_User_Lachee_Discord_DiscordAvatarSize_Lachee_Discord_User_AvatarDownloadCallback_" data-uid="Lachee.Discord.DiscordUserExtension.GetDefaultAvatarCoroutine(DiscordRPC.User,Lachee.Discord.DiscordAvatarSize,Lachee.Discord.User.AvatarDownloadCallback)">GetDefaultAvatarCoroutine(DiscordRPC.User, DiscordAvatarSize, User.AvatarDownloadCallback)</h4>
-  <div class="markdown level1 summary"><p>Gets the default avatar for the given user. Will check the cache first, and if none are available it will then download the default from discord.
-<p>An alias of <see cref="!:User.CacheDefaultAvatarCoroutine(DiscordAvatarSize, User.AvatarDownloadCallback)"></see> and will return the new <a class="xref" href="Lachee.Discord.User.html">User</a> instance in the callback.</p></p>
+  <a id="Lachee_Discord_Editor_SerializedPropertyExtensions_GetSerializedValue_" data-uid="Lachee.Discord.Editor.SerializedPropertyExtensions.GetSerializedValue*"></a>
+  <h4 id="Lachee_Discord_Editor_SerializedPropertyExtensions_GetSerializedValue_SerializedProperty_" data-uid="Lachee.Discord.Editor.SerializedPropertyExtensions.GetSerializedValue(SerializedProperty)">GetSerializedValue(SerializedProperty)</h4>
+  <div class="markdown level1 summary"><p>Gets the underlying value this property represents</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static IEnumerator GetDefaultAvatarCoroutine(this DiscordRPC.User user, DiscordAvatarSize size = DiscordAvatarSize.x128, User.AvatarDownloadCallback callback = null)</code></pre>
+    <pre><code class="lang-csharp hljs">public static object GetSerializedValue(this SerializedProperty property)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -258,20 +287,70 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">DiscordRPC.User</span></td>
-        <td><span class="parametername">user</span></td>
+        <td><span class="xref">SerializedProperty</span></td>
+        <td><span class="parametername">property</span></td>
         <td></td>
       </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
       <tr>
-        <td><a class="xref" href="Lachee.Discord.DiscordAvatarSize.html">DiscordAvatarSize</a></td>
-        <td><span class="parametername">size</span></td>
-        <td><p>The size of the target avatar</p>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">Object</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Lachee_Discord_Editor_SerializedPropertyExtensions_GetValueFromPath_" data-uid="Lachee.Discord.Editor.SerializedPropertyExtensions.GetValueFromPath*"></a>
+  <h4 id="Lachee_Discord_Editor_SerializedPropertyExtensions_GetValueFromPath_System_Type_System_Object_System_String_BindingFlags_" data-uid="Lachee.Discord.Editor.SerializedPropertyExtensions.GetValueFromPath(System.Type,System.Object,System.String,BindingFlags)">GetValueFromPath(Type, Object, String, BindingFlags)</h4>
+  <div class="markdown level1 summary"><p>Gets the field values from the given path</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static object GetValueFromPath(this Type type, object context, string path, BindingFlags flag = null)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.type">Type</a></td>
+        <td><span class="parametername">type</span></td>
+        <td><p>The type of the root object</p>
 </td>
       </tr>
       <tr>
-        <td><a class="xref" href="Lachee.Discord.User.AvatarDownloadCallback.html">User.AvatarDownloadCallback</a></td>
-        <td><span class="parametername">callback</span></td>
-        <td><p>The callback that will be made when the picture finishes downloading.</p>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">Object</a></td>
+        <td><span class="parametername">context</span></td>
+        <td><p>The root object to get the value from</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">String</a></td>
+        <td><span class="parametername">path</span></td>
+        <td><p>The SerializedProperty formatted path</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">BindingFlags</span></td>
+        <td><span class="parametername">flag</span></td>
+        <td><p>The flag used to search fields.</p>
 </td>
       </tr>
     </tbody>
@@ -286,7 +365,7 @@
     </thead>
     <tbody>
       <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.ienumerator">IEnumerator</a></td>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">Object</a></td>
         <td></td>
       </tr>
     </tbody>

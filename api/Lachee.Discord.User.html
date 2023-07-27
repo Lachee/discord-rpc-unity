@@ -116,16 +116,6 @@ public sealed class User</code></pre>
   
   
   <a id="Lachee_Discord_User__ctor_" data-uid="Lachee.Discord.User.#ctor*"></a>
-  <h4 id="Lachee_Discord_User__ctor" data-uid="Lachee.Discord.User.#ctor">User()</h4>
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public User()</code></pre>
-  </div>
-  
-  
-  <a id="Lachee_Discord_User__ctor_" data-uid="Lachee.Discord.User.#ctor*"></a>
   <h4 id="Lachee_Discord_User__ctor_DiscordRPC_User_" data-uid="Lachee.Discord.User.#ctor(DiscordRPC.User)">User(DiscordRPC.User)</h4>
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
@@ -367,7 +357,7 @@ public sealed class User</code></pre>
   
   <a id="Lachee_Discord_User_discriminator_" data-uid="Lachee.Discord.User.discriminator*"></a>
   <h4 id="Lachee_Discord_User_discriminator" data-uid="Lachee.Discord.User.discriminator">discriminator</h4>
-  <div class="markdown level1 summary"><p>The discriminator of the Discord user</p>
+  <div class="markdown level1 summary"><p>The discriminator of the user.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
@@ -389,6 +379,38 @@ public sealed class User</code></pre>
       </tr>
     </tbody>
   </table>
+  <h5 id="Lachee_Discord_User_discriminator_remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>If the user has migrated to unique a <a class="xref" href="Lachee.Discord.User.html#Lachee_Discord_User_username">username</a>, the discriminator will always be 0.</p>
+</div>
+  
+  
+  <a id="Lachee_Discord_User_displayName_" data-uid="Lachee.Discord.User.displayName*"></a>
+  <h4 id="Lachee_Discord_User_displayName" data-uid="Lachee.Discord.User.displayName">displayName</h4>
+  <div class="markdown level1 summary"><p>The display name of the user</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string displayName { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">String</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="Lachee_Discord_User_displayName_remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>This will be empty if the user has not set a global display name.</p>
+</div>
   
   
   <a id="Lachee_Discord_User_ID_" data-uid="Lachee.Discord.User.ID*"></a>
@@ -443,140 +465,6 @@ public sealed class User</code></pre>
   </table>
   <h3 id="methods">Methods
   </h3>
-  
-  
-  <a id="Lachee_Discord_User_CacheAvatar_" data-uid="Lachee.Discord.User.CacheAvatar*"></a>
-  <h4 id="Lachee_Discord_User_CacheAvatar_MonoBehaviour_Lachee_Discord_DiscordAvatarSize_Lachee_Discord_User_AvatarDownloadCallback_" data-uid="Lachee.Discord.User.CacheAvatar(MonoBehaviour,Lachee.Discord.DiscordAvatarSize,Lachee.Discord.User.AvatarDownloadCallback)">CacheAvatar(MonoBehaviour, DiscordAvatarSize, User.AvatarDownloadCallback)</h4>
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">[Obsolete(&quot;Now known as GetAvatar instead.&quot;)]
-public void CacheAvatar(MonoBehaviour coroutineCaller, DiscordAvatarSize size = DiscordAvatarSize.x128, User.AvatarDownloadCallback callback = null)</code></pre>
-  </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">MonoBehaviour</span></td>
-        <td><span class="parametername">coroutineCaller</span></td>
-        <td></td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="Lachee.Discord.DiscordAvatarSize.html">DiscordAvatarSize</a></td>
-        <td><span class="parametername">size</span></td>
-        <td></td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="Lachee.Discord.User.AvatarDownloadCallback.html">User.AvatarDownloadCallback</a></td>
-        <td><span class="parametername">callback</span></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  
-  
-  <a id="Lachee_Discord_User_CacheAvatarCoroutine_" data-uid="Lachee.Discord.User.CacheAvatarCoroutine*"></a>
-  <h4 id="Lachee_Discord_User_CacheAvatarCoroutine_Lachee_Discord_DiscordAvatarSize_Lachee_Discord_User_AvatarDownloadCallback_" data-uid="Lachee.Discord.User.CacheAvatarCoroutine(Lachee.Discord.DiscordAvatarSize,Lachee.Discord.User.AvatarDownloadCallback)">CacheAvatarCoroutine(DiscordAvatarSize, User.AvatarDownloadCallback)</h4>
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">[Obsolete(&quot;Now known as GetAvatarCoroutine instead.&quot;)]
-public IEnumerator CacheAvatarCoroutine(DiscordAvatarSize size = DiscordAvatarSize.x128, User.AvatarDownloadCallback callback = null)</code></pre>
-  </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="Lachee.Discord.DiscordAvatarSize.html">DiscordAvatarSize</a></td>
-        <td><span class="parametername">size</span></td>
-        <td></td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="Lachee.Discord.User.AvatarDownloadCallback.html">User.AvatarDownloadCallback</a></td>
-        <td><span class="parametername">callback</span></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.ienumerator">IEnumerator</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  
-  
-  <a id="Lachee_Discord_User_CacheDefaultAvatarCoroutine_" data-uid="Lachee.Discord.User.CacheDefaultAvatarCoroutine*"></a>
-  <h4 id="Lachee_Discord_User_CacheDefaultAvatarCoroutine_Lachee_Discord_DiscordAvatarSize_Lachee_Discord_User_AvatarDownloadCallback_" data-uid="Lachee.Discord.User.CacheDefaultAvatarCoroutine(Lachee.Discord.DiscordAvatarSize,Lachee.Discord.User.AvatarDownloadCallback)">CacheDefaultAvatarCoroutine(DiscordAvatarSize, User.AvatarDownloadCallback)</h4>
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">[Obsolete(&quot;Now known as GetAGetDefaultAvatarCoroutinevatar instead.&quot;)]
-public IEnumerator CacheDefaultAvatarCoroutine(DiscordAvatarSize size = DiscordAvatarSize.x128, User.AvatarDownloadCallback callback = null)</code></pre>
-  </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="Lachee.Discord.DiscordAvatarSize.html">DiscordAvatarSize</a></td>
-        <td><span class="parametername">size</span></td>
-        <td></td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="Lachee.Discord.User.AvatarDownloadCallback.html">User.AvatarDownloadCallback</a></td>
-        <td><span class="parametername">callback</span></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.ienumerator">IEnumerator</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
   
   
   <a id="Lachee_Discord_User_Equals_" data-uid="Lachee.Discord.User.Equals*"></a>
@@ -653,44 +541,6 @@ public IEnumerator CacheDefaultAvatarCoroutine(DiscordAvatarSize size = DiscordA
         <td><span class="parametername">callback</span></td>
         <td><p>The callback for when the texture completes. Default is no-callback, but its highly recommended to use a callback</p>
 </td>
-      </tr>
-    </tbody>
-  </table>
-  
-  
-  <a id="Lachee_Discord_User_GetAvatar_" data-uid="Lachee.Discord.User.GetAvatar*"></a>
-  <h4 id="Lachee_Discord_User_GetAvatar_MonoBehaviour_Lachee_Discord_DiscordAvatarSize_Lachee_Discord_User_AvatarDownloadCallback_" data-uid="Lachee.Discord.User.GetAvatar(MonoBehaviour,Lachee.Discord.DiscordAvatarSize,Lachee.Discord.User.AvatarDownloadCallback)">GetAvatar(MonoBehaviour, DiscordAvatarSize, User.AvatarDownloadCallback)</h4>
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">[Obsolete(&quot;coroutine caller has been replaced with just the DiscordManager&quot;)]
-public void GetAvatar(MonoBehaviour coroutineCaller, DiscordAvatarSize size = DiscordAvatarSize.x128, User.AvatarDownloadCallback callback = null)</code></pre>
-  </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">MonoBehaviour</span></td>
-        <td><span class="parametername">coroutineCaller</span></td>
-        <td></td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="Lachee.Discord.DiscordAvatarSize.html">DiscordAvatarSize</a></td>
-        <td><span class="parametername">size</span></td>
-        <td></td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="Lachee.Discord.User.AvatarDownloadCallback.html">User.AvatarDownloadCallback</a></td>
-        <td><span class="parametername">callback</span></td>
-        <td></td>
       </tr>
     </tbody>
   </table>
@@ -828,7 +678,9 @@ public void GetAvatar(MonoBehaviour coroutineCaller, DiscordAvatarSize size = Di
   
   <a id="Lachee_Discord_User_ToString_" data-uid="Lachee.Discord.User.ToString*"></a>
   <h4 id="Lachee_Discord_User_ToString" data-uid="Lachee.Discord.User.ToString">ToString()</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Formats the user into a displayable format. If the user has a <a class="xref" href="Lachee.Discord.User.html#Lachee_Discord_User_displayName">displayName</a>, then this will be used.
+<p>If the user still has a discriminator, then this will return the form of <code>Username#Discriminator</code>.</p></p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -845,7 +697,8 @@ public void GetAvatar(MonoBehaviour coroutineCaller, DiscordAvatarSize size = Di
     <tbody>
       <tr>
         <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">String</a></td>
-        <td></td>
+        <td><p>String of the user that can be used for display.</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -892,6 +745,48 @@ public void GetAvatar(MonoBehaviour coroutineCaller, DiscordAvatarSize size = Di
     <tbody>
       <tr>
         <td><a class="xref" href="Lachee.Discord.User.html">User</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Lachee_Discord_User_op_Implicit_" data-uid="Lachee.Discord.User.op_Implicit*"></a>
+  <h4 id="Lachee_Discord_User_op_Implicit_Lachee_Discord_User__DiscordRPC_User" data-uid="Lachee.Discord.User.op_Implicit(Lachee.Discord.User)~DiscordRPC.User">Implicit(User to DiscordRPC.User)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static implicit operator DiscordRPC.User(User user)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Lachee.Discord.User.html">User</a></td>
+        <td><span class="parametername">user</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">DiscordRPC.User</span></td>
         <td></td>
       </tr>
     </tbody>

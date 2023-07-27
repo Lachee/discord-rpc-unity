@@ -950,12 +950,6 @@ references:
   commentId: T:Lachee.Discord.DiscordTimestamp
   fullName: Lachee.Discord.DiscordTimestamp
   nameWithType: DiscordTimestamp
-- uid: Lachee.Discord.DiscordUser
-  name: DiscordUser
-  href: api/Lachee.Discord.DiscordUser.html
-  commentId: T:Lachee.Discord.DiscordUser
-  fullName: Lachee.Discord.DiscordUser
-  nameWithType: DiscordUser
 - uid: Lachee.Discord.DiscordUserExtension
   name: DiscordUserExtension
   href: api/Lachee.Discord.DiscordUserExtension.html
@@ -968,12 +962,6 @@ references:
   commentId: M:Lachee.Discord.DiscordUserExtension.GetAvatar(DiscordRPC.User,Lachee.Discord.DiscordAvatarSize,Lachee.Discord.User.AvatarDownloadCallback)
   fullName: Lachee.Discord.DiscordUserExtension.GetAvatar(DiscordRPC.User, Lachee.Discord.DiscordAvatarSize, Lachee.Discord.User.AvatarDownloadCallback)
   nameWithType: DiscordUserExtension.GetAvatar(DiscordRPC.User, DiscordAvatarSize, User.AvatarDownloadCallback)
-- uid: Lachee.Discord.DiscordUserExtension.GetAvatar(DiscordRPC.User,MonoBehaviour,Lachee.Discord.DiscordAvatarSize,Lachee.Discord.User.AvatarDownloadCallback)
-  name: GetAvatar(DiscordRPC.User, MonoBehaviour, DiscordAvatarSize, User.AvatarDownloadCallback)
-  href: api/Lachee.Discord.DiscordUserExtension.html#Lachee_Discord_DiscordUserExtension_GetAvatar_DiscordRPC_User_MonoBehaviour_Lachee_Discord_DiscordAvatarSize_Lachee_Discord_User_AvatarDownloadCallback_
-  commentId: M:Lachee.Discord.DiscordUserExtension.GetAvatar(DiscordRPC.User,MonoBehaviour,Lachee.Discord.DiscordAvatarSize,Lachee.Discord.User.AvatarDownloadCallback)
-  fullName: Lachee.Discord.DiscordUserExtension.GetAvatar(DiscordRPC.User, MonoBehaviour, Lachee.Discord.DiscordAvatarSize, Lachee.Discord.User.AvatarDownloadCallback)
-  nameWithType: DiscordUserExtension.GetAvatar(DiscordRPC.User, MonoBehaviour, DiscordAvatarSize, User.AvatarDownloadCallback)
 - uid: Lachee.Discord.DiscordUserExtension.GetAvatar*
   name: GetAvatar
   href: api/Lachee.Discord.DiscordUserExtension.html#Lachee_Discord_DiscordUserExtension_GetAvatar_
@@ -1007,6 +995,83 @@ references:
   isSpec: "True"
   fullName: Lachee.Discord.DiscordUserExtension.GetDefaultAvatarCoroutine
   nameWithType: DiscordUserExtension.GetDefaultAvatarCoroutine
+- uid: Lachee.Discord.Editor
+  name: Lachee.Discord.Editor
+  href: api/Lachee.Discord.Editor.html
+  commentId: N:Lachee.Discord.Editor
+  fullName: Lachee.Discord.Editor
+  nameWithType: Lachee.Discord.Editor
+- uid: Lachee.Discord.Editor.SerializedPropertyExtensions
+  name: SerializedPropertyExtensions
+  href: api/Lachee.Discord.Editor.SerializedPropertyExtensions.html
+  commentId: T:Lachee.Discord.Editor.SerializedPropertyExtensions
+  fullName: Lachee.Discord.Editor.SerializedPropertyExtensions
+  nameWithType: SerializedPropertyExtensions
+- uid: Lachee.Discord.Editor.SerializedPropertyExtensions.GetFieldInfoFromPath(System.Type,System.String,BindingFlags)
+  name: GetFieldInfoFromPath(Type, String, BindingFlags)
+  href: api/Lachee.Discord.Editor.SerializedPropertyExtensions.html#Lachee_Discord_Editor_SerializedPropertyExtensions_GetFieldInfoFromPath_System_Type_System_String_BindingFlags_
+  commentId: M:Lachee.Discord.Editor.SerializedPropertyExtensions.GetFieldInfoFromPath(System.Type,System.String,BindingFlags)
+  fullName: Lachee.Discord.Editor.SerializedPropertyExtensions.GetFieldInfoFromPath(System.Type, System.String, BindingFlags)
+  nameWithType: SerializedPropertyExtensions.GetFieldInfoFromPath(Type, String, BindingFlags)
+- uid: Lachee.Discord.Editor.SerializedPropertyExtensions.GetFieldInfoFromPath*
+  name: GetFieldInfoFromPath
+  href: api/Lachee.Discord.Editor.SerializedPropertyExtensions.html#Lachee_Discord_Editor_SerializedPropertyExtensions_GetFieldInfoFromPath_
+  commentId: Overload:Lachee.Discord.Editor.SerializedPropertyExtensions.GetFieldInfoFromPath
+  isSpec: "True"
+  fullName: Lachee.Discord.Editor.SerializedPropertyExtensions.GetFieldInfoFromPath
+  nameWithType: SerializedPropertyExtensions.GetFieldInfoFromPath
+- uid: Lachee.Discord.Editor.SerializedPropertyExtensions.GetSerializedFieldInfo(SerializedProperty)
+  name: GetSerializedFieldInfo(SerializedProperty)
+  href: api/Lachee.Discord.Editor.SerializedPropertyExtensions.html#Lachee_Discord_Editor_SerializedPropertyExtensions_GetSerializedFieldInfo_SerializedProperty_
+  commentId: M:Lachee.Discord.Editor.SerializedPropertyExtensions.GetSerializedFieldInfo(SerializedProperty)
+  fullName: Lachee.Discord.Editor.SerializedPropertyExtensions.GetSerializedFieldInfo(SerializedProperty)
+  nameWithType: SerializedPropertyExtensions.GetSerializedFieldInfo(SerializedProperty)
+- uid: Lachee.Discord.Editor.SerializedPropertyExtensions.GetSerializedFieldInfo*
+  name: GetSerializedFieldInfo
+  href: api/Lachee.Discord.Editor.SerializedPropertyExtensions.html#Lachee_Discord_Editor_SerializedPropertyExtensions_GetSerializedFieldInfo_
+  commentId: Overload:Lachee.Discord.Editor.SerializedPropertyExtensions.GetSerializedFieldInfo
+  isSpec: "True"
+  fullName: Lachee.Discord.Editor.SerializedPropertyExtensions.GetSerializedFieldInfo
+  nameWithType: SerializedPropertyExtensions.GetSerializedFieldInfo
+- uid: Lachee.Discord.Editor.SerializedPropertyExtensions.GetSerializedType(SerializedProperty)
+  name: GetSerializedType(SerializedProperty)
+  href: api/Lachee.Discord.Editor.SerializedPropertyExtensions.html#Lachee_Discord_Editor_SerializedPropertyExtensions_GetSerializedType_SerializedProperty_
+  commentId: M:Lachee.Discord.Editor.SerializedPropertyExtensions.GetSerializedType(SerializedProperty)
+  fullName: Lachee.Discord.Editor.SerializedPropertyExtensions.GetSerializedType(SerializedProperty)
+  nameWithType: SerializedPropertyExtensions.GetSerializedType(SerializedProperty)
+- uid: Lachee.Discord.Editor.SerializedPropertyExtensions.GetSerializedType*
+  name: GetSerializedType
+  href: api/Lachee.Discord.Editor.SerializedPropertyExtensions.html#Lachee_Discord_Editor_SerializedPropertyExtensions_GetSerializedType_
+  commentId: Overload:Lachee.Discord.Editor.SerializedPropertyExtensions.GetSerializedType
+  isSpec: "True"
+  fullName: Lachee.Discord.Editor.SerializedPropertyExtensions.GetSerializedType
+  nameWithType: SerializedPropertyExtensions.GetSerializedType
+- uid: Lachee.Discord.Editor.SerializedPropertyExtensions.GetSerializedValue(SerializedProperty)
+  name: GetSerializedValue(SerializedProperty)
+  href: api/Lachee.Discord.Editor.SerializedPropertyExtensions.html#Lachee_Discord_Editor_SerializedPropertyExtensions_GetSerializedValue_SerializedProperty_
+  commentId: M:Lachee.Discord.Editor.SerializedPropertyExtensions.GetSerializedValue(SerializedProperty)
+  fullName: Lachee.Discord.Editor.SerializedPropertyExtensions.GetSerializedValue(SerializedProperty)
+  nameWithType: SerializedPropertyExtensions.GetSerializedValue(SerializedProperty)
+- uid: Lachee.Discord.Editor.SerializedPropertyExtensions.GetSerializedValue*
+  name: GetSerializedValue
+  href: api/Lachee.Discord.Editor.SerializedPropertyExtensions.html#Lachee_Discord_Editor_SerializedPropertyExtensions_GetSerializedValue_
+  commentId: Overload:Lachee.Discord.Editor.SerializedPropertyExtensions.GetSerializedValue
+  isSpec: "True"
+  fullName: Lachee.Discord.Editor.SerializedPropertyExtensions.GetSerializedValue
+  nameWithType: SerializedPropertyExtensions.GetSerializedValue
+- uid: Lachee.Discord.Editor.SerializedPropertyExtensions.GetValueFromPath(System.Type,System.Object,System.String,BindingFlags)
+  name: GetValueFromPath(Type, Object, String, BindingFlags)
+  href: api/Lachee.Discord.Editor.SerializedPropertyExtensions.html#Lachee_Discord_Editor_SerializedPropertyExtensions_GetValueFromPath_System_Type_System_Object_System_String_BindingFlags_
+  commentId: M:Lachee.Discord.Editor.SerializedPropertyExtensions.GetValueFromPath(System.Type,System.Object,System.String,BindingFlags)
+  fullName: Lachee.Discord.Editor.SerializedPropertyExtensions.GetValueFromPath(System.Type, System.Object, System.String, BindingFlags)
+  nameWithType: SerializedPropertyExtensions.GetValueFromPath(Type, Object, String, BindingFlags)
+- uid: Lachee.Discord.Editor.SerializedPropertyExtensions.GetValueFromPath*
+  name: GetValueFromPath
+  href: api/Lachee.Discord.Editor.SerializedPropertyExtensions.html#Lachee_Discord_Editor_SerializedPropertyExtensions_GetValueFromPath_
+  commentId: Overload:Lachee.Discord.Editor.SerializedPropertyExtensions.GetValueFromPath
+  isSpec: "True"
+  fullName: Lachee.Discord.Editor.SerializedPropertyExtensions.GetValueFromPath
+  nameWithType: SerializedPropertyExtensions.GetValueFromPath
 - uid: Lachee.Discord.Event
   name: Event
   href: api/Lachee.Discord.Event.html
@@ -1756,12 +1821,6 @@ references:
   commentId: T:Lachee.Discord.User
   fullName: Lachee.Discord.User
   nameWithType: User
-- uid: Lachee.Discord.User.#ctor
-  name: User()
-  href: api/Lachee.Discord.User.html#Lachee_Discord_User__ctor
-  commentId: M:Lachee.Discord.User.#ctor
-  fullName: Lachee.Discord.User.User()
-  nameWithType: User.User()
 - uid: Lachee.Discord.User.#ctor(DiscordRPC.User)
   name: User(DiscordRPC.User)
   href: api/Lachee.Discord.User.html#Lachee_Discord_User__ctor_DiscordRPC_User_
@@ -1820,45 +1879,6 @@ references:
   isSpec: "True"
   fullName: Lachee.Discord.User.avatarHash
   nameWithType: User.avatarHash
-- uid: Lachee.Discord.User.CacheAvatar(MonoBehaviour,Lachee.Discord.DiscordAvatarSize,Lachee.Discord.User.AvatarDownloadCallback)
-  name: CacheAvatar(MonoBehaviour, DiscordAvatarSize, User.AvatarDownloadCallback)
-  href: api/Lachee.Discord.User.html#Lachee_Discord_User_CacheAvatar_MonoBehaviour_Lachee_Discord_DiscordAvatarSize_Lachee_Discord_User_AvatarDownloadCallback_
-  commentId: M:Lachee.Discord.User.CacheAvatar(MonoBehaviour,Lachee.Discord.DiscordAvatarSize,Lachee.Discord.User.AvatarDownloadCallback)
-  fullName: Lachee.Discord.User.CacheAvatar(MonoBehaviour, Lachee.Discord.DiscordAvatarSize, Lachee.Discord.User.AvatarDownloadCallback)
-  nameWithType: User.CacheAvatar(MonoBehaviour, DiscordAvatarSize, User.AvatarDownloadCallback)
-- uid: Lachee.Discord.User.CacheAvatar*
-  name: CacheAvatar
-  href: api/Lachee.Discord.User.html#Lachee_Discord_User_CacheAvatar_
-  commentId: Overload:Lachee.Discord.User.CacheAvatar
-  isSpec: "True"
-  fullName: Lachee.Discord.User.CacheAvatar
-  nameWithType: User.CacheAvatar
-- uid: Lachee.Discord.User.CacheAvatarCoroutine(Lachee.Discord.DiscordAvatarSize,Lachee.Discord.User.AvatarDownloadCallback)
-  name: CacheAvatarCoroutine(DiscordAvatarSize, User.AvatarDownloadCallback)
-  href: api/Lachee.Discord.User.html#Lachee_Discord_User_CacheAvatarCoroutine_Lachee_Discord_DiscordAvatarSize_Lachee_Discord_User_AvatarDownloadCallback_
-  commentId: M:Lachee.Discord.User.CacheAvatarCoroutine(Lachee.Discord.DiscordAvatarSize,Lachee.Discord.User.AvatarDownloadCallback)
-  fullName: Lachee.Discord.User.CacheAvatarCoroutine(Lachee.Discord.DiscordAvatarSize, Lachee.Discord.User.AvatarDownloadCallback)
-  nameWithType: User.CacheAvatarCoroutine(DiscordAvatarSize, User.AvatarDownloadCallback)
-- uid: Lachee.Discord.User.CacheAvatarCoroutine*
-  name: CacheAvatarCoroutine
-  href: api/Lachee.Discord.User.html#Lachee_Discord_User_CacheAvatarCoroutine_
-  commentId: Overload:Lachee.Discord.User.CacheAvatarCoroutine
-  isSpec: "True"
-  fullName: Lachee.Discord.User.CacheAvatarCoroutine
-  nameWithType: User.CacheAvatarCoroutine
-- uid: Lachee.Discord.User.CacheDefaultAvatarCoroutine(Lachee.Discord.DiscordAvatarSize,Lachee.Discord.User.AvatarDownloadCallback)
-  name: CacheDefaultAvatarCoroutine(DiscordAvatarSize, User.AvatarDownloadCallback)
-  href: api/Lachee.Discord.User.html#Lachee_Discord_User_CacheDefaultAvatarCoroutine_Lachee_Discord_DiscordAvatarSize_Lachee_Discord_User_AvatarDownloadCallback_
-  commentId: M:Lachee.Discord.User.CacheDefaultAvatarCoroutine(Lachee.Discord.DiscordAvatarSize,Lachee.Discord.User.AvatarDownloadCallback)
-  fullName: Lachee.Discord.User.CacheDefaultAvatarCoroutine(Lachee.Discord.DiscordAvatarSize, Lachee.Discord.User.AvatarDownloadCallback)
-  nameWithType: User.CacheDefaultAvatarCoroutine(DiscordAvatarSize, User.AvatarDownloadCallback)
-- uid: Lachee.Discord.User.CacheDefaultAvatarCoroutine*
-  name: CacheDefaultAvatarCoroutine
-  href: api/Lachee.Discord.User.html#Lachee_Discord_User_CacheDefaultAvatarCoroutine_
-  commentId: Overload:Lachee.Discord.User.CacheDefaultAvatarCoroutine
-  isSpec: "True"
-  fullName: Lachee.Discord.User.CacheDefaultAvatarCoroutine
-  nameWithType: User.CacheDefaultAvatarCoroutine
 - uid: Lachee.Discord.User.CacheDirectory
   name: CacheDirectory
   href: api/Lachee.Discord.User.html#Lachee_Discord_User_CacheDirectory
@@ -1953,6 +1973,19 @@ references:
   isSpec: "True"
   fullName: Lachee.Discord.User.discriminator
   nameWithType: User.discriminator
+- uid: Lachee.Discord.User.displayName
+  name: displayName
+  href: api/Lachee.Discord.User.html#Lachee_Discord_User_displayName
+  commentId: P:Lachee.Discord.User.displayName
+  fullName: Lachee.Discord.User.displayName
+  nameWithType: User.displayName
+- uid: Lachee.Discord.User.displayName*
+  name: displayName
+  href: api/Lachee.Discord.User.html#Lachee_Discord_User_displayName_
+  commentId: Overload:Lachee.Discord.User.displayName
+  isSpec: "True"
+  fullName: Lachee.Discord.User.displayName
+  nameWithType: User.displayName
 - uid: Lachee.Discord.User.Equals(System.Object)
   name: Equals(Object)
   href: api/Lachee.Discord.User.html#Lachee_Discord_User_Equals_System_Object_
@@ -1972,12 +2005,6 @@ references:
   commentId: M:Lachee.Discord.User.GetAvatar(Lachee.Discord.DiscordAvatarSize,Lachee.Discord.User.AvatarDownloadCallback)
   fullName: Lachee.Discord.User.GetAvatar(Lachee.Discord.DiscordAvatarSize, Lachee.Discord.User.AvatarDownloadCallback)
   nameWithType: User.GetAvatar(DiscordAvatarSize, User.AvatarDownloadCallback)
-- uid: Lachee.Discord.User.GetAvatar(MonoBehaviour,Lachee.Discord.DiscordAvatarSize,Lachee.Discord.User.AvatarDownloadCallback)
-  name: GetAvatar(MonoBehaviour, DiscordAvatarSize, User.AvatarDownloadCallback)
-  href: api/Lachee.Discord.User.html#Lachee_Discord_User_GetAvatar_MonoBehaviour_Lachee_Discord_DiscordAvatarSize_Lachee_Discord_User_AvatarDownloadCallback_
-  commentId: M:Lachee.Discord.User.GetAvatar(MonoBehaviour,Lachee.Discord.DiscordAvatarSize,Lachee.Discord.User.AvatarDownloadCallback)
-  fullName: Lachee.Discord.User.GetAvatar(MonoBehaviour, Lachee.Discord.DiscordAvatarSize, Lachee.Discord.User.AvatarDownloadCallback)
-  nameWithType: User.GetAvatar(MonoBehaviour, DiscordAvatarSize, User.AvatarDownloadCallback)
 - uid: Lachee.Discord.User.GetAvatar*
   name: GetAvatar
   href: api/Lachee.Discord.User.html#Lachee_Discord_User_GetAvatar_
@@ -2046,6 +2073,15 @@ references:
   fullName.vb: Lachee.Discord.User.Widening(DiscordRPC.User to Lachee.Discord.User)
   nameWithType: User.Implicit(DiscordRPC.User to User)
   nameWithType.vb: User.Widening(DiscordRPC.User to User)
+- uid: Lachee.Discord.User.op_Implicit(Lachee.Discord.User)~DiscordRPC.User
+  name: Implicit(User to DiscordRPC.User)
+  href: api/Lachee.Discord.User.html#Lachee_Discord_User_op_Implicit_Lachee_Discord_User__DiscordRPC_User
+  commentId: M:Lachee.Discord.User.op_Implicit(Lachee.Discord.User)~DiscordRPC.User
+  name.vb: Widening(User to DiscordRPC.User)
+  fullName: Lachee.Discord.User.Implicit(Lachee.Discord.User to DiscordRPC.User)
+  fullName.vb: Lachee.Discord.User.Widening(Lachee.Discord.User to DiscordRPC.User)
+  nameWithType: User.Implicit(User to DiscordRPC.User)
+  nameWithType.vb: User.Widening(User to DiscordRPC.User)
 - uid: Lachee.Discord.User.op_Implicit*
   name: Implicit
   href: api/Lachee.Discord.User.html#Lachee_Discord_User_op_Implicit_
