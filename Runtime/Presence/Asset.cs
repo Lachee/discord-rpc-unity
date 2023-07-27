@@ -13,8 +13,8 @@ namespace Lachee.Discord
 		/// The key of the image to be displayed.
 		/// <para>Max 32 Bytes.</para>
 		/// </summary>
-		[CharacterLimit(32, enforce = true)]
-		[Tooltip("The key of the image to be displayed in the large square.")]
+		[CharacterLimit(256, enforce = true)]
+		[Tooltip("The key or URL of the image to be displayed in the large square.")]
 		public string image;
 
 		/// <summary>
@@ -22,7 +22,7 @@ namespace Lachee.Discord
 		/// <para>Max 128 Bytes.</para>
 		/// </summary>
 		[CharacterLimit(128, enforce = true)]
-		[Tooltip("The tooltip of the large image.")]
+		[Tooltip("The tooltip of the image.")]
 		public string tooltip;
 
 		[Tooltip("Snowflake ID of the image.")]

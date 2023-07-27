@@ -17,18 +17,11 @@ namespace Lachee.Discord.Editor
 			EditorGUI.indentLevel = 0;
 			{
 				SerializedProperty foldout = prop.FindPropertyRelative("e_foldout");
-				SerializedProperty avatar = prop.FindPropertyRelative("_avatar");
-				SerializedProperty name = prop.FindPropertyRelative("_username");
-				SerializedProperty discrim = prop.FindPropertyRelative("_discriminator");
-				SerializedProperty snowflake = prop.FindPropertyRelative("_snowflake");
 
-				SerializedProperty cacheSize = prop.FindPropertyRelative("_cacheSize");
-				SerializedProperty cacheFormat = prop.FindPropertyRelative("_cacheFormat");
-				SerializedProperty avatarHash = prop.FindPropertyRelative("_avatarHash");
+				User user = prop.GetSerializedValue() as User;
+				if (user == null) return;
 
-
-
-				string displayName = "@" + name.stringValue + "#" + discrim.intValue.ToString("D4");
+				string displayName = user.ToString();
 
 				Rect imageRectangle = new Rect(16, 16, 108, 108);
 				imageRectangle.position += pos.position;
@@ -45,7 +38,7 @@ namespace Lachee.Discord.Editor
 				//Draw the label then the left over space it gave us
 				if (foldout.boolValue = EditorGUI.Foldout(new Rect(pos.x, pos.y, pos.width, EditorGUIUtility.singleLineHeight), foldout.boolValue, label))
 				{
-					DrawAvatar(imageRectangle, avatar);
+					DrawAvatar(imageRectangle, user.avatar);
 
 					DrawRect(usernameRectangle, Color.green);
 					DrawRect(snowflakeRectange, Color.white);
@@ -55,25 +48,25 @@ namespace Lachee.Discord.Editor
 
 					EditorGUI.LabelField(usernameRectangle, new GUIContent(displayName));
 
-					if (snowflake.longValue != 0)
-						EditorGUI.LabelField(snowflakeRectange, new GUIContent("(" + snowflake.longValue.ToString() + ")"));
+					if (user.ID != 0)
+						EditorGUI.LabelField(snowflakeRectange, new GUIContent("(" + user.ID.ToString() + ")"));
 
-					EditorGUI.LabelField(cacheSizeRectangle, new GUIContent(cacheSize.intValue + " x " + cacheSize.intValue + ", " + cacheFormat.enumNames[cacheFormat.enumValueIndex]));
-					EditorGUI.LabelField(avatarHashRectangle, new GUIContent(avatarHash.stringValue));
+					EditorGUI.LabelField(cacheSizeRectangle, new GUIContent($"{user.cacheSize} x {user.cacheSize}, {user.cacheFormat}"));
+					EditorGUI.LabelField(avatarHashRectangle, new GUIContent(user.avatarHash));
 				}
 			}
 			EditorGUI.indentLevel = indent;
 		}
 
 		/// <summary>Draws the avatar box </summary>
-		private void DrawAvatar(Rect position, SerializedProperty avatarProperty)
+		private void DrawAvatar(Rect position, Texture2D avatarProperty)
 		{ 
 			//Draw the backing colour
 			EditorGUI.HelpBox(position, "", MessageType.None);
 
 			//Draw the avatar if we have one
-			if (avatarProperty != null && avatarProperty.objectReferenceValue != null)
-				EditorGUI.DrawTextureTransparent(position, avatarProperty.objectReferenceValue as Texture2D, ScaleMode.ScaleToFit);
+			if (avatarProperty != null)
+				EditorGUI.DrawTextureTransparent(position, avatarProperty, ScaleMode.ScaleToFit);
 		}
 
 		private void DrawRect(Rect rect, Color color)

@@ -1,4 +1,6 @@
-﻿using System.Collections;
+﻿using Newtonsoft.Json;
+using System;
+using System.Collections;
 using System.IO;
 using UnityEngine;
 
@@ -8,9 +10,6 @@ using UnityEngine.Networking;
 
 namespace Lachee.Discord
 {
-    [System.Obsolete("The word Discord has been removed from types", true)]
-    public sealed class DiscordUser { }
-
     [System.Serializable]
     public sealed class User
     {
@@ -51,57 +50,62 @@ namespace Lachee.Discord
         /// </summary>
         public static DiscordAvatarFormat AvatarFormat { get; set; }
 
+
+        private DiscordRPC.User _user;
+
         /// <summary>
         /// The username of the Discord user
         /// </summary>
-        public string username { get { return _username; } }
-        [SerializeField] private string _username;
+        public string username => _user?.Username;
 
         /// <summary>
-        /// The discriminator of the Discord user
+        /// The display name of the user
         /// </summary>
-        public int discriminator { get { return _discriminator; } }
-        [SerializeField] private int _discriminator;
+        /// <remarks>This will be empty if the user has not set a global display name.</remarks>
+        public string displayName => _user?.DisplayName;
+
+        /// <summary>
+        /// The discriminator of the user.
+        /// </summary>
+        /// <remarks>If the user has migrated to unique a <see cref="username"/>, the discriminator will always be 0.</remarks>
+        [Obsolete("Discord no longer uses discriminators.")]
+        public int discriminator => (_user?.Discriminator).GetValueOrDefault();
 
         /// <summary>
         /// The discriminator in a nicely formatted string.
         /// </summary>
-        public string discrim { get { return "#" + _discriminator.ToString("D4"); } }
+        [Obsolete("Discord no longer uses discriminators.")]
+        public string discrim { get { return "#" + discriminator.ToString("D4"); } }
 
         /// <summary>
         /// The unique snowflake ID of the Discord user
         /// </summary>
-        public ulong ID { get { return _snowflake; } }
-        [SerializeField] private ulong _snowflake;
+        public ulong ID => (_user?.ID).GetValueOrDefault();
 
         /// <summary>
         /// The hash of the users avatar. Used to generate the URL's
         /// </summary>
-        public string avatarHash { get { return _avatarHash; } }
-        [SerializeField] private string _avatarHash;
+        public string avatarHash => (_user?.Avatar);
 
         /// <summary>
         /// The current avatar cache. Will return null until <see cref="GetAvatarCoroutine(DiscordAvatarSize, AvatarDownloadCallback)"/> is called.
         /// </summary>
-        public Texture2D avatar { get { return _avatar; } }
-        [SerializeField] private Texture2D _avatar;
+        public Texture2D avatar { get; private set; }
 
         /// <summary>
         /// The size of the currently cached avatar
         /// </summary>
-        public DiscordAvatarSize cacheSize { get { return _cacheSize; } }
-        [SerializeField] private DiscordAvatarSize _cacheSize;
+        public DiscordAvatarSize cacheSize { get; private set; }
 
         /// <summary>
         /// The format of the currently cached avatar
         /// </summary>
-        public DiscordAvatarFormat cacheFormat { get { return _cacheFormat; } }
-        [SerializeField] private DiscordAvatarFormat _cacheFormat;
+        public DiscordAvatarFormat cacheFormat { get; private set; }
 
         /// <summary>
         /// The current URL for the discord avatars
         /// </summary>
-        [SerializeField] private string _cdnEndpoint = "";
+        private string cdnEndpoint => _user?.CdnEndpoint;
 
 #if UNITY_EDITOR
 #pragma warning disable 0414
@@ -111,25 +115,9 @@ namespace Lachee.Discord
 #pragma warning restore 0414
 #endif
 
-        public User()
-        {
-            _username = "Clyde";
-            _discriminator = 1;
-            _snowflake = 0;
-            _avatarHash = "";
-            _avatar = null;
-            _cacheSize = DiscordAvatarSize.x128;
-            _cacheFormat = User.AvatarFormat;
-            _cdnEndpoint = "cdn.discordapp.com";
-        }
-
         public User(DiscordRPC.User user)
         {
-            _username = user.Username;
-            _discriminator = user.Discriminator;
-            _snowflake = user.ID;
-            _avatarHash = user.Avatar;
-            _cdnEndpoint = user.CdnEndpoint;
+            _user = user;
         }
 
         /// <summary>
@@ -138,12 +126,6 @@ namespace Lachee.Discord
         /// <param name="user">The user the avatar belongs too</param>
         /// <param name="avatar">The avatar that was downloaded</param>
         public delegate void AvatarDownloadCallback(User user, Texture2D avatar);
-
-        [System.Obsolete("coroutine caller has been replaced with just the DiscordManager")]
-        public void GetAvatar(MonoBehaviour coroutineCaller, DiscordAvatarSize size = DiscordAvatarSize.x128, AvatarDownloadCallback callback = null)
-        {
-            coroutineCaller.StartCoroutine(GetAvatarCoroutine(size, callback));
-        }
 
         /// <summary>
         /// Gets the user avatar as a Texture2D and starts it with the supplied monobehaviour. It will first check the cache if the image exists, if it does it will return the image. Otherwise it will download the image from Discord and store it in the cache, calling the callback once done.
@@ -166,17 +148,17 @@ namespace Lachee.Discord
         /// <returns></returns>
         public IEnumerator GetAvatarCoroutine(DiscordAvatarSize size = DiscordAvatarSize.x128, AvatarDownloadCallback callback = null)
         {
-            if (_avatar != null)
+            if (avatar != null)
             {
                 //Execute the callback (if any)
                 if (callback != null)
-                    callback.Invoke(this, _avatar);
+                    callback.Invoke(this, avatar);
 
                 //Stop here, we did all we need to do
                 yield break;
             }
 
-            if (string.IsNullOrEmpty(_avatarHash))
+            if (string.IsNullOrEmpty(avatarHash))
             {
                 yield return GetDefaultAvatarCoroutine(size, callback);
             }
@@ -207,8 +189,6 @@ namespace Lachee.Discord
                 //Check if the file exists and we have caching enabled
                 if (CacheLevel != CacheLevelFlag.None && File.Exists(path))
                 {
-                    Debug.Log("<color=#FA0B0F>Read Cache:</color> " + path);
-
                     //Load the image
                     var bytes = File.ReadAllBytes(path);
                     avatarTexture.LoadImage(bytes);
@@ -252,9 +232,9 @@ namespace Lachee.Discord
                 if (avatarTexture != null)
                 {
                     CacheAvatarTexture(avatarTexture, path);
-                    _avatar = avatarTexture;
-                    _cacheFormat = User.AvatarFormat;
-                    _cacheSize = size;
+                    avatar = avatarTexture;
+                    cacheFormat = User.AvatarFormat;
+                    cacheSize = size;
 
                     //Execute the callback (if any)
                     if (callback != null)
@@ -272,8 +252,6 @@ namespace Lachee.Discord
                 //Create the directory if it doesnt already exist
                 if (!Directory.Exists(CacheDirectory))
                     Directory.CreateDirectory(CacheDirectory);
-
-                Debug.Log("<color=#FA0B0F>Saving Cache:</color> " + path);
 
                 //Encode the image
                 byte[] bytes;
@@ -306,9 +284,14 @@ namespace Lachee.Discord
         /// <returns></returns>
         public IEnumerator GetDefaultAvatarCoroutine(DiscordAvatarSize size = DiscordAvatarSize.x128, AvatarDownloadCallback callback = null)
         {
-            //Calculate the discrim number and prepare the cache path
-            int discrim = discriminator % 5;
+            //Calculate the discrim number and prepare the cache path            
             string path = null;
+            int index = (int)((ID >> 22) % 6);
+
+#pragma warning disable CS0618 // Disable the obsolete warning as we know the discriminator is obsolete and we are validating it here.
+            if (discriminator > 0)
+                index = discriminator % 5;
+#pragma warning restore CS0618
 
             //Update the default cache just incase its null
             if (CacheLevel != CacheLevelFlag.None)
@@ -320,7 +303,7 @@ namespace Lachee.Discord
                 bool cacheSize = (CacheLevel & CacheLevelFlag.Size) == CacheLevelFlag.Size;
                 if (!cacheSize) size = DiscordAvatarSize.x512;
 
-                string filename = string.Format("default-{0}{1}.png", discrim, cacheSize ? size.ToString() : "");
+                string filename = string.Format("default-{0}{1}.png", index, cacheSize ? size.ToString() : "");
                 path = Path.Combine(CacheDirectory, filename);
             }
 
@@ -336,7 +319,7 @@ namespace Lachee.Discord
             }
             else
             {
-                string url = string.Format("https://{0}/embed/avatars/{1}.png?size={2}", _cdnEndpoint, discrim, (int)size);
+                string url = string.Format("https://{0}/embed/avatars/{1}.png?size={2}", cdnEndpoint, index, (int)size);
 
 #if UNITY_2017_4_OR_NEWER
                 using (UnityWebRequest req = UnityWebRequestTexture.GetTexture(url))
@@ -381,13 +364,13 @@ namespace Lachee.Discord
             }
 
             //Apply our avatar and update our cache
-            _avatar = avatarTexture;
-            _cacheFormat = DiscordAvatarFormat.PNG;
-            _cacheSize = size;
+            avatar = avatarTexture;
+            cacheFormat = DiscordAvatarFormat.PNG;
+            cacheSize = size;
 
             //Execute the callback (if any)
             if (callback != null)
-                callback.Invoke(this, _avatar);
+                callback.Invoke(this, avatar);
         }
 
         /// <summary>
@@ -398,46 +381,35 @@ namespace Lachee.Discord
             if (CacheDirectory == null)
                 CacheDirectory = Application.dataPath + "/Discord Rpc/Cache";
         }
-
-        #region Obsolete Functions
-        [System.Obsolete("Now known as GetAvatar instead.")]
-        public void CacheAvatar(MonoBehaviour coroutineCaller, DiscordAvatarSize size = DiscordAvatarSize.x128, AvatarDownloadCallback callback = null) { GetAvatar(coroutineCaller, size, callback); }
-
-        [System.Obsolete("Now known as GetAvatarCoroutine instead.")]
-        public IEnumerator CacheAvatarCoroutine(DiscordAvatarSize size = DiscordAvatarSize.x128, AvatarDownloadCallback callback = null) { return GetAvatarCoroutine(size, callback); }
-
-        [System.Obsolete("Now known as GetAGetDefaultAvatarCoroutinevatar instead.")]
-        public IEnumerator CacheDefaultAvatarCoroutine(DiscordAvatarSize size = DiscordAvatarSize.x128, AvatarDownloadCallback callback = null) { return GetDefaultAvatarCoroutine(size, callback); }
-        #endregion
-
+       
+        /// <summary>
+        /// Gets a URL that can be used to download the user's avatar. If the user has not yet set their avatar, it will return the default one that discord is using. The default avatar only supports the <see cref="AvatarFormat.PNG"/> format.
+        /// </summary>
+        /// <param name="format">The format of the target avatar</param>
+        /// <param name="size">The optional size of the avatar you wish for.</param>
+        /// <returns>URL to the discord CDN for the particular avatar</returns>
         private string GetAvatarURL(DiscordAvatarFormat format, DiscordAvatarSize size)
         {
-            //Prepare the endpoint
-            string endpoint = "/avatars/" + _snowflake + "/" + _avatarHash;
-
-            //The user has no avatar, so we better replace it with the default
-            if (string.IsNullOrEmpty(_avatarHash))
-            {
-                //Make sure we are only using PNG
-                if (format != DiscordAvatarFormat.PNG)
-                    throw new System.BadImageFormatException("The user has no avatar and the requested format " + format.ToString() + " is not supported. (Only supports PNG).");
-
-                //Get the endpoint
-                int descrim = _discriminator % 5;
-                endpoint = "/embed/avatars/" + descrim;
-            }
-
-            //Finish of the endpoint
-            return string.Format("https://{0}{1}.{2}?size={3}", this._cdnEndpoint, endpoint, format.ToString().ToLower(), (int)size);
+            return _user.GetAvatarURL(format == DiscordAvatarFormat.PNG ? DiscordRPC.User.AvatarFormat.PNG : DiscordRPC.User.AvatarFormat.JPEG, (DiscordRPC.User.AvatarSize)size);
         }
 
-        public override string ToString() { return "@" + username + discrim + " (" + _snowflake + ")"; }
+        /// <summary>
+        /// Formats the user into a displayable format. If the user has a <see cref="displayName"/>, then this will be used.
+        /// <para>If the user still has a discriminator, then this will return the form of `Username#Discriminator`.</para>
+        /// </summary>
+        /// <returns>String of the user that can be used for display.</returns>
+        public override string ToString()
+        {
+            if (_user == null) return "N/A";
+            return _user.ToString();
+        }
 
         /// <summary>
         /// Implicit casting from a DiscordRPC.User to a DiscordUser
         /// </summary>
         /// <param name="user"></param>
         public static implicit operator User(DiscordRPC.User user) { return new User(user); }
+        public static implicit operator DiscordRPC.User(User user) { return user._user; }
 
         public override int GetHashCode()
         {
@@ -499,22 +471,6 @@ namespace Lachee.Discord
     /// </summary>
     public static class DiscordUserExtension
     {
-        /// <summary>
-        /// Gets the user avatar as a Texture2D and starts it with the supplied monobehaviour. It will first check the cache if the image exists, if it does it will return the image. Otherwise it will download the image from Discord and store it in the cache, calling the callback once done.
-        /// <para>An alias of <see cref="User.CacheAvatar(MonoBehaviour, DiscordAvatarSize, AvatarDownloadCallback)"/> and will return the new <see cref="User"/> instance.</para>
-        /// </summary>
-        /// <param name="coroutineCaller">The target object that will start the coroutine</param>
-        /// <param name="size">The target size of the avatar. Default is 128x128</param>
-        /// <param name="callback">The callback for when the texture completes. Default is no-callback, but its highly recommended to use a callback</param>
-        /// <returns>Returns the generated <see cref="User"/> for this <see cref="DiscordRPC.User"/> object.</returns>
-        [System.Obsolete]
-        public static User GetAvatar(this DiscordRPC.User user, MonoBehaviour coroutineCaller, DiscordAvatarSize size = DiscordAvatarSize.x128, User.AvatarDownloadCallback callback = null)
-        {
-            var du = new User(user);
-            du.GetAvatar(coroutineCaller, size, callback);
-            return du;
-        }
-
         /// <summary>
         /// Gets the user avatar as a Texture2D and starts it with the supplied monobehaviour. It will first check the cache if the image exists, if it does it will return the image. Otherwise it will download the image from Discord and store it in the cache, calling the callback once done.
         /// <para>An alias of <see cref="User.CacheAvatar(MonoBehaviour, DiscordAvatarSize, AvatarDownloadCallback)"/> and will return the new <see cref="User"/> instance.</para>

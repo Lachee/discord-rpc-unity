@@ -19,9 +19,9 @@
             The CDN endpoint
             </summary>
         </member>
-        <member name="P:DiscordRPC.Configuration.Enviroment">
+        <member name="P:DiscordRPC.Configuration.Environment">
             <summary>
-            The type of enviroment the connection on. Usually Production. 
+            The type of environment the connection on. Usually Production. 
             </summary>
         </member>
         <member name="T:DiscordRPC.Converters.EnumSnakeCaseConverter">
@@ -809,13 +809,13 @@
         </member>
         <member name="M:DiscordRPC.IO.ManagedNamedPipeClient.GetPipeSandbox">
             <summary>
-            Gets the name of the possible sandbox enviroment the pipe might be located within. If the platform doesn't support sandboxed Discord, then it will return null.
+            Gets the name of the possible sandbox environment the pipe might be located within. If the platform doesn't support sandboxed Discord, then it will return null.
             </summary>
             <returns></returns>
         </member>
         <member name="M:DiscordRPC.IO.ManagedNamedPipeClient.GetTemporaryDirectory">
             <summary>
-            Gets the temporary path for the current enviroment. Only applicable for UNIX based systems.
+            Gets the temporary path for the current environment. Only applicable for UNIX based systems.
             </summary>
             <returns></returns>
         </member>
@@ -1715,6 +1715,7 @@
             Name of the uploaded image for the large profile artwork.
             <para>Max 256 Bytes.</para>
             </summary>
+            <remarks>Allows URL to directly link to images.</remarks>
         </member>
         <member name="P:DiscordRPC.Assets.IsLargeImageKeyExternal">
             <summary>
@@ -1732,6 +1733,7 @@
             Name of the uploaded image for the small profile artwork.
             <para>Max 256 Bytes.</para>
             </summary>
+            <remarks>Allows URL to directly link to images.</remarks>
         </member>
         <member name="P:DiscordRPC.Assets.IsSmallImageKeyExternal">
             <summary>
@@ -2472,6 +2474,13 @@
             <summary>
             The discriminator of the user.
             </summary>
+            <remarks>If the user has migrated to unique a <see cref="P:DiscordRPC.User.Username"/>, the discriminator will always be 0.</remarks>
+        </member>
+        <member name="P:DiscordRPC.User.DisplayName">
+            <summary>
+            The display name of the user
+            </summary>
+            <remarks>This will be empty if the user has not set a global display name.</remarks>
         </member>
         <member name="P:DiscordRPC.User.Avatar">
             <summary>
@@ -2580,9 +2589,10 @@
         </member>
         <member name="M:DiscordRPC.User.ToString">
             <summary>
-            Formats the user into username#discriminator
+            Formats the user into a displayable format. If the user has a <see cref="P:DiscordRPC.User.DisplayName"/>, then this will be used.
+            <para>If the user still has a discriminator, then this will return the form of `Username#Discriminator`.</para>
             </summary>
-            <returns></returns>
+            <returns>String of the user that can be used for display.</returns>
         </member>
     </members>
 </doc>
