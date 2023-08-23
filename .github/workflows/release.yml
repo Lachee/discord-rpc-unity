@@ -32,11 +32,11 @@ jobs:
           dotnet tools/UnityPackageExporter.dll \
             ./ \
             discord-rpc-unity.unitypackage \
+            --sub-folder "DiscordRPC"
             --exclude "tools" \
-            --exclude "Samples~" \
-            --exclude "Documentation~" \
+            --exclude "*~" \
             --exclude ".*" \
-            --assets "**/*" \
+            --exclude "*.unitypackage" \
             --skip-dependency-check \
             -r .
         

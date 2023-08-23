@@ -8,7 +8,7 @@
   "changelogUrl": "https://github.com/Lachee/discord-rpc-unity/commits/master",
   "license": "MIT",
   "dependencies": {
-    "com.unity.nuget.newtonsoft-json": "3.0.2"
+    "com.unity.nuget.newtonsoft-json": "3.0.3"
   },
   "samples": [
     {
