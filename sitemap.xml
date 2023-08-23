@@ -2,385 +2,385 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://lachee.github.io/unity-utilities/api/Lachee.Discord.Asset.html</loc>
-    <lastmod>2023-08-23T07:19:50+00:00</lastmod>
+    <lastmod>2023-08-23T07:22:09+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://lachee.github.io/unity-utilities/api/Lachee.Discord.Attributes.CharacterLimitAttribute.html</loc>
-    <lastmod>2023-08-23T07:19:50+00:00</lastmod>
+    <lastmod>2023-08-23T07:22:09+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://lachee.github.io/unity-utilities/api/Lachee.Discord.Attributes.html</loc>
-    <lastmod>2023-08-23T07:19:50+00:00</lastmod>
+    <lastmod>2023-08-23T07:22:09+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://lachee.github.io/unity-utilities/api/Lachee.Discord.Button.html</loc>
-    <lastmod>2023-08-23T07:19:50+00:00</lastmod>
+    <lastmod>2023-08-23T07:22:09+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://lachee.github.io/unity-utilities/api/Lachee.Discord.Control.MessageEvents.CloseMessageEvent.html</loc>
-    <lastmod>2023-08-23T07:19:50+00:00</lastmod>
+    <lastmod>2023-08-23T07:22:09+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://lachee.github.io/unity-utilities/api/Lachee.Discord.Control.MessageEvents.ConnectionEstablishedMessageEvent.html</loc>
-    <lastmod>2023-08-23T07:19:50+00:00</lastmod>
+    <lastmod>2023-08-23T07:22:09+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://lachee.github.io/unity-utilities/api/Lachee.Discord.Control.MessageEvents.ConnectionFailedMessageEvent.html</loc>
-    <lastmod>2023-08-23T07:19:50+00:00</lastmod>
+    <lastmod>2023-08-23T07:22:09+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://lachee.github.io/unity-utilities/api/Lachee.Discord.Control.MessageEvents.ErrorMessageEvent.html</loc>
-    <lastmod>2023-08-23T07:19:50+00:00</lastmod>
+    <lastmod>2023-08-23T07:22:09+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://lachee.github.io/unity-utilities/api/Lachee.Discord.Control.MessageEvents.JoinMessageEvent.html</loc>
-    <lastmod>2023-08-23T07:19:50+00:00</lastmod>
+    <lastmod>2023-08-23T07:22:09+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://lachee.github.io/unity-utilities/api/Lachee.Discord.Control.MessageEvents.JoinRequestMessageEvent.html</loc>
-    <lastmod>2023-08-23T07:19:50+00:00</lastmod>
+    <lastmod>2023-08-23T07:22:09+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://lachee.github.io/unity-utilities/api/Lachee.Discord.Control.MessageEvents.PresenceMessageEvent.html</loc>
-    <lastmod>2023-08-23T07:19:50+00:00</lastmod>
+    <lastmod>2023-08-23T07:22:09+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://lachee.github.io/unity-utilities/api/Lachee.Discord.Control.MessageEvents.ReadyMessageEvent.html</loc>
-    <lastmod>2023-08-23T07:19:50+00:00</lastmod>
+    <lastmod>2023-08-23T07:22:09+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://lachee.github.io/unity-utilities/api/Lachee.Discord.Control.MessageEvents.SpectateMessageEvent.html</loc>
-    <lastmod>2023-08-23T07:19:50+00:00</lastmod>
+    <lastmod>2023-08-23T07:22:09+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://lachee.github.io/unity-utilities/api/Lachee.Discord.Control.MessageEvents.SubscribeMessageEvent.html</loc>
-    <lastmod>2023-08-23T07:19:50+00:00</lastmod>
+    <lastmod>2023-08-23T07:22:09+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://lachee.github.io/unity-utilities/api/Lachee.Discord.Control.MessageEvents.UnsubscribeMessageEvent.html</loc>
-    <lastmod>2023-08-23T07:19:50+00:00</lastmod>
+    <lastmod>2023-08-23T07:22:09+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://lachee.github.io/unity-utilities/api/Lachee.Discord.Control.MessageEvents.html</loc>
-    <lastmod>2023-08-23T07:19:50+00:00</lastmod>
+    <lastmod>2023-08-23T07:22:09+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://lachee.github.io/unity-utilities/api/Lachee.Discord.Control.UnityLogger.html</loc>
-    <lastmod>2023-08-23T07:19:50+00:00</lastmod>
+    <lastmod>2023-08-23T07:22:09+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://lachee.github.io/unity-utilities/api/Lachee.Discord.Control.html</loc>
-    <lastmod>2023-08-23T07:19:50+00:00</lastmod>
+    <lastmod>2023-08-23T07:22:09+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://lachee.github.io/unity-utilities/api/Lachee.Discord.DiscordAsset.html</loc>
-    <lastmod>2023-08-23T07:19:50+00:00</lastmod>
+    <lastmod>2023-08-23T07:22:09+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://lachee.github.io/unity-utilities/api/Lachee.Discord.DiscordAvatarFormat.html</loc>
-    <lastmod>2023-08-23T07:19:50+00:00</lastmod>
+    <lastmod>2023-08-23T07:22:09+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://lachee.github.io/unity-utilities/api/Lachee.Discord.DiscordAvatarSize.html</loc>
-    <lastmod>2023-08-23T07:19:50+00:00</lastmod>
+    <lastmod>2023-08-23T07:22:09+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://lachee.github.io/unity-utilities/api/Lachee.Discord.DiscordButton.html</loc>
-    <lastmod>2023-08-23T07:19:50+00:00</lastmod>
+    <lastmod>2023-08-23T07:22:09+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://lachee.github.io/unity-utilities/api/Lachee.Discord.DiscordManager.Pipe.html</loc>
-    <lastmod>2023-08-23T07:19:50+00:00</lastmod>
+    <lastmod>2023-08-23T07:22:09+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://lachee.github.io/unity-utilities/api/Lachee.Discord.DiscordManager.html</loc>
-    <lastmod>2023-08-23T07:19:50+00:00</lastmod>
+    <lastmod>2023-08-23T07:22:09+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://lachee.github.io/unity-utilities/api/Lachee.Discord.DiscordParty.html</loc>
-    <lastmod>2023-08-23T07:19:50+00:00</lastmod>
+    <lastmod>2023-08-23T07:22:09+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://lachee.github.io/unity-utilities/api/Lachee.Discord.DiscordPresence.html</loc>
-    <lastmod>2023-08-23T07:19:50+00:00</lastmod>
+    <lastmod>2023-08-23T07:22:09+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://lachee.github.io/unity-utilities/api/Lachee.Discord.DiscordSecrets.html</loc>
-    <lastmod>2023-08-23T07:19:50+00:00</lastmod>
+    <lastmod>2023-08-23T07:22:09+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://lachee.github.io/unity-utilities/api/Lachee.Discord.DiscordTimestamp.html</loc>
-    <lastmod>2023-08-23T07:19:50+00:00</lastmod>
+    <lastmod>2023-08-23T07:22:09+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://lachee.github.io/unity-utilities/api/Lachee.Discord.DiscordUserExtension.html</loc>
-    <lastmod>2023-08-23T07:19:50+00:00</lastmod>
+    <lastmod>2023-08-23T07:22:09+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://lachee.github.io/unity-utilities/api/Lachee.Discord.Editor.SerializedPropertyExtensions.html</loc>
-    <lastmod>2023-08-23T07:19:50+00:00</lastmod>
+    <lastmod>2023-08-23T07:22:09+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://lachee.github.io/unity-utilities/api/Lachee.Discord.Editor.html</loc>
-    <lastmod>2023-08-23T07:19:50+00:00</lastmod>
+    <lastmod>2023-08-23T07:22:09+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://lachee.github.io/unity-utilities/api/Lachee.Discord.Event.html</loc>
-    <lastmod>2023-08-23T07:19:50+00:00</lastmod>
+    <lastmod>2023-08-23T07:22:09+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://lachee.github.io/unity-utilities/api/Lachee.Discord.EventExtension.html</loc>
-    <lastmod>2023-08-23T07:19:50+00:00</lastmod>
+    <lastmod>2023-08-23T07:22:09+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://lachee.github.io/unity-utilities/api/Lachee.Discord.Events.JoinRequestEvent.html</loc>
-    <lastmod>2023-08-23T07:19:50+00:00</lastmod>
+    <lastmod>2023-08-23T07:22:09+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://lachee.github.io/unity-utilities/api/Lachee.Discord.Events.PresenceEvent.html</loc>
-    <lastmod>2023-08-23T07:19:50+00:00</lastmod>
+    <lastmod>2023-08-23T07:22:09+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://lachee.github.io/unity-utilities/api/Lachee.Discord.Events.ReadyEvent.html</loc>
-    <lastmod>2023-08-23T07:19:50+00:00</lastmod>
+    <lastmod>2023-08-23T07:22:09+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://lachee.github.io/unity-utilities/api/Lachee.Discord.Events.UnityCloseEvent.html</loc>
-    <lastmod>2023-08-23T07:19:50+00:00</lastmod>
+    <lastmod>2023-08-23T07:22:09+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://lachee.github.io/unity-utilities/api/Lachee.Discord.Events.UnityConnectionEstablishedEvent.html</loc>
-    <lastmod>2023-08-23T07:19:50+00:00</lastmod>
+    <lastmod>2023-08-23T07:22:09+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://lachee.github.io/unity-utilities/api/Lachee.Discord.Events.UnityConnectionFailedEvent.html</loc>
-    <lastmod>2023-08-23T07:19:50+00:00</lastmod>
+    <lastmod>2023-08-23T07:22:09+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://lachee.github.io/unity-utilities/api/Lachee.Discord.Events.UnityErrorEvent.html</loc>
-    <lastmod>2023-08-23T07:19:50+00:00</lastmod>
+    <lastmod>2023-08-23T07:22:09+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://lachee.github.io/unity-utilities/api/Lachee.Discord.Events.UnityJoinEvent.html</loc>
-    <lastmod>2023-08-23T07:19:50+00:00</lastmod>
+    <lastmod>2023-08-23T07:22:09+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://lachee.github.io/unity-utilities/api/Lachee.Discord.Events.UnityJoinRequestEvent.html</loc>
-    <lastmod>2023-08-23T07:19:50+00:00</lastmod>
+    <lastmod>2023-08-23T07:22:09+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://lachee.github.io/unity-utilities/api/Lachee.Discord.Events.UnityPresenceEvent.html</loc>
-    <lastmod>2023-08-23T07:19:50+00:00</lastmod>
+    <lastmod>2023-08-23T07:22:09+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://lachee.github.io/unity-utilities/api/Lachee.Discord.Events.UnityReadyEvent.html</loc>
-    <lastmod>2023-08-23T07:19:50+00:00</lastmod>
+    <lastmod>2023-08-23T07:22:09+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://lachee.github.io/unity-utilities/api/Lachee.Discord.Events.UnitySpectateEvent.html</loc>
-    <lastmod>2023-08-23T07:19:50+00:00</lastmod>
+    <lastmod>2023-08-23T07:22:09+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://lachee.github.io/unity-utilities/api/Lachee.Discord.Events.UnitySubscribeEvent.html</loc>
-    <lastmod>2023-08-23T07:19:50+00:00</lastmod>
+    <lastmod>2023-08-23T07:22:09+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://lachee.github.io/unity-utilities/api/Lachee.Discord.Events.UnityUnsubscribeEvent.html</loc>
-    <lastmod>2023-08-23T07:19:50+00:00</lastmod>
+    <lastmod>2023-08-23T07:22:09+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://lachee.github.io/unity-utilities/api/Lachee.Discord.Events.html</loc>
-    <lastmod>2023-08-23T07:19:50+00:00</lastmod>
+    <lastmod>2023-08-23T07:22:09+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://lachee.github.io/unity-utilities/api/Lachee.Discord.Party.html</loc>
-    <lastmod>2023-08-23T07:19:50+00:00</lastmod>
+    <lastmod>2023-08-23T07:22:09+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://lachee.github.io/unity-utilities/api/Lachee.Discord.Presence.html</loc>
-    <lastmod>2023-08-23T07:19:50+00:00</lastmod>
+    <lastmod>2023-08-23T07:22:09+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://lachee.github.io/unity-utilities/api/Lachee.Discord.Secrets.html</loc>
-    <lastmod>2023-08-23T07:19:50+00:00</lastmod>
+    <lastmod>2023-08-23T07:22:09+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://lachee.github.io/unity-utilities/api/Lachee.Discord.Timestamp.html</loc>
-    <lastmod>2023-08-23T07:19:50+00:00</lastmod>
+    <lastmod>2023-08-23T07:22:09+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://lachee.github.io/unity-utilities/api/Lachee.Discord.User.AvatarDownloadCallback.html</loc>
-    <lastmod>2023-08-23T07:19:50+00:00</lastmod>
+    <lastmod>2023-08-23T07:22:09+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://lachee.github.io/unity-utilities/api/Lachee.Discord.User.CacheLevelFlag.html</loc>
-    <lastmod>2023-08-23T07:19:50+00:00</lastmod>
+    <lastmod>2023-08-23T07:22:09+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://lachee.github.io/unity-utilities/api/Lachee.Discord.User.html</loc>
-    <lastmod>2023-08-23T07:19:50+00:00</lastmod>
+    <lastmod>2023-08-23T07:22:09+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://lachee.github.io/unity-utilities/api/Lachee.Discord.html</loc>
-    <lastmod>2023-08-23T07:19:50+00:00</lastmod>
+    <lastmod>2023-08-23T07:22:09+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://lachee.github.io/unity-utilities/api/Lachee.IO.Exceptions.NamedPipeConnectionException.html</loc>
-    <lastmod>2023-08-23T07:19:50+00:00</lastmod>
+    <lastmod>2023-08-23T07:22:09+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://lachee.github.io/unity-utilities/api/Lachee.IO.Exceptions.NamedPipeOpenException.html</loc>
-    <lastmod>2023-08-23T07:19:50+00:00</lastmod>
+    <lastmod>2023-08-23T07:22:09+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://lachee.github.io/unity-utilities/api/Lachee.IO.Exceptions.NamedPipeReadException.html</loc>
-    <lastmod>2023-08-23T07:19:50+00:00</lastmod>
+    <lastmod>2023-08-23T07:22:09+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://lachee.github.io/unity-utilities/api/Lachee.IO.Exceptions.NamedPipeWriteException.html</loc>
-    <lastmod>2023-08-23T07:19:50+00:00</lastmod>
+    <lastmod>2023-08-23T07:22:09+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://lachee.github.io/unity-utilities/api/Lachee.IO.Exceptions.html</loc>
-    <lastmod>2023-08-23T07:19:50+00:00</lastmod>
+    <lastmod>2023-08-23T07:22:09+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://lachee.github.io/unity-utilities/api/Lachee.IO.NamedPipeClientStream.html</loc>
-    <lastmod>2023-08-23T07:19:50+00:00</lastmod>
+    <lastmod>2023-08-23T07:22:09+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://lachee.github.io/unity-utilities/api/Lachee.IO.html</loc>
-    <lastmod>2023-08-23T07:19:50+00:00</lastmod>
+    <lastmod>2023-08-23T07:22:09+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://lachee.github.io/unity-utilities/index.html</loc>
-    <lastmod>2023-08-23T07:19:50+00:00</lastmod>
+    <lastmod>2023-08-23T07:22:09+00:00</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.5</priority>
   </url>
