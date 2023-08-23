@@ -32,6 +32,7 @@ jobs:
           dotnet tools/UnityPackageExporter.dll \
             ./ \
             discord-rpc-unity.unitypackage \
+            --exclude "tools" \
             --exclude "Samples~" \
             --exclude "Documentation~" \
             --exclude ".*" \
