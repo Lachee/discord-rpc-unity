@@ -33,8 +33,9 @@ jobs:
             ./ \
             discord-rpc-unity.unitypackage \
             --exclude "Samples~" \
-            --assets "Runtime/**/*" \
-            --assets "Editor/**/*" \
+            --exclude "Documentation~" \
+            --exclude ".*" \
+            --assets "**/*" \
             --skip-dependency-check \
             -r .
         
