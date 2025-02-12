@@ -87,7 +87,7 @@ namespace Lachee.Discord
 		#endregion
 
 		[Header("Handlers and Events")]
-#if UNITY_2019_OR_NEWER
+#if UNITY_2019_1_OR_NEWER
 		public UnityEvent<ReadyEvent> OnReady;
 		public UnityEvent<CloseMessage> OnClose;
 		public UnityEvent<PresenceEvent> OnPresence;
