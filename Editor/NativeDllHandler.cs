@@ -35,7 +35,7 @@ namespace Lachee.Discord.Editor
 				}
 			}
 
-#if !UNITY_2019_OR_NEWER
+#if !UNITY_2019_1_OR_NEWER
 			FixLinkerSettings();
 #endif
 		}
