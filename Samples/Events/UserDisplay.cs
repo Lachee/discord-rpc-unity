@@ -79,7 +79,11 @@ namespace Lachee.DiscordRPC.Samples.Events
 				while (!operation.isDone)
 					await Task.Yield();
 
+#if UNITY_2021_3_OR_NEWER
 				if (request.result != UnityWebRequest.Result.Success)
+#else
+				if (request.isNetworkError || request.isHttpError)
+#endif
 				{
 					Debug.LogError($"Failed to download texture from {url}: {request.error}");
 					return null;

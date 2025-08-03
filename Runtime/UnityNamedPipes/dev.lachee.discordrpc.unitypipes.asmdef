@@ -1,7 +1,7 @@
 {
     "name": "dev.lachee.discordrpc.unitypipes",
-    "rootNamespace": "Lachee.DiscordRPC.UnityNamedPipes",
     "references": [],
+    "optionalUnityReferences": [],
     "includePlatforms": [
         "Editor",
         "LinuxStandalone64",
@@ -15,8 +15,6 @@
     "precompiledReferences": [],
     "autoReferenced": true,
     "defineConstraints": [
-        "ENABLE_IL2CPP || !NETSTANDARD2_1"
-    ],
-    "versionDefines": [],
-    "noEngineReferences": true
+        "!UNITY_2022_1_OR_NEWER || ENABLE_IL2CPP || !NETSTANDARD2_1"
+    ]
 }

@@ -1,9 +1,9 @@
 {
     "name": "dev.lachee.discordrpc",
-    "rootNamespace": "Lachee.DiscordRPC",
     "references": [
-        "GUID:8102b227e2ddb6848984026f18d5a4c4"
+        "dev.lachee.discordrpc.unitypipes"
     ],
+    "optionalUnityReferences": [],
     "includePlatforms": [
         "Editor",
         "LinuxStandalone64",
@@ -18,7 +18,5 @@
         "Newtonsoft.Json.dll"
     ],
     "autoReferenced": true,
-    "defineConstraints": [],
-    "versionDefines": [],
-    "noEngineReferences": false
+    "defineConstraints": []
 }

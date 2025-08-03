@@ -1,3 +1,4 @@
+#if UNITY_2021_3_OR_NEWER
 using UnityEngine;
 using UnityEditor;
 using DiscordRPC;
@@ -64,7 +65,6 @@ namespace Lachee.DiscordRPC.Editor
 			}
 			EditorGUILayout.EndFoldoutHeaderGroup();
 			EditorGUI.EndProperty();
-
 			container.presence = presence;
 			ApplyProperties(property, container);
 			EditorGUI.indentLevel = prevIndentLevel;
@@ -73,7 +73,7 @@ namespace Lachee.DiscordRPC.Editor
 		private void DrawAssets(ref RichPresence presence)
 		{
 			bool isExpanded = EditorGUILayout.BeginToggleGroup("Assets", presence.Assets != null);
-			presence.Assets ??= new Assets(); // Ensure Assets is initialized
+			presence.Assets = presence.Assets ?? new Assets(); // Ensure Assets is initialized
 			if (isExpanded)
 			{
 				EditorGUI.indentLevel++;
@@ -108,7 +108,7 @@ namespace Lachee.DiscordRPC.Editor
 		private void DrawParty(ref RichPresence presence)
 		{
 			bool isExpanded = EditorGUILayout.BeginToggleGroup("Party", presence.Party != null);
-			presence.Party ??= new Party(); // Ensure Party is initialized
+			presence.Party = presence.Party ?? new Party(); // Ensure Party is initialized
 			if (isExpanded)
 			{
 				EditorGUI.indentLevel++;
@@ -134,7 +134,7 @@ namespace Lachee.DiscordRPC.Editor
 		private void DrawTimestamps(ref RichPresence presence)
 		{
 			bool isExpanded = EditorGUILayout.BeginToggleGroup("Timestamps", presence.Timestamps != null);
-			presence.Timestamps ??= new Timestamps(); // Ensure Timestamps is initialized
+			presence.Timestamps = presence.Timestamps ?? new Timestamps(); // Ensure Timestamps is initialized
 			if (isExpanded)
 			{
 				EditorGUI.indentLevel++;
@@ -288,3 +288,4 @@ namespace Lachee.DiscordRPC.Editor
 		}
 	}
 }
+#endif
