@@ -1,10 +1,14 @@
-﻿using System.Collections;
+﻿#if ENABLE_IL2CPP || !NETSTANDARD2_1
+#define NATIVE_PIPES
+#endif
+
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
 using DiscordRPC;
 using DiscordRPC.Logging;
 using Lachee.DiscordRPC.Logging;
+using DiscordRPC.IO;
 
 namespace Lachee.DiscordRPC
 {
@@ -38,13 +42,23 @@ namespace Lachee.DiscordRPC
             client.Invoke();
         }
 
-        public void Initialize()  {
+        public void Initialize()
+        {
             if (client != null)
                 Deinitialize();
 
             var logger = new UnityLogger() { Level = LogLevel.Trace };
-            client = new DiscordRpcClient(applicationId, logger: logger, autoEvents: false);
+
+            INamedPipeClient pipeClient;
+#if NATIVE_PIPES
+            pipeClient = new Lachee.DiscordRPC.UnityNamedPipes.NativeNamedPipeClient();
+#else
+            pipeClient = new ManagedNamedPipeClient();
+#endif
+
+            client = new DiscordRpcClient(applicationId, logger: logger, autoEvents: false, client: pipeClient);
             client.Initialize();
+            client.SetPresence(new RichPresence() { Details = "Hello from Unity" });
         }
 
         public void Deinitialize() {

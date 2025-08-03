@@ -1,15 +1,11 @@
 {
-    "name": "dev.lachee.discordrpc.runtime",
-    "rootNamespace": "Lachee.DiscordRPC",
-    "references": [
-        "GUID:8102b227e2ddb6848984026f18d5a4c4"
-    ],
+    "name": "dev.lachee.discordrpc.unitypipes",
+    "rootNamespace": "Lachee.DiscordRPC.UnityNamedPipes",
+    "references": [],
     "includePlatforms": [
         "Editor",
         "LinuxStandalone64",
-        "CloudRendering",
         "macOSStandalone",
-        "macOSStandaloneServer",
         "WindowsStandalone32",
         "WindowsStandalone64",
         "WindowsStandalone32Server",
@@ -18,11 +14,11 @@
     "excludePlatforms": [],
     "allowUnsafeCode": false,
     "overrideReferences": false,
-    "precompiledReferences": [
-        "Newtonsoft.Json.dll"
-    ],
+    "precompiledReferences": [],
     "autoReferenced": true,
-    "defineConstraints": [],
+    "defineConstraints": [
+        "ENABLE_IL2CPP || !NETSTANDARD2_1"
+    ],
     "versionDefines": [],
-    "noEngineReferences": false
+    "noEngineReferences": true
 }
