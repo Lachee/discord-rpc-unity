@@ -1,5 +1,5 @@
 {
-    "name": "dev.lachee.discordrpc.runtime",
+    "name": "dev.lachee.discordrpc",
     "rootNamespace": "Lachee.DiscordRPC",
     "references": [
         "GUID:8102b227e2ddb6848984026f18d5a4c4"

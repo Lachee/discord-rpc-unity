@@ -1,0 +1,18 @@
+{
+    "name": "dev.lachee.discordrpc.editor",
+    "rootNamespace": "Lachee.DiscordRPC.Editor",
+    "references": [
+        "GUID:24da468265cf2e540af394dc479fb741"
+    ],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
