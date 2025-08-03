@@ -2,284 +2,288 @@ using UnityEngine;
 using UnityEditor;
 using DiscordRPC;
 using System;
+using UnityEditorInternal;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace Lachee.DiscordRPC.Editor
 {
 	[CustomPropertyDrawer(typeof(RichPresenceObject))]
 	public class RichPresenceObjectDrawer : PropertyDrawer
 	{
-		private bool _foldout = false;
-		private bool _showJson = false;
+		private bool _foldout = true;
+		private bool _showJson = true;
 		private static readonly float LINE_HEIGHT = EditorGUIUtility.singleLineHeight;
 		private static readonly float SPACING = EditorGUIUtility.standardVerticalSpacing;
 
 		public override void OnGUI(Rect position, SerializedProperty property, GUIContent label)
 		{
 			EditorGUI.BeginProperty(position, label, property);
+			var container = property.GetSerializedValue() as RichPresenceObject;
+			var presence = container.presence ?? new RichPresence();
+			int prevIndentLevel = EditorGUI.indentLevel;
 
-			var jsonProperty = property.FindPropertyRelative("_json");
-			var richPresenceObject = GetRichPresenceObject(property);
-
-			// Main foldout
-			Rect foldoutRect = new Rect(position.x, position.y, position.width, LINE_HEIGHT);
-			_foldout = EditorGUI.Foldout(foldoutRect, _foldout, label, true);
-
+			_foldout = EditorGUILayout.BeginFoldoutHeaderGroup(_foldout, label);
 			if (_foldout)
 			{
 				EditorGUI.indentLevel++;
-				float currentY = position.y + LINE_HEIGHT + SPACING;
-
 				try
 				{
-					var presence = richPresenceObject?.presence;
+					presence.Details = EditorGUILayout.TextField("Details", presence.Details);
+					presence.DetailsUrl = EditorGUILayout.TextField("┗ Link", presence.DetailsUrl);
+					GUILayout.Space(5);
 
-					if (presence != null)
-					{
-						// Details
-						Rect detailsRect = new Rect(position.x, currentY, position.width, LINE_HEIGHT);
-						string newDetails = EditorGUI.TextField(detailsRect, "Details", presence.Details ?? "");
-						if (newDetails != (presence.Details ?? ""))
-						{
-							presence.Details = string.IsNullOrEmpty(newDetails) ? null : newDetails;
-							UpdateJson(richPresenceObject, jsonProperty);
-						}
-						currentY += LINE_HEIGHT + SPACING;
+					presence.State = EditorGUILayout.TextField("State", presence.State);
+					presence.StateUrl = EditorGUILayout.TextField("┗ Link", presence.StateUrl);
+					GUILayout.Space(5);
 
-						// State
-						Rect stateRect = new Rect(position.x, currentY, position.width, LINE_HEIGHT);
-						string newState = EditorGUI.TextField(stateRect, "State", presence.State ?? "");
-						if (newState != (presence.State ?? ""))
-						{
-							presence.State = string.IsNullOrEmpty(newState) ? null : newState;
-							UpdateJson(richPresenceObject, jsonProperty);
-						}
-						currentY += LINE_HEIGHT + SPACING;
+					presence.StatusDisplay = (StatusDisplayType)EditorGUILayout.EnumPopup("Status Display", presence.StatusDisplay);
+					presence.Type = (ActivityType)EditorGUILayout.EnumPopup("Activity Type", presence.Type);
+					GUILayout.Space(5);
 
-						// Assets Section
-						EditorGUI.LabelField(new Rect(position.x, currentY, position.width, LINE_HEIGHT), "Assets", EditorStyles.boldLabel);
-						currentY += LINE_HEIGHT + SPACING;
+					// Assets
+					DrawAssets(ref presence);
+					GUILayout.Space(5);
 
-						EditorGUI.indentLevel++;
+					// Party
+					DrawParty(ref presence);
+					GUILayout.Space(5);
 
-						// Initialize assets if null
-						if (presence.Assets == null)
-							presence.Assets = new Assets();
+					// Timestamps
+					DrawTimestamps(ref presence);
+					GUILayout.Space(5);
 
-						// Large Image
-						Rect largeImageRect = new Rect(position.x, currentY, position.width, LINE_HEIGHT);
-						string newLargeImageKey = EditorGUI.TextField(largeImageRect, "Large Image Key", presence.Assets.LargeImageKey ?? "");
-						if (newLargeImageKey != (presence.Assets.LargeImageKey ?? ""))
-						{
-							presence.Assets.LargeImageKey = string.IsNullOrEmpty(newLargeImageKey) ? null : newLargeImageKey;
-							UpdateJson(richPresenceObject, jsonProperty);
-						}
-						currentY += LINE_HEIGHT + SPACING;
-
-						// Large Image Text
-						Rect largeImageTextRect = new Rect(position.x, currentY, position.width, LINE_HEIGHT);
-						string newLargeImageText = EditorGUI.TextField(largeImageTextRect, "Large Image Text", presence.Assets.LargeImageText ?? "");
-						if (newLargeImageText != (presence.Assets.LargeImageText ?? ""))
-						{
-							presence.Assets.LargeImageText = string.IsNullOrEmpty(newLargeImageText) ? null : newLargeImageText;
-							UpdateJson(richPresenceObject, jsonProperty);
-						}
-						currentY += LINE_HEIGHT + SPACING;
-
-						// Small Image
-						Rect smallImageRect = new Rect(position.x, currentY, position.width, LINE_HEIGHT);
-						string newSmallImageKey = EditorGUI.TextField(smallImageRect, "Small Image Key", presence.Assets.SmallImageKey ?? "");
-						if (newSmallImageKey != (presence.Assets.SmallImageKey ?? ""))
-						{
-							presence.Assets.SmallImageKey = string.IsNullOrEmpty(newSmallImageKey) ? null : newSmallImageKey;
-							UpdateJson(richPresenceObject, jsonProperty);
-						}
-						currentY += LINE_HEIGHT + SPACING;
-
-						// Small Image Text
-						Rect smallImageTextRect = new Rect(position.x, currentY, position.width, LINE_HEIGHT);
-						string newSmallImageText = EditorGUI.TextField(smallImageTextRect, "Small Image Text", presence.Assets.SmallImageText ?? "");
-						if (newSmallImageText != (presence.Assets.SmallImageText ?? ""))
-						{
-							presence.Assets.SmallImageText = string.IsNullOrEmpty(newSmallImageText) ? null : newSmallImageText;
-							UpdateJson(richPresenceObject, jsonProperty);
-						}
-						currentY += LINE_HEIGHT + SPACING;
-
-						EditorGUI.indentLevel--;
-
-						// Party Section
-						EditorGUI.LabelField(new Rect(position.x, currentY, position.width, LINE_HEIGHT), "Party", EditorStyles.boldLabel);
-						currentY += LINE_HEIGHT + SPACING;
-
-						EditorGUI.indentLevel++;
-
-						// Initialize party if null
-						if (presence.Party == null)
-							presence.Party = new Party();
-
-						// Party ID
-						Rect partyIdRect = new Rect(position.x, currentY, position.width, LINE_HEIGHT);
-						string newPartyId = EditorGUI.TextField(partyIdRect, "Party ID", presence.Party.ID ?? "");
-						if (newPartyId != (presence.Party.ID ?? ""))
-						{
-							presence.Party.ID = string.IsNullOrEmpty(newPartyId) ? null : newPartyId;
-							UpdateJson(richPresenceObject, jsonProperty);
-						}
-						currentY += LINE_HEIGHT + SPACING;
-
-						// Party Size
-						Rect partySizeRect = new Rect(position.x, currentY, position.width, LINE_HEIGHT);
-						int newPartySize = EditorGUI.IntField(partySizeRect, "Party Size", presence.Party.Size);
-						if (newPartySize != presence.Party.Size)
-						{
-							presence.Party.Size = newPartySize;
-							UpdateJson(richPresenceObject, jsonProperty);
-						}
-						currentY += LINE_HEIGHT + SPACING;
-
-						// Party Max
-						Rect partyMaxRect = new Rect(position.x, currentY, position.width, LINE_HEIGHT);
-						int newPartyMax = EditorGUI.IntField(partyMaxRect, "Party Max", presence.Party.Max);
-						if (newPartyMax != presence.Party.Max)
-						{
-							presence.Party.Max = newPartyMax;
-							UpdateJson(richPresenceObject, jsonProperty);
-						}
-						currentY += LINE_HEIGHT + SPACING;
-
-						EditorGUI.indentLevel--;
-
-
-						// JSON Toggle
-						Rect jsonToggleRect = new Rect(position.x, currentY, position.width, LINE_HEIGHT);
-						_showJson = EditorGUI.Foldout(jsonToggleRect, _showJson, "Raw JSON", true);
-						currentY += LINE_HEIGHT + SPACING;
-
-						if (_showJson)
-						{
-							EditorGUI.indentLevel++;
-
-							// JSON text area (multi-line)
-							Rect jsonRect = new Rect(position.x, currentY, position.width, LINE_HEIGHT * 4);
-							EditorGUI.BeginChangeCheck();
-							string newJson = EditorGUI.TextArea(jsonRect, jsonProperty.stringValue ?? "");
-							if (EditorGUI.EndChangeCheck())
-							{
-								jsonProperty.stringValue = newJson;
-								try
-								{
-									richPresenceObject?.Deserialize();
-								}
-								catch (Exception ex)
-								{
-									Debug.LogWarning($"Failed to deserialize JSON: {ex.Message}");
-								}
-							}
-							currentY += LINE_HEIGHT * 4 + SPACING;
-
-							EditorGUI.indentLevel--;
-						}
-					}
-					else
-					{
-						// No presence data - show create button
-						Rect createRect = new Rect(position.x, currentY, position.width, LINE_HEIGHT);
-						if (GUI.Button(createRect, "Create New Rich Presence"))
-						{
-							if (richPresenceObject != null)
-							{
-								richPresenceObject.presence = new RichPresence();
-								UpdateJson(richPresenceObject, jsonProperty);
-							}
-						}
-						currentY += LINE_HEIGHT + SPACING;
-					}
+					// Buttons
+					DrawButtons(ref presence);
 				}
 				catch (Exception ex)
 				{
-					// Error handling
-					Rect errorRect = new Rect(position.x, currentY, position.width, LINE_HEIGHT);
-					EditorGUI.HelpBox(errorRect, $"Error: {ex.Message}", MessageType.Error);
-					currentY += LINE_HEIGHT + SPACING;
-
-					// Show raw JSON field for manual editing
-					Rect jsonRect = new Rect(position.x, currentY, position.width, LINE_HEIGHT);
-					EditorGUI.PropertyField(jsonRect, jsonProperty, new GUIContent("JSON"));
+					EditorGUILayout.HelpBox($"Error: {ex.Message}", MessageType.Error);
 				}
-
 				EditorGUI.indentLevel--;
 			}
-
+			EditorGUILayout.EndFoldoutHeaderGroup();
 			EditorGUI.EndProperty();
+
+			container.presence = presence;
+			ApplyProperties(property, container);
+			EditorGUI.indentLevel = prevIndentLevel;
+		}
+
+		private void DrawAssets(ref RichPresence presence)
+		{
+			bool isExpanded = EditorGUILayout.BeginToggleGroup("Assets", presence.Assets != null);
+			presence.Assets ??= new Assets(); // Ensure Assets is initialized
+			if (isExpanded)
+			{
+				EditorGUI.indentLevel++;
+				try
+				{
+					EditorGUILayout.LabelField("Large", EditorStyles.boldLabel);
+					EditorGUI.indentLevel++;
+					presence.Assets.LargeImageKey = EditorGUILayout.TextField("Image Key", presence.Assets.LargeImageKey);
+					presence.Assets.LargeImageText = EditorGUILayout.TextField("┣ Text", presence.Assets.LargeImageText);
+					presence.Assets.LargeImageUrl = EditorGUILayout.TextField("┗ Link", presence.Assets.LargeImageUrl);
+					EditorGUI.indentLevel--;
+
+					EditorGUILayout.LabelField("Small", EditorStyles.boldLabel);
+					EditorGUI.indentLevel++;
+					presence.Assets.SmallImageKey = EditorGUILayout.TextField("Image Key", presence.Assets.SmallImageKey);
+					presence.Assets.SmallImageText = EditorGUILayout.TextField("┣ Text", presence.Assets.SmallImageText);
+					presence.Assets.SmallImageUrl = EditorGUILayout.TextField("┗ Link", presence.Assets.SmallImageUrl);
+					EditorGUI.indentLevel--;
+				}
+				catch (Exception ex)
+				{
+					EditorGUILayout.HelpBox($"Error: {ex.Message}", MessageType.Error);
+				}
+				EditorGUI.indentLevel--;
+			}
+			EditorGUILayout.EndToggleGroup();
+
+			if (!isExpanded)
+				presence.Assets = null; // Clear Assets if not expanded
+		}
+
+		private void DrawParty(ref RichPresence presence)
+		{
+			bool isExpanded = EditorGUILayout.BeginToggleGroup("Party", presence.Party != null);
+			presence.Party ??= new Party(); // Ensure Party is initialized
+			if (isExpanded)
+			{
+				EditorGUI.indentLevel++;
+				try
+				{
+					presence.Party.ID = EditorGUILayout.TextField("Party ID", presence.Party.ID ?? "");
+					presence.Party.Size = EditorGUILayout.IntField("Size", presence.Party.Size);
+					presence.Party.Max = EditorGUILayout.IntField("Max", presence.Party.Max);
+
+				}
+				catch (Exception ex)
+				{
+					EditorGUILayout.HelpBox($"Error: {ex.Message}", MessageType.Error);
+				}
+				EditorGUI.indentLevel--;
+			}
+			EditorGUILayout.EndToggleGroup();
+
+			if (!isExpanded)
+				presence.Party = null; // Clear Party if not expanded
+		}
+
+		private void DrawTimestamps(ref RichPresence presence)
+		{
+			bool isExpanded = EditorGUILayout.BeginToggleGroup("Timestamps", presence.Timestamps != null);
+			presence.Timestamps ??= new Timestamps(); // Ensure Timestamps is initialized
+			if (isExpanded)
+			{
+				EditorGUI.indentLevel++;
+				try
+				{
+					// Start Time
+					EditorGUILayout.LabelField("Start Time", EditorStyles.boldLabel);
+					EditorGUI.indentLevel++;
+
+					DateTime? startTime = presence.Timestamps.Start;
+					bool hasStartTime = startTime.HasValue;
+					hasStartTime = EditorGUILayout.Toggle("Enable Start Time", hasStartTime);
+
+					if (hasStartTime)
+					{
+						if (!startTime.HasValue)
+							startTime = DateTime.Now;
+
+						string startTimeStr = startTime.Value.ToString("yyyy-MM-dd HH:mm:ss");
+						string newStartTimeStr = EditorGUILayout.TextField("Start Time", startTimeStr);
+
+						if (DateTime.TryParse(newStartTimeStr, out DateTime parsedStart))
+							presence.Timestamps.Start = parsedStart;
+
+						if (GUILayout.Button("Set to Now"))
+							presence.Timestamps.Start = DateTime.Now;
+					}
+					else
+					{
+						presence.Timestamps.Start = null;
+					}
+					EditorGUI.indentLevel--;
+
+					// End Time
+					EditorGUILayout.LabelField("End Time", EditorStyles.boldLabel);
+					EditorGUI.indentLevel++;
+
+					DateTime? endTime = presence.Timestamps.End;
+					bool hasEndTime = endTime.HasValue;
+					hasEndTime = EditorGUILayout.Toggle("Enable End Time", hasEndTime);
+
+					if (hasEndTime)
+					{
+						if (!endTime.HasValue)
+							endTime = DateTime.Now.AddMinutes(30); // Default to 30 minutes from now
+
+						string endTimeStr = endTime.Value.ToString("yyyy-MM-dd HH:mm:ss");
+						string newEndTimeStr = EditorGUILayout.TextField("End Time", endTimeStr);
+
+						if (DateTime.TryParse(newEndTimeStr, out DateTime parsedEnd))
+							presence.Timestamps.End = parsedEnd;
+
+						if (GUILayout.Button("Set to +30 min"))
+							presence.Timestamps.End = DateTime.Now.AddMinutes(30);
+					}
+					else
+					{
+						presence.Timestamps.End = null;
+					}
+					EditorGUI.indentLevel--;
+				}
+				catch (Exception ex)
+				{
+					EditorGUILayout.HelpBox($"Error: {ex.Message}", MessageType.Error);
+				}
+				EditorGUI.indentLevel--;
+			}
+			EditorGUILayout.EndToggleGroup();
+
+			if (!isExpanded)
+				presence.Timestamps = null; // Clear Timestamps if not expanded
+		}
+
+		private void DrawButtons(ref RichPresence presence)
+		{
+			bool isExpanded = EditorGUILayout.BeginToggleGroup("Buttons", presence.Buttons != null);
+			List<Button> buttons = new List<Button>(presence.Buttons ?? Array.Empty<Button>());
+			if (isExpanded)
+			{
+				EditorGUI.indentLevel++;
+				try
+				{
+					for (int i = 0; i < 2; i++)
+					{
+						if (i >= buttons.Count)
+						{
+							EditorGUILayout.BeginHorizontal();
+							GUILayout.FlexibleSpace();
+							if (GUILayout.Button("New Button") || buttons.Count == 0)
+							{
+								buttons.Add(new Button());
+							}
+							EditorGUILayout.EndHorizontal();
+							break;
+						}
+
+						Button button = buttons[i];
+						EditorGUI.indentLevel++;
+						button.Label = EditorGUILayout.TextField("Label", button.Label);
+						button.Url = EditorGUILayout.TextField("┗ URL", button.Url);
+						EditorGUILayout.BeginHorizontal();
+						GUILayout.FlexibleSpace();
+
+						if (buttons.Count > 1 && GUILayout.Button("🗑️ Delete"))
+						{
+							buttons.RemoveAt(i);
+						}
+
+						if (i > 0 && GUILayout.Button("↑"))
+						{
+							var temp = buttons[i - 1];
+							buttons[i - 1] = button;
+							buttons[i] = temp;
+						}
+
+						if (i < buttons.Count - 1 && GUILayout.Button("↓"))
+						{
+							var temp = buttons[i + 1];
+							buttons[i + 1] = button;
+							buttons[i] = temp;
+						}
+
+						EditorGUILayout.EndHorizontal();
+						EditorGUI.indentLevel--;
+					}
+
+				}
+				catch (Exception ex)
+				{
+					EditorGUILayout.HelpBox($"Error: {ex.Message}", MessageType.Error);
+				}
+				EditorGUI.indentLevel--;
+			}
+			EditorGUILayout.EndToggleGroup();
+			presence.Buttons = isExpanded ? buttons.Where(b => b != null).ToArray() : null;
 		}
 
 		public override float GetPropertyHeight(SerializedProperty property, GUIContent label)
 		{
-			if (!_foldout)
-				return LINE_HEIGHT;
-
-			float height = LINE_HEIGHT + SPACING; // Foldout line
-
-			try
-			{
-				var richPresenceObject = GetRichPresenceObject(property);
-				var presence = richPresenceObject?.presence;
-
-				if (presence != null)
-				{
-					// Basic fields: Details, State
-					height += (LINE_HEIGHT + SPACING) * 2;
-
-					// Assets section: Label + 4 fields
-					height += (LINE_HEIGHT + SPACING) * 5;
-
-					// Party section: Label + 3 fields
-					height += (LINE_HEIGHT + SPACING) * 4;
-
-					// Instance
-					height += LINE_HEIGHT + SPACING;
-
-					// JSON toggle
-					height += LINE_HEIGHT + SPACING;
-
-					if (_showJson)
-					{
-						height += (LINE_HEIGHT * 4) + SPACING; // Multi-line JSON area
-					}
-				}
-				else
-				{
-					// Create button
-					height += LINE_HEIGHT + SPACING;
-				}
-			}
-			catch
-			{
-				// Error case: error box + JSON field
-				height += (LINE_HEIGHT + SPACING) * 2;
-			}
-
-			return height;
+			return 0f; // Let EditorGUILayout handle the height automatically
 		}
 
-		private RichPresenceObject GetRichPresenceObject(SerializedProperty property)
-		{
-			var target = property.serializedObject.targetObject;
-			var field = target.GetType().GetField(property.propertyPath,
-				System.Reflection.BindingFlags.Instance |
-				System.Reflection.BindingFlags.Public |
-				System.Reflection.BindingFlags.NonPublic);
-
-			return field?.GetValue(target) as RichPresenceObject;
-		}
-
-		private void UpdateJson(RichPresenceObject richPresenceObject, SerializedProperty jsonProperty)
+		private void ApplyProperties(SerializedProperty property, RichPresenceObject richPresenceObject)
 		{
 			if (richPresenceObject != null)
 			{
 				string json = richPresenceObject.Serialize();
-				jsonProperty.stringValue = json;
-				jsonProperty.serializedObject.ApplyModifiedProperties();
+				property.FindPropertyRelative("_json").stringValue = json;
+				property.serializedObject.ApplyModifiedProperties();
 			}
 		}
 	}
