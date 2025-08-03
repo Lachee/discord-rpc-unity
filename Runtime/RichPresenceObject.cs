@@ -9,7 +9,7 @@ namespace Lachee.DiscordRPC
 	[Serializable]
 	public sealed class RichPresenceObject
 	{
-		[SerializeField]
+		[SerializeField, TextArea]
 		private string _json;
 
 		private RichPresence m_presence = null;
