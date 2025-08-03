@@ -231,11 +231,32 @@
             </summary>
             <param name="presence">The Rich Presence to set on the current Discord user.</param>
         </member>
+        <member name="M:DiscordRPC.DiscordRpcClient.Update(System.Action{DiscordRPC.RichPresence})">
+            <summary>
+            Updates the values assigned in the delegate passed
+            </summary>
+            <param name="func">Delegate used to update the rich presence</param>
+            <returns>Updated Rich Presence</returns>
+        </member>
+        <member name="M:DiscordRPC.DiscordRpcClient.UpdateType(DiscordRPC.ActivityType)">
+            <summary>
+            Updates only the <see cref="P:DiscordRPC.BaseRichPresence.Type"/> of the <see cref="P:DiscordRPC.DiscordRpcClient.CurrentPresence"/> and sends the updated presence to Discord. Returns the newly edited Rich Presence.
+            </summary>
+            <param name="type">The type of the Rich Presence</param>
+            <returns>Updated Rich Presence</returns>
+        </member>
+        <member name="M:DiscordRPC.DiscordRpcClient.UpdateStatusDisplayType(DiscordRPC.StatusDisplayType)">
+            <summary>
+            Updates only the <see cref="P:DiscordRPC.BaseRichPresence.StatusDisplay"/> of the <see cref="P:DiscordRPC.DiscordRpcClient.CurrentPresence"/> and sends the updated presence to Discord. Returns the newly edited Rich Presence.
+            </summary>
+            <param name="type">The type to display on the status</param>
+            <returns>Updated Rich Presence</returns>
+        </member>
         <member name="M:DiscordRPC.DiscordRpcClient.UpdateButtons(DiscordRPC.Button[])">
             <summary>
             Updates only the <see cref="P:DiscordRPC.RichPresence.Buttons"/> of the <see cref="P:DiscordRPC.DiscordRpcClient.CurrentPresence"/> and updates/removes the buttons. Returns the newly edited Rich Presence.
             </summary>
-            <param name="button">The buttons of the Rich Presence</param>
+            <param name="buttons">The buttons of the Rich Presence</param>
             <returns>Updated Rich Presence</returns>
         </member>
         <member name="M:DiscordRPC.DiscordRpcClient.SetButton(DiscordRPC.Button,System.Int32)">
@@ -1277,8 +1298,8 @@
         <member name="F:DiscordRPC.Message.ErrorCode.NotImplemented">
             <summary>The functionality was not yet implemented</summary>
         </member>
-        <member name="F:DiscordRPC.Message.ErrorCode.UnkownError">
-            <summary>Unkown Discord error</summary>
+        <member name="F:DiscordRPC.Message.ErrorCode.UnknownError">
+            <summary>Unknown Discord error</summary>
         </member>
         <member name="F:DiscordRPC.Message.ErrorCode.InvalidPayload">
             <summary>Invalid Payload received</summary>
@@ -1489,45 +1510,98 @@
             The event that was subscribed too.
             </summary>
         </member>
-        <member name="M:DiscordRPC.Registry.IUriSchemeCreator.RegisterUriScheme(DiscordRPC.Registry.UriSchemeRegister)">
+        <member name="T:DiscordRPC.Registry.IRegisterUriScheme">
+            <summary>
+            Interface for registering a URI scheme.
+            </summary>
+        </member>
+        <member name="M:DiscordRPC.Registry.IRegisterUriScheme.Register(DiscordRPC.Registry.SchemeInfo)">
             <summary>
             Registers the URI scheme. If Steam ID is passed, the application will be launched through steam instead of directly.
             <para>Additional arguments can be supplied if required.</para>
             </summary>
-            <param name="register">The register context.</param>
+            <param name="info">The register context.</param>
         </member>
-        <member name="P:DiscordRPC.Registry.UriSchemeRegister.ApplicationID">
+        <member name="T:DiscordRPC.Registry.MacUriScheme">
             <summary>
-            The ID of the Discord App to register
+            Registers a URI scheme on MacOS.
             </summary>
         </member>
-        <member name="P:DiscordRPC.Registry.UriSchemeRegister.SteamAppID">
+        <member name="M:DiscordRPC.Registry.MacUriScheme.#ctor(DiscordRPC.Logging.ILogger)">
             <summary>
-            Optional Steam App ID to register. If given a value, then the game will launch through steam instead of Discord.
+            Initializes a new instance of the <see cref="T:DiscordRPC.Registry.MacUriScheme"/> class.
+            </summary>
+            <param name="logger"></param>
+        </member>
+        <member name="M:DiscordRPC.Registry.MacUriScheme.Register(DiscordRPC.Registry.SchemeInfo)">
+            <inheritdoc/>
+        </member>
+        <member name="T:DiscordRPC.Registry.UnixUriScheme">
+            <summary>
+            Registers a URI scheme on Unix-like systems using the xdg-open command. 
+            The scheme is saved as a .desktop file in the user's local applications directory.
             </summary>
         </member>
-        <member name="P:DiscordRPC.Registry.UriSchemeRegister.UsingSteamApp">
+        <member name="M:DiscordRPC.Registry.UnixUriScheme.#ctor(DiscordRPC.Logging.ILogger)">
             <summary>
-            Is this register using steam?
+            Initializes a new instance of the <see cref="T:DiscordRPC.Registry.UnixUriScheme"/> class.
+            </summary>
+            <param name="logger"></param>
+        </member>
+        <member name="M:DiscordRPC.Registry.UnixUriScheme.Register(DiscordRPC.Registry.SchemeInfo)">
+            <inheritdoc/>
+        </member>
+        <member name="T:DiscordRPC.Registry.SchemeInfo">
+            <summary>
+            URI Scheme information to register to the system.
             </summary>
         </member>
-        <member name="P:DiscordRPC.Registry.UriSchemeRegister.ExecutablePath">
+        <member name="P:DiscordRPC.Registry.SchemeInfo.ApplicationID">
             <summary>
-            The full executable path of the application.
+            The Discord application ID for the game or application.
             </summary>
         </member>
-        <member name="M:DiscordRPC.Registry.UriSchemeRegister.RegisterUriScheme">
+        <member name="P:DiscordRPC.Registry.SchemeInfo.SteamAppID">
             <summary>
-            Registers the URI scheme, using the correct creator for the correct platform
+            The Steam application ID if the game is registered through Steam. When set, the application will be launched through Steam instead of directly.
+            <para>Can be null if the game is not registered through Steam.</para>
             </summary>
         </member>
-        <member name="M:DiscordRPC.Registry.UriSchemeRegister.GetApplicationLocation">
+        <member name="P:DiscordRPC.Registry.SchemeInfo.ExecutablePath">
             <summary>
-            Gets the FileName for the currently executing application
+            The path to the executable that will be launched when the URI scheme is invoked.
             </summary>
-            <returns></returns>
         </member>
-        <member name="M:DiscordRPC.Registry.WindowsUriSchemeCreator.CreateUriScheme(System.String,System.String,System.String,System.String)">
+        <member name="P:DiscordRPC.Registry.SchemeInfo.UsingSteamApp">
+            <summary>
+            Indicates whether the scheme is using a Steam application ID.
+            </summary>
+        </member>
+        <member name="T:DiscordRPC.Registry.UriScheme">
+            <summary>
+            Registers a URI Scheme for the current platform.
+            </summary>
+        </member>
+        <member name="M:DiscordRPC.Registry.UriScheme.Register(DiscordRPC.Registry.SchemeInfo,DiscordRPC.Logging.ILogger)">
+            <summary>
+            Registers the URI Scheme for the current platform.
+            </summary>
+        </member>
+        <member name="T:DiscordRPC.Registry.WindowsUriScheme">
+            <summary>
+            Registers a URI scheme on Windows.
+            </summary>
+        </member>
+        <member name="M:DiscordRPC.Registry.WindowsUriScheme.#ctor(DiscordRPC.Logging.ILogger)">
+            <summary>
+            Initializes a new instance of the <see cref="T:DiscordRPC.Registry.WindowsUriScheme"/> class.
+            </summary>
+            <param name="logger"></param>
+        </member>
+        <member name="M:DiscordRPC.Registry.WindowsUriScheme.Register(DiscordRPC.Registry.SchemeInfo)">
+            <inheritdoc/>
+        </member>
+        <member name="M:DiscordRPC.Registry.WindowsUriScheme.CreateUriScheme(System.String,System.String,System.String,System.String)">
             <summary>
             Creates the actual scheme
             </summary>
@@ -1536,7 +1610,7 @@
             <param name="defaultIcon"></param>
             <param name="command"></param>
         </member>
-        <member name="M:DiscordRPC.Registry.WindowsUriSchemeCreator.GetSteamLocation">
+        <member name="M:DiscordRPC.Registry.WindowsUriScheme.GetSteamLocation">
             <summary>
             Gets the current location of the steam client
             </summary>
@@ -1550,20 +1624,38 @@
         <member name="P:DiscordRPC.BaseRichPresence.State">
             <summary>
             The user's current <see cref="P:DiscordRPC.BaseRichPresence.Party"/> status. For example, "Playing Solo" or "With Friends".
-            <para>Max 128 bytes</para>
+            <para>Max 128 characters</para>
             </summary>
         </member>
         <member name="F:DiscordRPC.BaseRichPresence._state">
             <summary>Inernal inner state string</summary>
         </member>
+        <member name="P:DiscordRPC.BaseRichPresence.StateUrl">
+            <summary>
+            URL that is linked to when clicking on the details text in the activity card.
+            <para>Max 256 characters</para>
+            </summary>
+        </member>
+        <member name="F:DiscordRPC.BaseRichPresence._stateUrl">
+            <summary>Inernal inner state URL string</summary>
+        </member>
         <member name="P:DiscordRPC.BaseRichPresence.Details">
             <summary>
             What the user is currently doing. For example, "Competitive - Total Mayhem".
-            <para>Max 128 bytes</para>
+            <para>Max 128 characters</para>
             </summary>
         </member>
         <member name="F:DiscordRPC.BaseRichPresence._details">
             <summary>Inernal inner detail string</summary>
+        </member>
+        <member name="P:DiscordRPC.BaseRichPresence.DetailsUrl">
+            <summary>
+            URL that is linked to when clicking on the details text in the activity card.
+            <para>Max 256 characters</para>
+            </summary>
+        </member>
+        <member name="F:DiscordRPC.BaseRichPresence._detailsUrl">
+            <summary>Inernal inner detail URL string</summary>
         </member>
         <member name="P:DiscordRPC.BaseRichPresence.Timestamps">
             <summary>
@@ -1585,6 +1677,16 @@
             The secrets used for Join / Spectate. Secrets are obfuscated data of your choosing. They could be match ids, player ids, lobby ids, etc. Make this object null if you do not wish too / unable too implement the Join / Request feature.
             <para>To keep security on the up and up, Discord requires that you properly hash/encode/encrypt/put-a-padlock-on-and-swallow-the-key-but-wait-then-how-would-you-open-it your secrets.</para>
             <para>Visit the <see href="https://discordapp.com/developers/docs/rich-presence/how-to#secrets">Rich Presence How-To</see> for more information.</para>
+            </summary>
+        </member>
+        <member name="P:DiscordRPC.BaseRichPresence.Type">
+            <summary>
+            The activity type
+            </summary>
+        </member>
+        <member name="P:DiscordRPC.BaseRichPresence.StatusDisplay">
+            <summary>
+            The display type for the status
             </summary>
         </member>
         <member name="P:DiscordRPC.BaseRichPresence.Instance">
@@ -1619,21 +1721,29 @@
             </summary>
             <returns></returns>
         </member>
-        <member name="M:DiscordRPC.BaseRichPresence.ValidateString(System.String,System.String@,System.Int32,System.Text.Encoding)">
+        <member name="M:DiscordRPC.BaseRichPresence.ValidateString(System.String,System.String@,System.Boolean,System.Int32,System.Text.Encoding)">
             <summary>
             Attempts to call <see cref="M:DiscordRPC.Helper.StringTools.GetNullOrString(System.String)"/> on the string and return the result, if its within a valid length.
             </summary>
             <param name="str">The string to check</param>
             <param name="result">The formatted string result</param>
-            <param name="bytes">The maximum number of bytes the string can take up</param>
-            <param name="encoding">The encoding to count the bytes with</param>
+            <param name="useBytes">True if you need to validate the string by byte length</param>
+            <param name="length">The maximum number of bytes/characters the string can take up</param>
+            <param name="encoding">The encoding to count the bytes with, optional</param>
             <returns>True if the string fits within the number of bytes</returns>
+        </member>
+        <member name="M:DiscordRPC.BaseRichPresence.ValidateUrl(System.String)">
+            <summary>
+            Validates URLs.
+            </summary>
+            <param name="url">The URL to check</param>
+            <returns>True if the URL is valid</returns>
         </member>
         <member name="M:DiscordRPC.BaseRichPresence.op_Implicit(DiscordRPC.BaseRichPresence)~System.Boolean">
             <summary>
             Operator that converts a presence into a boolean for null checks.
             </summary>
-            <param name="presesnce"></param>
+            <param name="presence"></param>
         </member>
         <member name="M:DiscordRPC.BaseRichPresence.Matches(DiscordRPC.RichPresence)">
             <summary>
@@ -1660,7 +1770,7 @@
             <summary>
             The unique match code to distinguish different games/lobbies. Use <see cref="M:DiscordRPC.Secrets.CreateSecret(System.Random)"/> to get an appropriately sized secret. 
             <para>This cannot be null and must be supplied for the  Join / Spectate feature to work.</para>
-            <para>Max Length of 128 Bytes</para>
+            <para>Max Length of 128 characters</para>
             </summary>
         </member>
         <member name="P:DiscordRPC.Secrets.JoinSecret">
@@ -1669,7 +1779,7 @@
             <para>It is recommended to encrypt this information so its hard for people to replicate it. 
             Do <b>NOT</b> just use the IP address in this. That is a bad practice and can leave your players vulnerable!
             </para>
-            <para>Max Length of 128 Bytes</para>
+            <para>Max Length of 128 characters</para>
             </summary>
         </member>
         <member name="P:DiscordRPC.Secrets.SpectateSecret">
@@ -1678,7 +1788,7 @@
             <para>It is recommended to encrypt this information so its hard for people to replicate it. 
             Do <b>NOT</b> just use the IP address in this. That is a bad practice and can leave your players vulnerable!
             </para>
-            <para>Max Length of 128 Bytes</para>
+            <para>Max Length of 128 characters</para>
             </summary>
         </member>
         <member name="P:DiscordRPC.Secrets.Encoding">
@@ -1713,7 +1823,7 @@
         <member name="P:DiscordRPC.Assets.LargeImageKey">
             <summary>
             Name of the uploaded image for the large profile artwork.
-            <para>Max 256 Bytes.</para>
+            <para>Max 256 characters.</para>
             </summary>
             <remarks>Allows URL to directly link to images.</remarks>
         </member>
@@ -1725,13 +1835,19 @@
         <member name="P:DiscordRPC.Assets.LargeImageText">
             <summary>
             The tooltip for the large square image. For example, "Summoners Rift" or "Horizon Lunar Colony".
-            <para>Max 128 Bytes.</para>
+            <para>Max 128 characters.</para>
+            </summary>
+        </member>
+        <member name="P:DiscordRPC.Assets.LargeImageUrl">
+            <summary>
+            URL that is linked to when clicking on the large image in the activity card.
+            <para>Max 256 characters.</para>
             </summary>
         </member>
         <member name="P:DiscordRPC.Assets.SmallImageKey">
             <summary>
             Name of the uploaded image for the small profile artwork.
-            <para>Max 256 Bytes.</para>
+            <para>Max 256 characters.</para>
             </summary>
             <remarks>Allows URL to directly link to images.</remarks>
         </member>
@@ -1743,7 +1859,13 @@
         <member name="P:DiscordRPC.Assets.SmallImageText">
             <summary>
             The tooltip for the small circle image. For example, "LvL 6" or "Ultimate 85%".
-            <para>Max 128 Bytes.</para>
+            <para>Max 128 characters.</para>
+            </summary>
+        </member>
+        <member name="P:DiscordRPC.Assets.SmallImageUrl">
+            <summary>
+            URL that is linked to when clicking on the small image in the activity card.
+            <para>Max 256 characters.</para>
             </summary>
         </member>
         <member name="P:DiscordRPC.Assets.LargeImageID">
@@ -1854,7 +1976,7 @@
         </member>
         <member name="F:DiscordRPC.Party.PrivacySetting.Public">
             <summary>
-            THe party is public, anyone can join.
+            The party is public, anyone can join.
             </summary>
         </member>
         <member name="P:DiscordRPC.Party.ID">
@@ -1886,13 +2008,58 @@
         <member name="P:DiscordRPC.Button.Label">
             <summary>
             Text shown on the button
-            <para>Max 32 bytes.</para>
+            <para>Max 31 bytes.</para>
             </summary>
         </member>
         <member name="P:DiscordRPC.Button.Url">
             <summary>
             The URL opened when clicking the button.
-            <para>Max 512 bytes.</para>
+            <para>Max 512 characters.</para>
+            </summary>
+        </member>
+        <member name="T:DiscordRPC.ActivityType">
+            <summary>
+            Rich Presence activity type
+            </summary>
+        </member>
+        <member name="F:DiscordRPC.ActivityType.Playing">
+            <summary>
+            Playing status type. Displays as "Playing ..."
+            </summary>
+        </member>
+        <member name="F:DiscordRPC.ActivityType.Listening">
+            <summary>
+            Listening status type. Displays as "Listening to ..."
+            </summary>
+        </member>
+        <member name="F:DiscordRPC.ActivityType.Watching">
+            <summary>
+            Watching status type. Displays as "Watching ..."
+            </summary>
+        </member>
+        <member name="F:DiscordRPC.ActivityType.Competing">
+            <summary>
+            Competing status type. Displays as "Competing in ..."
+            </summary>
+        </member>
+        <member name="T:DiscordRPC.StatusDisplayType">
+            <summary>
+            Rich Presence Display type
+            </summary>
+        </member>
+        <member name="F:DiscordRPC.StatusDisplayType.Name">
+            <summary>
+            Displays the rich presence name "Listening to Spotify"
+            </summary>
+        </member>
+        <member name="F:DiscordRPC.StatusDisplayType.State">
+            <summary>
+            Displays the rich presence state "Listening to Rick Astley"
+            </summary>
+        </member>
+        <member name="F:DiscordRPC.StatusDisplayType.Details">
+            <summary>
+            Displays the rich presence details "Listening to Never Gonna Give You Up"
             </summary>
         </member>
         <member name="T:DiscordRPC.RichPresence">
@@ -1919,11 +2086,39 @@
             <param name="state">The user's current <see cref="T:DiscordRPC.Party"/> status.</param>
             <returns>The modified Rich Presence.</returns>
         </member>
+        <member name="M:DiscordRPC.RichPresence.WithStateUrl(System.String)">
+            <summary>
+            Sets the state URL of the Rich Presence. See also <seealso cref="P:DiscordRPC.BaseRichPresence.StateUrl"/>.
+            </summary>
+            <param name="stateUrl">State URL when clicking on the state text.</param>
+            <returns>The modified Rich Presence.</returns>
+        </member>
         <member name="M:DiscordRPC.RichPresence.WithDetails(System.String)">
             <summary>
             Sets the details of the Rich Presence. See also <seealso cref="P:DiscordRPC.BaseRichPresence.Details"/>.
             </summary>
             <param name="details">What the user is currently doing.</param>
+            <returns>The modified Rich Presence.</returns>
+        </member>
+        <member name="M:DiscordRPC.RichPresence.WithDetailsUrl(System.String)">
+            <summary>
+            Sets the details URL of the Rich Presence. See also <seealso cref="P:DiscordRPC.BaseRichPresence.DetailsUrl"/>.
+            </summary>
+            <param name="detailsUrl">Details URL when clicking on the details text.</param>
+            <returns>The modified Rich Presence.</returns>
+        </member>
+        <member name="M:DiscordRPC.RichPresence.WithType(DiscordRPC.ActivityType)">
+            <summary>
+            Sets the type of the Rich Presence. See also <seealso cref="T:DiscordRPC.ActivityType"/>.
+            </summary>
+            <param name="type">The status type</param>
+            <returns>The modified Rich Presence.</returns>
+        </member>
+        <member name="M:DiscordRPC.RichPresence.WithStatusDisplay(DiscordRPC.StatusDisplayType)">
+            <summary>
+            Sets the display type for the status. See also <seealso cref="T:DiscordRPC.StatusDisplayType"/>.
+            </summary>
+            <param name="statusDisplay"></param>
             <returns>The modified Rich Presence.</returns>
         </member>
         <member name="M:DiscordRPC.RichPresence.WithTimestamps(DiscordRPC.Timestamps)">
@@ -1952,6 +2147,14 @@
             Sets the Rich Presence's secrets. See also <seealso cref="T:DiscordRPC.Secrets"/>.
             </summary>
             <param name="secrets">The secrets used for Join / Spectate.</param>
+            <returns>The modified Rich Presence.</returns>
+        </member>
+        <member name="M:DiscordRPC.RichPresence.WithButtons(DiscordRPC.Button,DiscordRPC.Button)">
+            <summary>
+            Sets the Rich Presence's buttons.
+            </summary>
+            <param name="topButton">The top button to display</param>
+            <param name="bottomButton">The optional bottom button to display</param>
             <returns>The modified Rich Presence.</returns>
         </member>
         <member name="M:DiscordRPC.RichPresence.Clone">
@@ -2460,6 +2663,21 @@
         <member name="F:DiscordRPC.User.AvatarSize.x2048">
             <summary> 2048 x 2048 pixels.</summary>
         </member>
+        <member name="T:DiscordRPC.User.AvatarDecorationData">
+            <summary>
+            Data for the avatar decoration which can be layered on top of the avatar.
+            </summary>
+        </member>
+        <member name="P:DiscordRPC.User.AvatarDecorationData.Asset">
+            <summary>
+            The hash of the asset used for the decoration.
+            </summary>
+        </member>
+        <member name="P:DiscordRPC.User.AvatarDecorationData.SKU">
+            <summary>
+            The SKU of the decoration.
+            </summary>
+        </member>
         <member name="P:DiscordRPC.User.ID">
             <summary>
             The snowflake ID of the user. 
@@ -2484,7 +2702,27 @@
         </member>
         <member name="P:DiscordRPC.User.Avatar">
             <summary>
-            The avatar hash of the user. Too get a URL for the avatar, use the <see cref="M:DiscordRPC.User.GetAvatarURL(DiscordRPC.User.AvatarFormat,DiscordRPC.User.AvatarSize)"/>. This can be null if the user has no avatar. The <see cref="M:DiscordRPC.User.GetAvatarURL(DiscordRPC.User.AvatarFormat,DiscordRPC.User.AvatarSize)"/> will account for this and return the discord default.
+            The hash of the user's avatar.
+            To get a URL for the avatar, use the <see cref="M:DiscordRPC.User.GetAvatarURL(DiscordRPC.User.AvatarFormat,DiscordRPC.User.AvatarSize)"/>. 
+            </summary>
+            <remarks>
+            If the user has a default Discord avatar, this value will be <c>null</c>. <see cref="M:DiscordRPC.User.GetAvatarURL(DiscordRPC.User.AvatarFormat,DiscordRPC.User.AvatarSize)"/> will still return the correct default avatar.
+            </remarks>
+        </member>
+        <member name="P:DiscordRPC.User.IsAvatarAnimated">
+            <summary>
+            The avatar is animated
+            </summary>
+        </member>
+        <member name="P:DiscordRPC.User.AvatarDecoration">
+            <summary>
+            The SKU and hash of the users avatar decoration. 
+            To get a URL for the decoration, use the <see cref="M:DiscordRPC.User.GetAvatarDecorationURL"/>.
+            </summary>
+        </member>
+        <member name="P:DiscordRPC.User.Bot">
+            <summary>
+            Whether the user belongs to an OAuth2 application.
             </summary>
         </member>
         <member name="P:DiscordRPC.User.Flags">
@@ -2501,33 +2739,49 @@
             <summary>No flag</summary>
         </member>
         <member name="F:DiscordRPC.User.Flag.Employee">
-            <summary>Staff of Discord.</summary>
+            <summary>Discord Employee</summary>
         </member>
         <member name="F:DiscordRPC.User.Flag.Partner">
-            <summary>Partners of Discord.</summary>
+            <summary>Partnered Server Owner</summary>
         </member>
         <member name="F:DiscordRPC.User.Flag.HypeSquad">
-            <summary>Original HypeSquad which organise events.</summary>
+            <summary>HypeSquad Events Member</summary>
         </member>
         <member name="F:DiscordRPC.User.Flag.BugHunter">
-            <summary>Bug Hunters that found and reported bugs in Discord.</summary>
+            <summary>Bug Hunter Level 1</summary>
         </member>
         <member name="F:DiscordRPC.User.Flag.HouseBravery">
-            <summary>The HypeSquad House of Bravery.</summary>
+            <summary>House Bravery Member</summary>
         </member>
         <member name="F:DiscordRPC.User.Flag.HouseBrilliance">
-            <summary>The HypeSquad House of Brilliance.</summary>
+            <summary>House Brilliance Member</summary>
         </member>
         <member name="F:DiscordRPC.User.Flag.HouseBalance">
-            <summary>The HypeSquad House of Balance (the best one).</summary>
+            <summary>House Balance Member</summary>
         </member>
         <member name="F:DiscordRPC.User.Flag.EarlySupporter">
-            <summary>Early Supporter of Discord and had Nitro before the store was released.</summary>
+            <summary>Early Nitro Supporter</summary>
         </member>
         <member name="F:DiscordRPC.User.Flag.TeamUser">
-            <summary>Apart of a team.
-            <para>Unclear if it is reserved for members that share a team with the current application.</para>
-            </summary>
+            <summary>User is a team</summary>
+        </member>
+        <member name="F:DiscordRPC.User.Flag.BugHunterLevel2">
+            <summary>Bug Hunter Level 2</summary>
+        </member>
+        <member name="F:DiscordRPC.User.Flag.VerifiedBot">
+            <summary>Verified Bot</summary>
+        </member>
+        <member name="F:DiscordRPC.User.Flag.VerifiedDeveloper">
+            <summary>Early Verified Bot Developer</summary>
+        </member>
+        <member name="F:DiscordRPC.User.Flag.CertifiedModerator">
+            <summary>Moderator Programs Alumni</summary>
+        </member>
+        <member name="F:DiscordRPC.User.Flag.BotHttpInteractions">
+            <summary>Bot uses only HTTP interactions and is shown in the online member list</summary>
+        </member>
+        <member name="F:DiscordRPC.User.Flag.ActiveDeveloper">
+            <summary>User is an Active Developer</summary>
         </member>
         <member name="P:DiscordRPC.User.Premium">
             <summary>
@@ -2540,13 +2794,16 @@
             </summary>
         </member>
         <member name="F:DiscordRPC.User.PremiumType.None">
-            <summary>No subscription to any forms of Nitro.</summary>
+            <summary>No subscription</summary>
         </member>
         <member name="F:DiscordRPC.User.PremiumType.NitroClassic">
-            <summary>Nitro Classic subscription. Has chat perks and animated avatars.</summary>
+            <summary>Nitro Classic. The precursor to the <see cref="F:DiscordRPC.User.PremiumType.NitroBasic"/></summary>
         </member>
         <member name="F:DiscordRPC.User.PremiumType.Nitro">
-            <summary>Nitro subscription. Has chat perks, animated avatars, server boosting, and access to free Nitro Games.</summary>
+            <summary>Nitro. Access to all premium features</summary>
+        </member>
+        <member name="F:DiscordRPC.User.PremiumType.NitroBasic">
+            <summary>Nitro Basic. Access to mostpremium features</summary>
         </member>
         <member name="P:DiscordRPC.User.CdnEndpoint">
             <summary>
@@ -2564,21 +2821,66 @@
             </summary>
             <param name="configuration">The configuration received by the OnReady event.</param>
         </member>
+        <member name="M:DiscordRPC.User.GetAvatarURL">
+            <summary>
+            Gets a URL to the user's avatar PNG.
+            <para>If the user does not have an avatar, a URL to a default avatar is returned.</para>
+            </summary>
+            <remarks>
+            The file returned will be <c>128x128px</c>.
+            </remarks>
+            <returns>URL to the discord CDN for the particular avatar</returns>
+        </member>
         <member name="M:DiscordRPC.User.GetAvatarURL(DiscordRPC.User.AvatarFormat)">
             <summary>
-            Gets a URL that can be used to download the user's avatar. If the user has not yet set their avatar, it will return the default one that discord is using. The default avatar only supports the <see cref="F:DiscordRPC.User.AvatarFormat.PNG"/> format.
+            Gets a URL to the user's avatar with the specified format.
+            <para>If the user does not have an avatar, a URL to a default avatar is returned.</para>
             </summary>
-            <remarks>The file returned will be 128px x 128px</remarks>
+            <remarks>
+            <para>The file returned will be <c>128x128px</c>.</para>
+            <para>The default avatar only supports the <see cref="F:DiscordRPC.User.AvatarFormat.PNG"/> format.</para>
+            </remarks>
             <param name="format">The format of the target avatar</param>
             <returns>URL to the discord CDN for the particular avatar</returns>
+            <exception cref="T:System.BadImageFormatException">The user has a default avatar but a format other than PNG is requested.</exception>
         </member>
         <member name="M:DiscordRPC.User.GetAvatarURL(DiscordRPC.User.AvatarFormat,DiscordRPC.User.AvatarSize)">
             <summary>
-            Gets a URL that can be used to download the user's avatar. If the user has not yet set their avatar, it will return the default one that discord is using. The default avatar only supports the <see cref="F:DiscordRPC.User.AvatarFormat.PNG"/> format.
+            Gets a URL to the user's avatar with the specified format and size.
+            <para>If the user does not have an avatar, a URL to a default avatar is returned.</para>
             </summary>
+            <remarks>
+            The default avatar only supports the <see cref="F:DiscordRPC.User.AvatarFormat.PNG"/> format.
+            </remarks>
             <param name="format">The format of the target avatar</param>
             <param name="size">The optional size of the avatar you wish for.</param>
             <returns>URL to the discord CDN for the particular avatar</returns>
+            <exception cref="T:System.BadImageFormatException">The user has a default avatar but a format other than PNG is requested.</exception>
+        </member>
+        <member name="M:DiscordRPC.User.GetAvatarDecorationURL">
+            <summary>
+            Gets a URL to the user's avatar decoration.
+            </summary>
+            <remarks>The Image will be a Animated PNG.</remarks>
+            <returns>URL to the discord CDN for the current avatar decoration, otherwise <c>null</c>.</returns>
+        </member>
+        <member name="M:DiscordRPC.User.GetAvatarDecorationURL(DiscordRPC.User.AvatarFormat)">
+            <summary>		
+            Gets a URL to the user's avatar decoration.
+            </summary>
+            <remarks>
+            The avatar formats do not behave like User Avatars:
+            <list type="bullet">
+            <item><see cref="F:DiscordRPC.User.AvatarFormat.PNG"/> are Animated PNG</item>
+            <item><see cref="F:DiscordRPC.User.AvatarFormat.GIF"/> will respond with <c>415 Unsupported Media Type</c></item>
+            <item><see cref="F:DiscordRPC.User.AvatarFormat.WebP"/> are not animated</item>
+            <item><see cref="F:DiscordRPC.User.AvatarFormat.JPEG"/> do not have transparency</item>
+            </list>
+            
+            Additionally, size is not support and makes no difference to the resulting image.
+            </remarks>
+            <param name="format">The format of the decoration</param>
+            <returns>URL to the discord CDN for the current avatar decoration, otherwise <c>null</c>.</returns>
         </member>
         <member name="M:DiscordRPC.User.GetAvatarExtension(DiscordRPC.User.AvatarFormat)">
             <summary>
