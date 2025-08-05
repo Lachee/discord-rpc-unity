@@ -10,16 +10,16 @@ namespace Lachee.DiscordRPC
 	public sealed class RichPresenceObject
 	{
 		[SerializeField, TextArea]
-		private string _json;
+		private string m_json;
 
 		private RichPresence m_presence = null;
 		public RichPresence presence
 		{
 			get
 			{
-				if (m_presence != null)
-					return m_presence;
-				return Deserialize();
+				if (m_presence == null)
+					return Deserialize();
+				return m_presence;
 			}
 			set
 			{
@@ -28,16 +28,32 @@ namespace Lachee.DiscordRPC
 			}
 		}
 
+		public RichPresenceObject() 
+		{
+			this.m_presence = null;
+		}
+
+		public RichPresenceObject(RichPresence presence) 
+		{
+			this.presence = presence;
+		}
+
+		/// <summary>
+		/// Loads the Rich Presence object from the internal serialized state
+		/// </summary>
+		/// <remarks>This is used in the Editor to serialize/deserialize the object from the discord-rpc-csharp library.</remarks>
+		/// <returns></returns>
 		public RichPresence Deserialize()
-		{
-			return m_presence = Newtonsoft.Json.JsonConvert.DeserializeObject<RichPresence>(_json);
-		}
+			=> m_presence = Newtonsoft.Json.JsonConvert.DeserializeObject<RichPresence>(m_json) ?? new RichPresence();
 
+		/// <summary>
+		/// Saves the Rich PResence object to the internal serialized state
+		/// </summary>
+		/// <remarks>This is used in the Editor to serialize/deserialize the object from the discord-rpc-csharp library.</remarks>
+		/// <returns></returns>
 		public string Serialize()
-		{
-			return _json = Newtonsoft.Json.JsonConvert.SerializeObject(m_presence);
-		}
-
+			=> m_json = Newtonsoft.Json.JsonConvert.SerializeObject(m_presence ?? new RichPresence());
+		
 		public static implicit operator RichPresence(RichPresenceObject obj)
 		{
 			return obj.presence;
@@ -45,10 +61,7 @@ namespace Lachee.DiscordRPC
 
 		public static implicit operator RichPresenceObject(RichPresence obj)
 		{
-			return new RichPresenceObject()
-			{
-				presence = obj
-			};
+			return new RichPresenceObject(obj);
 		}
 	}
 }

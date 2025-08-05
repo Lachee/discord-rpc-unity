@@ -1,10 +1,11 @@
-using UnityEngine;
-using UnityEditor;
 using DiscordRPC;
 using System;
-using UnityEditorInternal;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
+using UnityEditor;
+using UnityEditorInternal;
+using UnityEngine;
 
 namespace Lachee.DiscordRPC.Editor
 {
@@ -16,8 +17,7 @@ namespace Lachee.DiscordRPC.Editor
 		public override void OnGUI(Rect position, SerializedProperty property, GUIContent label)
 		{
 			EditorGUI.BeginProperty(position, label, property);
-			var container = property.GetSerializedValue() as RichPresenceObject;
-			var presence = container.presence ?? new RichPresence();
+			var presence = GetRichPresence(property);
 			int prevIndentLevel = EditorGUI.indentLevel;
 
 			Rect rect = new Rect(position.x, position.y, position.width, EditorGUIUtility.singleLineHeight);
@@ -59,9 +59,9 @@ namespace Lachee.DiscordRPC.Editor
 			}
 			EditorGUI.EndFoldoutHeaderGroup();
 			EditorGUI.EndProperty();
-			container.presence = presence;
-			ApplyProperties(property, container);
 			EditorGUI.indentLevel = prevIndentLevel;
+
+			SetRichPresence(property, presence);
 		}
 
 		private void DrawAssets(ref Rect rect, ref RichPresence presence)
@@ -266,9 +266,7 @@ namespace Lachee.DiscordRPC.Editor
 
 		public override float GetPropertyHeight(SerializedProperty property, GUIContent label)
 		{
-			var container = property.GetSerializedValue() as RichPresenceObject;
-			var presence = container?.presence ?? new RichPresence();
-
+			var presence = GetRichPresence(property);
 			float height = EditorGUIUtility.singleLineHeight + 1f; // Header foldout
 
 			if (!_foldout)
@@ -344,14 +342,17 @@ namespace Lachee.DiscordRPC.Editor
 			return height + EditorGUIUtility.singleLineHeight;
 		}
 
-		private void ApplyProperties(SerializedProperty property, RichPresenceObject richPresenceObject)
+		private void SetRichPresence(SerializedProperty property, RichPresence presence) 
 		{
-			if (richPresenceObject != null)
-			{
-				string json = richPresenceObject.Serialize();
-				property.FindPropertyRelative("_json").stringValue = json;
-				property.serializedObject.ApplyModifiedProperties();
-			}
+			var jsonProperty = property.FindPropertyRelative("m_json");
+			jsonProperty.stringValue = Newtonsoft.Json.JsonConvert.SerializeObject(presence);
+			jsonProperty.serializedObject.ApplyModifiedProperties();
+		}
+
+		private RichPresence GetRichPresence(SerializedProperty property) 
+		{
+			var jsonProperty = property.FindPropertyRelative("m_json");
+			return Newtonsoft.Json.JsonConvert.DeserializeObject<RichPresence>(jsonProperty.stringValue);
 		}
 	}
 }

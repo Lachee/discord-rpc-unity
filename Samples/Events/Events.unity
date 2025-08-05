@@ -735,6 +735,8 @@ MonoBehaviour:
   registerUriScheme: 0
   logLevel: 3
   logFile: discord.log
+  m_currentPresence:
+    _json: '{"type":0,"status_display_type":0}'
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

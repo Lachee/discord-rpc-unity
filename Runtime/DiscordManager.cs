@@ -7,13 +7,14 @@ using DiscordRPC;
 using DiscordRPC.Logging;
 using Lachee.DiscordRPC.Logging;
 using DiscordRPC.IO;
+using UnityEngine.UIElements;
 
 namespace Lachee.DiscordRPC
 {
     public class DiscordManager : MonoBehaviour
     {
         public static DiscordManager current { get; private set; }
-        public static DiscordRpcClient client => current.m_client;
+        public static DiscordRpcClient client => current == null ? null : current.m_client;
 
 		[Header("Properties")]
 		[Tooltip("The ID of the Discord Application. Visit the Discord API to create a new application if nessary.")]
@@ -34,10 +35,10 @@ namespace Lachee.DiscordRPC
 
         [Header("State")]
         [SerializeField]
-        private User m_user;
-        public User user => m_user;
         private UnityLogger m_logger;
         private DiscordRpcClient m_client;
+		public User user => m_client?.CurrentUser;
+		public RichPresence presence => m_client?.CurrentPresence;
 
 		void Awake() 
         {
@@ -87,13 +88,7 @@ namespace Lachee.DiscordRPC
                 m_client.RegisterUriScheme(steamId);
 
 			m_client.OnError += (s, args) => m_logger.Error($"[DRP] Error Occured within the Discord IPC: ({args.Code}) {args.Message}");
-			m_client.OnReady += (s, args) =>
-            {
-				//We have connected to the Discord IPC. We should send our rich presence just incase it lost it.
-				m_logger.Info("[DRP] Connection established and received READY from Discord IPC.");
-                m_user = args.User;
-            };
-
+			m_client.OnReady += (s, args) => m_logger.Info("[DRP] Connection established and received READY from Discord IPC.");
 			m_client.Initialize();
 		}
 
