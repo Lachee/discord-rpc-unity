@@ -11,6 +11,11 @@ namespace Lachee.DiscordRPC.Samples.Events
 {
 	public class UserDisplay : MonoBehaviour
 	{
+		// This is a very simple dirty cache for avatars which will grow memory usage over time.
+		// A better solution will be to save the avatar textures to a temporary directory or "{Application.persistentDataPath}/cache/{user.Avatar}.png"
+		// then attempt to load that file in case of cache miss rather than storing every downloaded texture in a static array.
+		private static Dictionary<string, Texture2D> avatarCache = new Dictionary<string, Texture2D>();
+
 		public Text usernameText;
 		public RawImage avatarImage;
 		public RawImage decorationImage;
@@ -36,8 +41,6 @@ namespace Lachee.DiscordRPC.Samples.Events
 		{
 			await UpdateUserDisplay(e.User);
 		}
-
-		private static Dictionary<string, Texture2D> avatarCache = new Dictionary<string, Texture2D>();
 
 		private async Task UpdateUserDisplay(User user)
 		{
