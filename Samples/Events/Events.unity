@@ -215,6 +215,7 @@ RectTransform:
   m_Children:
   - {fileID: 513549533}
   - {fileID: 965052454}
+  - {fileID: 1118922190}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -230,38 +231,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 316638962}
     m_Modifications:
-    - target: {fileID: 2027494137758896341, guid: 768d92d9dd4fe49ba83b6fc87e365d6e, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 2027494137758896341, guid: 768d92d9dd4fe49ba83b6fc87e365d6e, type: 3}
-      propertyPath: m_AnchorMin.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2027494137758896341, guid: 768d92d9dd4fe49ba83b6fc87e365d6e, type: 3}
-      propertyPath: m_AnchorMin.y
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 2027494137758896341, guid: 768d92d9dd4fe49ba83b6fc87e365d6e, type: 3}
-      propertyPath: m_SizeDelta.x
-      value: -373.7841
-      objectReference: {fileID: 0}
-    - target: {fileID: 2027494137758896341, guid: 768d92d9dd4fe49ba83b6fc87e365d6e, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 142.04077
-      objectReference: {fileID: 0}
-    - target: {fileID: 2027494137758896341, guid: 768d92d9dd4fe49ba83b6fc87e365d6e, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: -3.3228
-      objectReference: {fileID: 0}
-    - target: {fileID: 2091619575159705446, guid: 768d92d9dd4fe49ba83b6fc87e365d6e, type: 3}
-      propertyPath: m_Text
-      value: Lachee
-      objectReference: {fileID: 0}
-    - target: {fileID: 2091619575159705446, guid: 768d92d9dd4fe49ba83b6fc87e365d6e, type: 3}
-      propertyPath: m_FontData.m_Alignment
-      value: 3
-      objectReference: {fileID: 0}
     - target: {fileID: 5277908309155617972, guid: 768d92d9dd4fe49ba83b6fc87e365d6e, type: 3}
       propertyPath: m_Name
       value: User Display
@@ -435,7 +404,7 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 5884936319386108519, guid: 768d92d9dd4fe49ba83b6fc87e365d6e, type: 3}
   m_PrefabInstance: {fileID: 416950861}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1954452673
+--- !u!1 &1118922189
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -443,44 +412,79 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 1954452674}
-  - component: {fileID: 1954452675}
-  m_Layer: 0
-  m_Name: Basic Game Manager
+  - component: {fileID: 1118922190}
+  - component: {fileID: 1118922192}
+  - component: {fileID: 1118922191}
+  m_Layer: 5
+  m_Name: Text (Legacy)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &1954452674
-Transform:
+--- !u!224 &1118922190
+RectTransform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1954452673}
-  serializedVersion: 2
+  m_GameObject: {fileID: 1118922189}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 316638962}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1954452675
+  m_AnchorMin: {x: 0.5, y: 0}
+  m_AnchorMax: {x: 0.5, y: 0}
+  m_AnchoredPosition: {x: 0, y: 76}
+  m_SizeDelta: {x: 998.3918, y: 176.3859}
+  m_Pivot: {x: 0.5, y: 0}
+--- !u!114 &1118922191
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1954452673}
+  m_GameObject: {fileID: 1118922189}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c6093e595e52b484fb18e14792cf5adb, type: 3}
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  details: Basic Example
-  state: Very Basics
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_FontData:
+    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_FontSize: 68
+    m_FontStyle: 0
+    m_BestFit: 0
+    m_MinSize: 10
+    m_MaxSize: 101
+    m_Alignment: 1
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: 'LOADING
+
+    ( using unity events )'
+--- !u!222 &1118922192
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1118922189}
+  m_CullTransparentMesh: 1
 --- !u!1 &1956376617
 GameObject:
   m_ObjectHideFlags: 0
@@ -711,7 +715,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2081299160}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -735,14 +739,47 @@ MonoBehaviour:
   registerUriScheme: 0
   logLevel: 3
   logFile: discord.log
-  m_currentPresence:
-    _json: '{"type":0,"status_display_type":0}'
+  onReady:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1118922191}
+        m_TargetAssemblyTypeName: UnityEngine.Behaviour, UnityEngine
+        m_MethodName: set_enabled
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  onClose:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1118922191}
+        m_TargetAssemblyTypeName: UnityEngine.Behaviour, UnityEngine
+        m_MethodName: set_enabled
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+  onError:
+    m_PersistentCalls:
+      m_Calls: []
+  onPresenceUpdated:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
-  - {fileID: 1956635289}
-  - {fileID: 1954452674}
   - {fileID: 2081299161}
+  - {fileID: 1956635289}
   - {fileID: 316638962}
   - {fileID: 1956376620}

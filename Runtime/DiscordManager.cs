@@ -8,6 +8,8 @@ using DiscordRPC.Logging;
 using Lachee.DiscordRPC.Logging;
 using DiscordRPC.IO;
 using UnityEngine.UIElements;
+using UnityEngine.Events;
+using DiscordRPC.Events;
 
 namespace Lachee.DiscordRPC
 {
@@ -16,50 +18,57 @@ namespace Lachee.DiscordRPC
         public static DiscordManager current { get; private set; }
         public static DiscordRpcClient client => current == null ? null : current.m_client;
 
-		[Header("Properties")]
-		[Tooltip("The ID of the Discord Application. Visit the Discord API to create a new application if nessary.")]
-		public string applicationId = "424087019149328395";
+        [Header("Properties")]
+        [Tooltip("The ID of the Discord Application. Visit the Discord API to create a new application if nessary.")]
+        public string applicationId = "424087019149328395";
 
-		[Tooltip("The Steam App ID. This is a optional field used to launch your game through steam instead of the executable.")]
-		public string steamId = "";
+        [Tooltip("The Steam App ID. This is a optional field used to launch your game through steam instead of the executable.")]
+        public string steamId = "";
 
-		[Tooltip("Registers a custom URI scheme for your game. This is required for the Join / Specate features to work.")]
-		public bool registerUriScheme = false;
+        [Tooltip("Registers a custom URI scheme for your game. This is required for the Join / Specate features to work.")]
+        public bool registerUriScheme = false;
 
-		[Header("Logging")]
-		[Tooltip("Logging level of the Discord IPC connection.")]
-		public LogLevel logLevel = LogLevel.Warning;
+        [Header("Logging")]
+        [Tooltip("Logging level of the Discord IPC connection.")]
+        public LogLevel logLevel = LogLevel.Warning;
 
-		[Tooltip("The file to write the logs too in a build. If empty, then the console logger will be used.")]
-		public string logFile = "discord.log";
+        [Tooltip("The file to write the logs too in a build. If empty, then the console logger will be used.")]
+        public string logFile = "discord.log";
+
+        [Header("Events")]
+        public UnityEvent<User> onReady;
+        public UnityEvent onClose;
+        public UnityEvent<string> onError;
+        public UnityEvent<RichPresence> onPresenceUpdated;
 
         [Header("State")]
         [SerializeField]
         private UnityLogger m_logger;
         private DiscordRpcClient m_client;
-		public User user => m_client?.CurrentUser;
-		public RichPresence presence => m_client?.CurrentPresence;
+        public User user => m_client?.CurrentUser;
+        public RichPresence presence => m_client?.CurrentPresence;
 
-		void Awake() 
+        void Awake()
         {
             DontDestroyOnLoad(this);
 
             current = this;
-            m_logger = new UnityLogger() {
-                Level = logLevel 
+            m_logger = new UnityLogger()
+            {
+                Level = logLevel
             };
 
-			Initialize();
-		}
+            Initialize();
+        }
 
-        void OnDestroy() 
+        void OnDestroy()
         {
             Deinitialize();
         }
 
-        void Update() 
+        void Update()
         {
-            if (client == null) 
+            if (client == null)
                 return;
 
             m_logger.Level = logLevel;
@@ -77,25 +86,41 @@ namespace Lachee.DiscordRPC
             INamedPipeClient pipeClient = new ManagedNamedPipeClient();
 #endif
 
-			m_client = new DiscordRpcClient(
-                applicationId, 
-                logger: m_logger, 
-                autoEvents: false, 
+            m_client = new DiscordRpcClient(
+                applicationId,
+                logger: m_logger,
+                autoEvents: false,
                 client: pipeClient
             );
-			
+
             if (registerUriScheme)
                 m_client.RegisterUriScheme(steamId);
 
-			m_client.OnError += (s, args) => m_logger.Error($"[DRP] Error Occured within the Discord IPC: ({args.Code}) {args.Message}");
-			m_client.OnReady += (s, args) => m_logger.Info("[DRP] Connection established and received READY from Discord IPC.");
-			m_client.Initialize();
-		}
+            m_client.OnError += (s, args) =>
+            {
+                m_logger.Error($"[DRP] Error Occured within the Discord IPC: ({args.Code}) {args.Message}");
+                onError?.Invoke(args.Message);
+            };
+            m_client.OnReady += (s, args) =>
+            {
+                m_logger.Info("[DRP] Connection established and received READY from Discord IPC.");
+                onReady?.Invoke(args.User);
+            };
+            m_client.OnPresenceUpdate += (s, args) => onPresenceUpdated?.Invoke(m_client.CurrentPresence);
+            m_client.OnClose += (s, args) =>
+            {
+                m_logger.Info("[DRP] Connection closed by Discord IPC.");
+                onClose?.Invoke();
+            };
 
-		public void Deinitialize() {
-			m_client.Deinitialize();
-			m_client.Dispose();
-			m_client = null;
+            m_client.Initialize();
+        }
+
+        public void Deinitialize()
+        {
+            m_client.Deinitialize();
+            m_client.Dispose();
+            m_client = null;
         }
     }
 }
