@@ -352,7 +352,7 @@ namespace Lachee.DiscordRPC.Editor
 		private RichPresence GetRichPresence(SerializedProperty property) 
 		{
 			var jsonProperty = property.FindPropertyRelative("m_json");
-			return Newtonsoft.Json.JsonConvert.DeserializeObject<RichPresence>(jsonProperty.stringValue);
+			return Newtonsoft.Json.JsonConvert.DeserializeObject<RichPresence>(jsonProperty.stringValue) ?? new RichPresence();
 		}
 	}
 }
